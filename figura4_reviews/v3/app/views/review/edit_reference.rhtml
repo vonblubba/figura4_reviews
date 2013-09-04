@@ -1,0 +1,7 @@
+<h1>Modifica scheda</h1>
+<%= error_messages_for 'comment' %>
+<% form_tag :action => 'update_reference', :id => @review do %>
+	<%= render(:partial => 'reference', :object => @review) %>
+	<%= submit_tag "Salva modifiche" %>
+<% end %>
+<p><%= link_to("back", :action => 'back') %></p>

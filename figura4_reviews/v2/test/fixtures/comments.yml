@@ -1,0 +1,26 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+commento_dune_1:
+  id: 1
+  body: Il miglior romanzo di SF di sempre
+  author: figura4
+  review_id: 1
+  
+commento_dune_2:
+  id: 2
+  body: Grande!
+  user_id: 2
+  review_id: 1
+  
+commento_blade_1:
+  id: 3
+  body: atmosfera!
+  user_id: 2
+  review_id: 2
+  
+commento_blade_2:
+  id: 4
+  body: non l'ho capito
+  author: pasqualgimmy
+  email: fesso@fesso.it
+  review_id: 2
+  

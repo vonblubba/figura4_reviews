@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+pagina_di_sta_ceppa:
+  id: 1
+  title: la pagina di sta ceppa
+  second_title: sempre sta ceppa
+  description: sta ceppa
+  html_body: <h1>sta ceppa!!!</h1>
+  meta_description: sta ceppa
+  meta_keywords: ceppa
+  user_id: 1
+  published: 1
+  
+pagina_della_gnocca:
+  id: 2
+  title: la pagina della gnocca
+  second_title: sempre gnocca
+  description: miinkia
+  html_body: <h1>sta minkia!!!</h1>
+  meta_description: sta minkia
+  meta_keywords: minkia
+  user_id: 1
+  published: 0

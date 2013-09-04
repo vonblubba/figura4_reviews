@@ -1,0 +1,20 @@
+<h1>Modifica voto</h1>
+<%= error_messages_for 'review' %>
+<% form_tag :action => 'update_vote', :id => @review do %>
+	<label for="review_vote">Voto (*)</label>
+	<br/>
+	<select id="review_vote" name="review[vote]">
+		<option value="1" <%= "selected='selected'" if @review.vote == 1 %>>1</option>
+		<option value="2" <%= "selected='selected'" if @review.vote == 2 %>>2</option>
+		<option value="3" <%= "selected='selected'" if @review.vote == 3 %>>3</option>
+		<option value="4" <%= "selected='selected'" if @review.vote == 4 %>>4</option>
+		<option value="5" <%= "selected='selected'" if @review.vote == 5 %>>5</option>
+		<option value="6" <%= "selected='selected'" if @review.vote == 6 %>>6</option>
+		<option value="7" <%= "selected='selected'" if @review.vote == 7 %>>7</option>
+		<option value="8" <%= "selected='selected'" if @review.vote == 8 %>>8</option>
+		<option value="9" <%= "selected='selected'" if @review.vote == 9 %>>9</option>
+		<option value="10" <%= "selected='selected'" if @review.vote == 10 %>>10</option>
+	</select>
+	<%= submit_tag "Salva modifiche" %>
+<% end %>
+<p><%= link_to("back", :action => 'back') %></p>

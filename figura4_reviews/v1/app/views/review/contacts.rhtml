@@ -1,0 +1,38 @@
+<div id="rci_right_column">
+<p>Usa questo form per contattare il gestore del sito.</p>
+<p>I campi contrasseganti da (*) sono obbligatori.</p>
+<p>Prometto che non venderò il vostro indirizzo email a nessuno spacciatore di Viagra...</p>
+</div>
+
+<div id="rci_left_column">	
+<h2>Contattami</h2>
+<p>
+<%= form_tag(:action=>'feedback')%>
+
+	<label for="nickname">Il tuo nome (*)</label><br/>
+	<%= text_field 'feedback', 'nickname', :size => 40 -%><br/><br/>
+
+	<label for="email">La tua email (*)</label><br/>
+	<%= text_field 'feedback', 'email', :size => 40 -%><br/><br/>
+	
+	<select name="feedback[subject]">
+		<option value="" selected="selected">--Il motivo del tuo messaggio</option>
+		<option value="segnalazione libro">Voglio segnalare un libro</option>
+		<option value="segnalazione serie tv">Voglio segnalare una serie TV</option>
+		<option value="segnalazione film">Voglio segnalare un film</option>
+		<option value="segnalazione fumetto">Voglio segnalare un fumetto</option>
+		<option value="segnalazione bug">Voglio segnalare un bug nel codice del sito</option>
+		<option value="4 chiacchiere">Voglio fare quattro chiacchiere</option>
+		<option value="altro">Altro</option>
+	</select>
+	<br /><br/>
+	<label for="body">Il tuo messaggio (*)</label><br/>
+	<%= text_area 'feedback', 'body', :size => "40x10" %><br /><br/>
+	<%= submit_tag 'invia' %>
+</form>
+</p>
+<% if flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<br />
+</div>

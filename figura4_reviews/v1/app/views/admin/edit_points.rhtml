@@ -1,0 +1,24 @@
+<h1>Modifica punti - <%= @review.page_title %></h1>
+
+<%= error_messages_for 'point' %>
+
+<%= form_tag({:action=>'update_points', :id => @review}, :multipart => true)%>
+	<br />
+	<% for @existing_point in @review.points do %>
+		<p>
+			<%= text_area("existing_point[]", "text", :size => "40x10") -%>
+			<%= check_box("existing_point[]", "is_pro") %> Pro?
+		</p>
+	<% end %>
+	<% 0.upto(4) do |i| %>
+		<% @new_point = Point.new %>
+		<p>
+			<%= text_area("new_point[]", "text", :size => "40x10")%>
+			<%= check_box("new_point[]", "is_pro") %> Pro?
+		</p>
+	<% end %>
+<%= submit_tag 'Salva' %>
+	
+</form>
+
+<%= link_to 'Back', :action => 'list' %>

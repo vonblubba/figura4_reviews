@@ -1,0 +1,62 @@
+<div id="rci_right_column">
+	<%= render(:partial => 'review_right_column', :object => @review) %>
+</div>
+
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<div class="show_comments">
+		<h1>I vostri commenti</h1>
+		<% unless @review.comments.size == 0 %>
+			<ul>
+				<% @review.comments.each do |c| %>
+					<li>
+						<div class="comment_author">
+							<%= comment_avatar_tag(c) %>
+							
+								<% if c.user %>
+									<% if c.user.external_link %>
+										<span class="author_name"><%= link_to(h(c.user.name), h(c.user.external_link.link_url)) %></span>
+									<% else %>
+										<span class="author_name"><%=h c.user.name %></span>
+									<% end %>
+								<% else %>
+									<% if c.external_link %>
+										<span class="author_name"><%= link_to(h(c.author), h(c.external_link.link_url)) %></span>
+									<% else %>
+										<span class="author_name"><%=h c.author %></span>
+									<% end %>
+								<% end %>
+								<br />
+								<span class="comment_date">
+									<%=h c.created_on.strftime("%d %b %Y") %>
+									<br />
+									@ <%=h c.created_on.strftime("%H:%M") %>
+								</span>
+							
+						</div>
+						<div class="comment_text">
+							<%= text_formatter(h(c.body)) %>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		<% else %>
+			<p>
+				Non ci sono ancora commenti a questa recensione.
+				Invia tu il primo!
+			</p>
+		<% end %>
+	</div>
+	
+	<%= link_to("<div class='back_to_review'>Torna alla recensione</div>", {:controller => 'review', :action => 'show', :id => @review}) %> 
+
+	<div id="new_comment">	
+		<h4>Partecipa alla discussione!</h4>
+		<%= form_tag(:action=>'post_comment', :id => @review.id)%>
+			<%= render(:partial => 'comment') %>
+			<p><%= submit_tag 'Invia' %></p>
+		</form>	
+	</div>
+</div>

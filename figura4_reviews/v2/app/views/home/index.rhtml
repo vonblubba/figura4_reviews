@@ -1,0 +1,43 @@
+<div id="rci_right_column">
+	<%= render(:partial => "now_reading") %>
+	<%= render(:partial=>"recent_comments") %>
+</div>
+
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<h1>Figura4's reviews (beta)</h1>
+	<div id="mission">
+		<p>
+			Ho deciso di mettermi a scrivere delle piccole <em>recensioni</em> di (quasi) tutto ci&ograve; che mi capita di leggere/guardare (soprattutto leggere, in verit&agrave;...).<br />A che scopo? per dare un aiuto a chi, come me, spesso si trova a vagare senza meta per la rete in cerca un titolo interessante da leggere.
+		</p>
+		<p>
+			Una piccola nota: ricordate che una recensione &egrave;, in ultima analisi, un'opinione, e come tale non pu&ograve; essere giusta o sbagliata, ma semplicemente condivisa o meno.<br />
+		</p>
+		<p>
+			Buona lettura!
+		</p>
+	</div>
+	<div id="recent_reviews">
+		<% @last_reviews.each do |r| %>
+			<div class="preview">		
+				<%= link_to(cover_tag(r, "my_cover"), {:controller => 'review', :action => 'show', :id => r}) %>
+				<h2 class="preview_title"><%=h smart_truncate(r.full_title, 27) %></h2>
+				<% unless r.subtitle.nil? or r.subtitle.blank? %>
+					<h2 class="preview_subtitle"><%=h r.subtitle %></h2>
+				<% end %>
+				<h2 class="preview_author">by <%=h r.author.full_name %></h2>
+				<div class="vote">
+					<img src="/images/<%= r.vote %>.png" alt="<%= vote_comment(r.vote) %>" title="<%= vote_comment(r.vote) %>" />
+					<%= media_icon_tag(r) %>
+				</div>
+				<%= text_formatter(h(smart_truncate(r.plot, 200))) %>	
+				<%= link_to("<span class='preview_more'>Leggi la recensione</span>", {:controller => 'review', :action => 'show', :id => r}) %> 
+				<% if r.comments.size > 0 %>
+					<%= link_to("<span class='preview_comments'>#{r.comments.size} commenti</span>", {:controller => 'review', :action => 'show_comments', :id => r}) %>
+				<% end %>
+			</div>
+		<% end %> 
+	</div>
+</div>

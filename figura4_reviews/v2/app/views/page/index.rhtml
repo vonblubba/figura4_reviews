@@ -1,0 +1,28 @@
+<div id="rci_right_column">
+	<p>
+		Qui puoi trovare tutto ciò che non è una recensione, ma che per qualche imperscrutabile motivo ho voluto comunque pubblicare sul sito. 
+	</p>
+</div>
+
+<div id="rci_left_column">
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<div id="pages_index">
+		<h1>Approfondimenti</h1>
+		<% if @pages.size == 0 %>
+			<p>
+				Al momento non ci sono approfondimenti da leggere. <br />
+				Riprova tra qualche tempo!
+			</p>
+		<% else %>
+			<% @pages.each do |p| %>
+				<div class="pages_list_element">
+					<h2><%= link_to(h(p.title), {:controller => 'page', :action => 'show', :id => p}) %></h2>
+					<h3><%= h(p.second_title) %></h3>
+					<%= text_formatter(h(p.description)) %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>

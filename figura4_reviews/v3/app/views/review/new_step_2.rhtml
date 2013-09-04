@@ -1,0 +1,10 @@
+<h1>Nuova recensione - passo 2</h1>
+<%= error_messages_for 'review' %>
+<% form_tag :action=>'update_plot', :id => @review do %>
+	<p>
+		<label for="review_plot">La trama in breve</label>
+		<br/>
+		<%= text_area 'review', 'plot', :size => '60x50'  %>
+	</p>
+	<%= submit_tag 'Procedi' %>
+<% end %>

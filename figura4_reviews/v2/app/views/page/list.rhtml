@@ -1,0 +1,24 @@
+<h1>Lista pagine</h1>
+
+<div id="table-list" >
+	<table cellpadding="5" cellspacing="0">
+		<tr>
+			<th>Titolo</th>
+			<th>Pubblicata</th>
+	  	</tr>
+	  	<% for page in @pages %>
+  	    	<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+  		 		<td><%=h page.title %></td>
+		  		<td><%=h page.published %></td>
+    	  		<td><%= link_to 'Mostra', :action => 'show', :id => page %></td>
+    	  		<td><%= link_to 'Modifica', :action => 'edit', :id => page %></td>
+    	  		<td><%= link_to 'Cancella', { :action => 'destroy', :id => page }, :confirm => 'Sei sicuro?', :method => :post %></td>
+  	    	</tr>
+	  	<% end %>
+	</table>
+</div>
+
+<%= link_to 'Precedente', { :page => @page_pages.current.previous } if @page_pages.current.previous %>
+<%= link_to 'Successiva', { :page => @page_pages.current.next } if @page_pages.current.next %> 
+<br />
+<%= link_to 'Nuova pagina', :action => 'new' %>

@@ -1,0 +1,33 @@
+MySQL Database Backup Plugin
+
+What does it do?
+====================================
+
+A simple backup plugin for backing up mysql databases and compressing them on linux systems.
+
+It uses mysqldump and tar to create and compress the backups. Details of the backup are then saved into
+a 'database_backups' table which contains the filename, path and file size as well as the date created.
+
+Install Instructions
+====================================
+
+1) Install the plguin
+   ./script/plugin install http://svn.atechmedia.com/railsbits/plugins/mysql_backup
+
+2) Run the included database migration generator
+   ./script/generate database_backup_migration
+   
+3) Run db:migrate to create the database_backups table
+   rake db:migrate
+   
+4) Set your backup path, whether you want the files compressed and your file prefix in config/backup.yml
+
+5) Try and backup using the included rake task
+   rake db:backup
+   
+
+Notes
+====================================
+
+ - You can also run a backup by running 'AtechMedia::Backup.now' from anywhere in your Rails app or
+   through ./script/console

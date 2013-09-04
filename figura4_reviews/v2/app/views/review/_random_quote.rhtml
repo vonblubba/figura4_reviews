@@ -1,0 +1,5 @@
+<% quote = Quote.random_quote %>
+<% if not quote.nil? %>
+	<%= text_formatter(h(quote.text)) %>
+	<p id="quote_attrib">Tratto da <%= link_to('"' + h(quote.review.full_title) + '"', {:controller => 'review', :action => 'show', :id => quote.review}) %> di <%= h(quote.review.author.full_name) %></p>
+<% end %>

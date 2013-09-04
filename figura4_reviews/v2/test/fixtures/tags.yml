@@ -1,0 +1,8 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+hard_sf:
+  id: 1
+  name: hard sf
+  
+soft_sf:
+  id: 2
+  name: soft sf

@@ -1,0 +1,26 @@
+<% unless @last_comments.nil? or @last_comments.size == 0 %>
+	<div class="rc_box_title">
+		<h3>Commenti</h3>
+	</div>
+	<div class="rc_box">
+		<ul class="recent_comments"> 
+			<% @last_comments.each do |c| %>
+				<li>
+					<%= text_formatter(h(smart_truncate(c.body, 70))) %> 
+					<p class="comment_details">
+						<% if c.user %>
+							<strong><%=h c.user.name %></strong>
+						<% else %>
+							<strong><%=h c.author %></strong>
+						<% end %>
+						<br />
+						<%=h "#{c.created_on.strftime("%d %b %Y")} @ #{c.created_on.strftime("%H:%M")}" %>
+					</p>
+				</li>
+			<% end %>
+		</ul>
+		<%= link_to("<span class=\"rc_box_read_all\">Leggi tutti</span>", {:controller => 'node', :action => 'show_comments', :id => @last_comments[0].node.id}) %>
+	</div>
+	<div class="rc_box_footer">
+	</div>
+<% end %>

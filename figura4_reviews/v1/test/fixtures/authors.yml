@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+herbert:
+  id: 1
+  first_name:   Frank
+  second_name:  Herbert
+  bio:          Frank Patrick Herbert (8 ottobre 1920 - 11 febbraio 1986) è stato un celebre autore di fantascienza nordamericano.\nHerbert è stato uno scrittore acclamato dalla critica ed ha contemporaneamente riportato un successo di pubblico a livello mondiale. Rimane noto soprattutto per il suo romanzo Dune e per i cinque successivi libri della serie. La saga di Dune affronta temi complessi cari allo scrittore come la sopravvivenza umana, l''evoluzione, l''ecologia e la commistione di religione, politica e potere. Da molti degli appassionati del genere è considerata l''opera migliore di fantascienza epica mai scritta, e rimane certamente una delle più popolari.\nDune vinse nel 1965 il Premio Nebula, a cui fece seguito il Premio Hugo nel 1966, cioè entrambi i massimi riconoscimenti nell''ambito fantascientifico. Dopo la scomparsa dell''autore, il figlio Brian Herbert con Kevin J. Anderson, hanno scritto un secondo ciclo di romanzi, il preludio a Dune. Il film tratto dal romanzo, Dune diretto da David Lynch nel 1984, quantunque criticato, rimane un classico del genere. Nel 2001 Dune è stato adattato per una mini-serie TV con il titolo Dune il destino dell''universo (Frank Herbert''s Dune); grazie al successo riscosso il serial ha avuto un seguito, I figli di Dune (Frank Herbert''s Children of Dune, 2003), anch''esso tratto dalla fortunata saga di Herbert.\nOltre ai film sono ispirati alla saga di Dune una serie di videogiochi in particolare l''omonimo Dune, un felice connubio fra un adventure ed uno strategico e Dune II che ha ispirato molti giochi strategici in tempo reale successivi.
+  picture:      frank_herbert.jpg
+
+leguin:
+  id: 2
+  first_name:   Ursula
+  second_name:  K. Le Guin
+  bio:          Ursula Kroeber Le Guin (Berkeley, 21 ottobre 1929) è una scrittrice statunitense di fantascienza e di fantasy.\nHa vinto quattro premi Hugo e tre premi Nebula - i massimi riconoscimenti della letteratura fantastica - ed è considerata una delle principali autrici viventi di fantascienza. La profondità e attualità dei suoi temi, che spaziano dal femminismo all''utopia e al pacifismo, hanno reso i suoi romanzi noti e apprezzati ben oltre il tradizionale circolo di lettori di genere. Tra le sue opere si ricordano in particolare La mano sinistra delle tenebre (1969) e I reietti dell''altro pianeta (1975).
+  picture:      ursula_le_guin.jpg
+  
+martin:
+  id: 3
+  first_name:   George R. R.
+  second_name:  Martin
+  bio:          Non so
+  picture:      george_martin.jpg

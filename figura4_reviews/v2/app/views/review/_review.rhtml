@@ -1,0 +1,176 @@
+<h3>Campi per scheda</h3>
+<p>
+	<label for="author">Autore/Regista (*)</label>
+	<br/>
+	<%if @review.author.nil?%>
+		<%= authors_select("none", "review[author_id]", "--Seleziona l'autore") -%> oppure 
+	<% else %>
+		<%= authors_select("none", "review[author_id]", "--Seleziona l'autore", @review.author.id) -%> oppure 
+	<% end %>
+	<%= link_to 'inserisci un nuovo autore', :action => 'new_author' %>
+</p>
+
+<p>
+	<label for="type">Tipo di recensione (*)</label>
+	<br/>
+	<select id="type" name="review[type]">
+		<option value="BookReview" <%= "selected='selected'" if @review.is_a?(BookReview) %> >libro</option>
+		<option value="TvReview" <%= "selected='selected'" if @review.is_a?(TvReview) %> >serie tv</option>
+		<option value="MovieReview" <%= "selected='selected'" if @review.is_a?(MovieReview) %> >film</option>
+		<option value="ComicReview" <%= "selected='selected'" if @review.is_a?(ComicReview) %> >fumetto</option>
+	</select>
+</p>
+
+<p>
+	<label for="review_original_title">Titolo originale (titolo, articolo) (*)</label>
+	<br/>
+	<%= text_field 'review', 'original_title', :size => 40  %>, <%= text_field 'review', 'original_article', :size => 4  %>
+</p>
+
+<p>
+	<label for="review_original_subtitle">Sottotitolo originale</label>
+	<br/>
+	<%= text_field 'review', 'original_subtitle', :size => 40  %>
+</p>
+
+<p>
+	<label for="review_italian_title">Titolo italiano (titolo, articolo). Lasciare vuoto se inedito in italia.</label>
+	<br/>
+	<%= text_field 'review', 'italian_title', :size => 40  %>, <%= text_field 'review', 'italian_article', :size => 4  %>
+</p>
+
+<p>
+	<label for="review_italian_subtitle">Sottotitolo italiano</label>
+	<br/>
+	<%= text_field 'review', 'italian_subtitle', :size => 40  %>
+</p>
+
+<p>
+	<label for="review_cover">Copertina/locandina (larghezza 150px)</label>
+	<br/>
+	<%= file_field("picture" , "picture", :size => 40 ) %>
+	<br />
+	<% unless @review.cover.nil? %>
+		<img src="<%= url_for(:action => "picture", :id => @review.cover.id) %>" />
+		<input type="checkbox" name="delete_cover" value="1" /> Elmina immagine
+	<% end %>
+</p>
+
+<p>
+	<label for="review_year">Anno (yyyy)</label>
+	<br/>
+	<%= text_field 'review', 'year', :size => 4  %>
+</p>
+
+<p>
+	<label for="review_vote">Voto (*)</label>
+	<br/>
+	<select id="review_vote" name="review[vote]">
+		<option value="1" <%= "selected='selected'" if review.vote == 1 %>>1</option>
+		<option value="2" <%= "selected='selected'" if review.vote == 2 %>>2</option>
+		<option value="3" <%= "selected='selected'" if review.vote == 3 %>>3</option>
+		<option value="4" <%= "selected='selected'" if review.vote == 4 %>>4</option>
+		<option value="5" <%= "selected='selected'" if review.vote == 5 %>>5</option>
+		<option value="6" <%= "selected='selected'" if review.vote == 6 %>>6</option>
+		<option value="7" <%= "selected='selected'" if review.vote == 7 %>>7</option>
+		<option value="8" <%= "selected='selected'" if review.vote == 8 %>>8</option>
+		<option value="9" <%= "selected='selected'" if review.vote == 9 %>>9</option>
+		<option value="10" <%= "selected='selected'" if review.vote == 10 %>>10</option>
+	</select>
+</p>
+
+<p>
+	<label for="review_published">Pubblicata (*)</label>
+	<br/>
+	<select id="review_published" name="review[published]">
+		<option value="0" <%= "selected='selected'" if review.published == 0 %>>No</option>
+		<option value="1" <%= "selected='selected'" if review.published == 1 %>>Si</option>
+	</select>
+</p>
+
+<p>
+	<label for="review_created_on">Creata il</label>
+	<br/>
+	<%= datetime_select 'review', 'created_on'  %>
+	</p>
+
+<p>
+	<label for="review_updated_on">Modificata il</label>
+	<br/>
+	<%= datetime_select 'review', 'updated_on'  %>
+</p>
+
+<h3>Campi per libri/fumetti</h3>
+
+<p>
+	<label for="review_editor">Edizione recensita</label>
+	<br/>
+	<%= text_field 'review', 'editor', :size => 40  %>
+</p>
+
+<p>
+	<label for="review_pages">Pagine</label>
+	<br/>
+	<%= text_field 'review', 'pages', :size => 5  %>
+</p>
+
+<p>
+	<label for="review_language">Lingua dell'edizione recensita</label>
+	<br/>
+	<select id="review_language" name="review[language]">
+		<option value="0" <%= "selected='selected'" if review.language == 0 %> >Italiano</option>
+		<option value="1" <%= "selected='selected'" if review.language == 1 %> >Inglese</option>
+	</select>
+</p>
+
+<h3>Campi per film/serie tv</h3>
+
+<p>
+	<label for="review_actors">Cast</label>
+	<br/>
+	<%= text_area 'review', 'actors', :size => '60x8'  %>
+</p>
+
+<p>
+	<label for="review_nation">Nazione</label>
+	<br/>
+	<%= text_field 'review', 'nation', :size => 60  %>
+</p>
+
+<p>
+	<label for="review_seasons">Stagioni (solo serie tv)</label>
+	<br/>
+	<%= text_field 'review', 'seasons', :size => 60  %>
+</p>
+
+<h3>Campi per recensione </h3>
+
+<p>
+	<label for="review_plot">La trama in breve</label>
+	<br/>
+	<%= text_area 'review', 'plot', :size => '60x8'  %>
+</p>
+
+<p>
+	<label for="review_review">Recensione (*)</label>
+	<br/>
+	<%= text_area 'review', 'review', :size => '60x8'  %>
+</p>
+
+<p>
+	<label for="review_final_words">In conclusione</label>
+	<br/>
+	<%= text_area 'review', 'final_words', :size => '60x8'  %>
+</p>
+
+<p>
+	<label for="review_reasons_pro">Motivi per leggere/guardare</label>
+	<br/>
+	<%= text_area 'review', 'reason_to_read', :size => '60x8'  %>
+</p>
+	
+<p>
+	<label for="review_reasons_pro">Motivi per evitare</label>
+	<br/>
+	<%= text_area 'review', 'reason_to_avoid', :size => '60x8'  %>
+</p>

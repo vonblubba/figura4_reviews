@@ -1,0 +1,10 @@
+<h1>Modifica commento - <%= @comment.review.full_title %></h1>
+
+<%= error_messages_for 'comment' %>
+
+<%= form_tag({:action => 'update', :id => @comment}, :multipart => true) %>
+	<%= render(:partial => 'comment', :object => @comment) %>
+    <%= submit_tag 'Salva' %>
+</form>
+
+<%= link_to 'Back', :action => 'list', :id => @comment.review.id %>

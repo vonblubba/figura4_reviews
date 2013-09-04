@@ -1,0 +1,24 @@
+<div id="rci_right_column">
+	<p>
+		Questo &egrave; l'elenco completo delle recensioni, raggruppate per autore.<br />
+		In alternativa, puoi utilizzare il box di ricerca a sinistra.
+		<ul>
+			<li><%= link_to("ordina per voto", :action => 'list_by_vote') %></li>
+			<li><%= link_to("ordina per titolo", :action => 'list_by_title') %></li>
+			<li><%= link_to("ordina per titolo originale", :action => 'list_by_original_title') %></li>
+			<li><%= link_to("ordina per tipo", :action => 'list_by_media') %></li>
+		</ul>
+	</p>
+	<p>
+		(*) Inedito in Italia
+	</p>
+</div>
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<h1>Elenco recensioni</h1>
+	<p>
+		<%= render(:partial => "reviews_table", :object => @reviews, :original_title => 0) %>
+	</p>
+</div>

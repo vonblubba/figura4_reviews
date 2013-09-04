@@ -1,0 +1,1705 @@
+
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-01-19 14:02:21) [GET]
+  Session ID: dfaf8e27e5b104e10204a62cf5df0887
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mReview Load (0.020202)[0m   [0;1mSELECT * FROM `reviews` WHERE (published = 1) ORDER BY created_on DESC LIMIT 5[0m
+  [4;35;1mReview Columns (0.001052)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/review
+Rendering home/index
+Rendered home/_now_reading (0.00086)
+  [4;36;1mComment Load (0.026615)[0m   [0;1mSELECT * FROM `comments` WHERE (is_spam = 0) ORDER BY created_on DESC LIMIT 5[0m
+  [4;35;1mComment Columns (0.000782)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mReview Load (0.000233)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mTvReview Columns (0.001106)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+Rendered home/_recent_comments (0.10930)
+  [4;36;1mAuthor Columns (0.000586)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.003191)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+  [4;36;1mCover Columns (0.000767)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mCover Load (0.001162)[0m   [0mSELECT * FROM `pictures` WHERE (pictures.review_id = 4) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.000221)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 4) [0m
+  [4;36;1mAuthor Load (0.000150)[0m   [0;1mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;35;1mTag Load (0.009649)[0m   [0mSELECT * FROM `tags` ORDER BY name[0m
+  [4;36;1mTag Columns (0.000682)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+Rendered review/_search_box (0.01809)
+Rendered review/_credits (0.00107)
+Rendered review/_badges (0.00156)
+  [4;35;1mQuote Columns (0.000560)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+  [4;36;1mSQL (0.000551)[0m   [0;1mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+  [4;35;1mQuote Load (0.000108)[0m   [0mSELECT * FROM `quotes` WHERE (random = 1) LIMIT 0, 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+Rendered review/_random_quote (0.00930)
+Completed in 0.23771 (4 reqs/sec) | Rendering: 0.13307 (55%) | DB: 0.06762 (28%) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 14:02:21) [GET]
+  Session ID: dfaf8e27e5b104e10204a62cf5df0887
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svn_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing HomeController#picture (for 127.0.0.1 at 2008-01-19 14:02:21) [GET]
+  Session ID: dfaf8e27e5b104e10204a62cf5df0887
+  Parameters: {"action"=>"picture", "id"=>"19", "controller"=>"home"}
+  [4;36;1mPicture Columns (0.000850)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mPicture Load (0.000272)[0m   [0mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 19) [0m
+  [4;36;1mCover Columns (0.000771)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+Sending data anansi.jpg
+Completed in 0.01502 (66 reqs/sec) | Rendering: 0.00005 (0%) | DB: 0.00189 (12%) | 200 OK [http://localhost/home/picture/19]
+
+
+Processing ContactController#index (for 127.0.0.1 at 2008-01-19 14:02:23) [GET]
+  Session ID: dfaf8e27e5b104e10204a62cf5df0887
+  Parameters: {"action"=>"index", "controller"=>"contact"}
+Rendering template within layouts/review
+Rendering contact/index
+  [4;35;1mAuthor Load (0.000081)[0m   [0mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;36;1mAuthor Columns (0.000505)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mTag Load (0.000043)[0m   [0mSELECT * FROM `tags` ORDER BY name[0m
+Rendered review/_search_box (0.00811)
+Rendered review/_credits (0.00048)
+Rendered review/_badges (0.00040)
+  [4;36;1mQuote Columns (0.000536)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mSQL (0.000040)[0m   [0mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+  [4;36;1mQuote Load (0.000044)[0m   [0;1mSELECT * FROM `quotes` WHERE (random = 1) LIMIT 0, 1[0m
+  [4;35;1mReview Columns (0.001068)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (0.000093)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mTvReview Columns (0.001002)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mAuthor Load (0.000076)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+Rendered review/_random_quote (0.02868)
+Completed in 0.04606 (21 reqs/sec) | Rendering: 0.04002 (86%) | DB: 0.00349 (7%) | 200 OK [http://localhost/contact]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 14:02:23) [GET]
+  Session ID: dfaf8e27e5b104e10204a62cf5df0887
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svn_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ContactController#feedback (for 127.0.0.1 at 2008-01-19 14:02:39) [POST]
+  Session ID: dfaf8e27e5b104e10204a62cf5df0887
+  Parameters: {"commit"=>"invia", "action"=>"feedback", "controller"=>"contact", "feedback"=>{"body"=>"fdgfdsggd", "nickname"=>"gdfgd", "subject"=>"f4 feedback - segnalazione serie tv", "email"=>"dfgdfgd@fdgdfg.dfg"}}
+Sent mail:
+ Date: Sat, 19 Jan 2008 14:02:39 +0100
+From: dfgdfgd@fdgdfg.dfg
+To: oscar.riva@gmail.com
+Subject: f4 reviews - f4 feedback - segnalazione serie tv
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Feedback dal sito figura4.com
+
+Hai ricevuto un messaggio da gdfgd (dfgdfgd@fdgdfg.dfg)
+
+Oggetto: f4 feedback - segnalazione serie tv
+
+fdgfdsggd
+  [4;35;1mEmail Columns (0.000803)[0m   [0mSHOW FIELDS FROM `emails`[0m
+Rendering template within layouts/review
+Rendering contact/index
+  [4;36;1mAuthor Load (0.000112)[0m   [0;1mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;35;1mAuthor Columns (0.000705)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mTag Load (0.000063)[0m   [0;1mSELECT * FROM `tags` ORDER BY name[0m
+Rendered review/_search_box (0.01098)
+Rendered review/_credits (0.00064)
+Rendered review/_badges (0.00061)
+  [4;35;1mQuote Columns (0.000737)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+  [4;36;1mSQL (0.000063)[0m   [0;1mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+  [4;35;1mQuote Load (0.000074)[0m   [0mSELECT * FROM `quotes` WHERE (random = 1) LIMIT 0, 1[0m
+  [4;36;1mReview Columns (0.002743)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (0.005843)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;36;1mTvReview Columns (0.001128)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mAuthor Load (0.000058)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+Rendered review/_random_quote (0.07416)
+Completed in 0.87241 (1 reqs/sec) | Rendering: 0.07998 (9%) | DB: 0.01233 (1%) | 200 OK [http://localhost/contact/feedback]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 14:02:40) [GET]
+  Session ID: dfaf8e27e5b104e10204a62cf5df0887
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svn_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-01-19 14:05:53) [GET]
+  Session ID: aa6e6d65c96d73d4b8dc6b55d40385fd
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mReview Load (0.000069)[0m   [0;1mSELECT * FROM `reviews` WHERE (published = 1) ORDER BY created_on DESC LIMIT 5[0m
+  [4;35;1mReview Columns (0.000882)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/review
+Rendering home/index
+Rendered home/_now_reading (0.00078)
+  [4;36;1mComment Load (0.000079)[0m   [0;1mSELECT * FROM `comments` WHERE (is_spam = 0) ORDER BY created_on DESC LIMIT 5[0m
+  [4;35;1mComment Columns (0.000599)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mReview Load (0.000067)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mTvReview Columns (0.000905)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+Rendered home/_recent_comments (0.07115)
+  [4;36;1mAuthor Columns (0.000700)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.000070)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+  [4;36;1mCover Columns (0.000972)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mCover Load (0.000113)[0m   [0mSELECT * FROM `pictures` WHERE (pictures.review_id = 4) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.000090)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 4) [0m
+  [4;36;1mAuthor Load (0.000069)[0m   [0;1mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;35;1mTag Load (0.000057)[0m   [0mSELECT * FROM `tags` ORDER BY name[0m
+  [4;36;1mTag Columns (0.000446)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+Rendered review/_search_box (0.00936)
+Rendered review/_credits (0.00132)
+Rendered review/_badges (0.00174)
+  [4;35;1mQuote Columns (0.000576)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+  [4;36;1mSQL (0.000048)[0m   [0;1mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+  [4;35;1mQuote Load (0.000049)[0m   [0mSELECT * FROM `quotes` WHERE (random = 1) LIMIT 0, 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+Rendered review/_random_quote (0.02652)
+Completed in 0.16569 (6 reqs/sec) | Rendering: 0.14533 (87%) | DB: 0.00579 (3%) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 14:05:54) [GET]
+  Session ID: aa6e6d65c96d73d4b8dc6b55d40385fd
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svn_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ContactController#index (for 127.0.0.1 at 2008-01-19 14:05:55) [GET]
+  Session ID: aa6e6d65c96d73d4b8dc6b55d40385fd
+  Parameters: {"action"=>"index", "controller"=>"contact"}
+Rendering template within layouts/review
+Rendering contact/index
+  [4;36;1mAuthor Load (0.000068)[0m   [0;1mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;35;1mAuthor Columns (0.000444)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mTag Load (0.000042)[0m   [0;1mSELECT * FROM `tags` ORDER BY name[0m
+Rendered review/_search_box (0.00778)
+Rendered review/_credits (0.00044)
+Rendered review/_badges (0.00040)
+  [4;35;1mQuote Columns (0.000432)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+  [4;35;1mQuote Load (0.000040)[0m   [0mSELECT * FROM `quotes` WHERE (random = 1) LIMIT 0, 1[0m
+  [4;36;1mReview Columns (0.000985)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (0.000060)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;36;1mTvReview Columns (0.000886)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mAuthor Load (0.000054)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+Rendered review/_random_quote (0.06235)
+Completed in 0.08201 (12 reqs/sec) | Rendering: 0.07562 (92%) | DB: 0.00305 (3%) | 200 OK [http://localhost/contact]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 14:05:56) [GET]
+  Session ID: aa6e6d65c96d73d4b8dc6b55d40385fd
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svn_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ContactController#feedback (for 127.0.0.1 at 2008-01-19 14:06:05) [POST]
+  Session ID: aa6e6d65c96d73d4b8dc6b55d40385fd
+  Parameters: {"commit"=>"invia", "action"=>"feedback", "controller"=>"contact", "feedback"=>{"body"=>"sdgfgdfdf", "nickname"=>"sdfsdf", "subject"=>"f4 feedback - segnalazione libro", "email"=>"sdfsdf@sdfsd.it"}}
+Sent mail:
+ Date: Sat, 19 Jan 2008 14:06:05 +0100
+From: sdfsdf@sdfsd.it
+To: oscar.riva@gmail.com
+Subject: f4 reviews - f4 feedback - segnalazione libro
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Feedback dal sito figura4.com
+
+Hai ricevuto un messaggio da sdfsdf (sdfsdf@sdfsd.it)
+
+Oggetto: f4 feedback - segnalazione libro
+
+sdgfgdfdf
+  [4;36;1mEmail Columns (0.000667)[0m   [0;1mSHOW FIELDS FROM `emails`[0m
+
+
+NoMethodError (undefined method `subject=' for #<Email:0xb7405530>):
+    /vendor/rails/activerecord/lib/active_record/attribute_methods.rb:200:in `method_missing'
+    /vendor/rails/activerecord/lib/active_record/base.rb:2044:in `send'
+    /vendor/rails/activerecord/lib/active_record/base.rb:2044:in `attributes='
+    /vendor/rails/activerecord/lib/active_record/base.rb:2043:in `each'
+    /vendor/rails/activerecord/lib/active_record/base.rb:2043:in `attributes='
+    /vendor/rails/activerecord/lib/active_record/base.rb:1853:in `initialize'
+    /vendor/rails/activerecord/lib/active_record/base.rb:521:in `new'
+    /vendor/rails/activerecord/lib/active_record/base.rb:521:in `create'
+    /app/controllers/contact_controller.rb:22:in `feedback'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1168:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1168:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:697:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svn_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ContactController#feedback (for 127.0.0.1 at 2008-01-19 14:07:02) [POST]
+  Session ID: aa6e6d65c96d73d4b8dc6b55d40385fd
+  Parameters: {"commit"=>"invia", "action"=>"feedback", "controller"=>"contact", "feedback"=>{"body"=>"sdgfgdfdf", "nickname"=>"sdfsdf", "subject"=>"f4 feedback - segnalazione libro", "email"=>"sdfsdf@sdfsd.it"}}
+Sent mail:
+ Date: Sat, 19 Jan 2008 14:07:02 +0100
+From: sdfsdf@sdfsd.it
+To: oscar.riva@gmail.com
+Subject: f4 reviews - f4 feedback - segnalazione libro
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Feedback dal sito figura4.com
+
+Hai ricevuto un messaggio da sdfsdf (sdfsdf@sdfsd.it)
+
+Oggetto: f4 feedback - segnalazione libro
+
+sdgfgdfdf
+  [4;35;1mEmail Columns (0.000671)[0m   [0mSHOW FIELDS FROM `emails`[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mBEGIN[0m
+  [4;35;1mEmail Create (0.020143)[0m   [0mINSERT INTO `emails` (`created_on`, `body`, `sender`, `sender_address`, `updated_on`, `is_spam`) VALUES('2008-01-19 14:07:02', 'sdgfgdfdf', 'sdfsdf', 'sdfsdf@sdfsd.it', '2008-01-19 14:07:02', 0)[0m
+  [4;36;1mSQL (0.000041)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/contact
+Completed in 0.48623 (2 reqs/sec) | DB: 0.02157 (4%) | 302 Found [http://localhost/contact/feedback]
+
+
+Processing ContactController#index (for 127.0.0.1 at 2008-01-19 14:07:02) [GET]
+  Session ID: aa6e6d65c96d73d4b8dc6b55d40385fd
+  Parameters: {"action"=>"index", "controller"=>"contact"}
+Rendering template within layouts/review
+Rendering contact/index
+  [4;35;1mAuthor Load (0.000086)[0m   [0mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;36;1mAuthor Columns (0.000583)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mTag Load (0.000063)[0m   [0mSELECT * FROM `tags` ORDER BY name[0m
+Rendered review/_search_box (0.01110)
+Rendered review/_credits (0.00064)
+Rendered review/_badges (0.00060)
+  [4;36;1mQuote Columns (0.000510)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mSQL (0.000035)[0m   [0mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+  [4;36;1mQuote Load (0.000037)[0m   [0;1mSELECT * FROM `quotes` WHERE (random = 1) LIMIT 0, 1[0m
+  [4;35;1mReview Columns (0.000943)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (0.000082)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mTvReview Columns (0.001000)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mAuthor Load (0.000053)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+Rendered review/_random_quote (0.07959)
+Completed in 0.10020 (9 reqs/sec) | Rendering: 0.09340 (93%) | DB: 0.00339 (3%) | 200 OK [http://localhost/contact]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 14:07:03) [GET]
+  Session ID: aa6e6d65c96d73d4b8dc6b55d40385fd
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svn_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-01-19 22:06:39) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"index", "controller"=>"home"}
+
+
+ArgumentError (Unknown key(s): condition):
+    /vendor/rails/activesupport/lib/active_support/core_ext/hash/keys.rb:55:in `assert_valid_keys'
+    /vendor/rails/activerecord/lib/active_record/associations.rb:1170:in `create_has_many_reflection'
+    /vendor/rails/activerecord/lib/active_record/associations.rb:667:in `has_many'
+    /app/models/review.rb:3
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:203:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:203:in `load_file'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:202:in `load_file'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:94:in `require_or_load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:248:in `load_missing_constant'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:453:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:465:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:260:in `load_missing_constant'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:469:in `const_missing'
+    /app/controllers/home_controller.rb:14:in `index'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1168:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1168:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:697:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svw_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-01-19 22:09:46) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mReview Load (0.131737)[0m   [0;1mSELECT * FROM `reviews` WHERE (published = 1) ORDER BY created_on DESC LIMIT 5[0m
+  [4;35;1mReview Columns (0.008035)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/review
+Rendering home/index
+Rendered home/_now_reading (0.00356)
+  [4;36;1mComment Load (0.003574)[0m   [0;1mSELECT * FROM `comments` WHERE (is_spam = 0) ORDER BY created_on DESC LIMIT 5[0m
+  [4;35;1mComment Columns (0.005398)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mReview Load (0.005816)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;35;1mBookReview Columns (0.007972)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;35;1mUser Columns (0.003665)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001500)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mReview Load (0.005323)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+Rendered home/_recent_comments (0.13244)
+  [4;36;1mSQL (0.002069)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAuthor Columns (0.003947)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.001659)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;35;1mCover Columns (0.005535)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+  [4;36;1mCover Load (0.003440)[0m   [0;1mSELECT * FROM `pictures` WHERE (pictures.review_id = 2) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+  [4;35;1mSQL (0.001233)[0m   [0mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;35;1mAuthor Load (0.001863)[0m   [0mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;36;1mTag Load (0.000921)[0m   [0;1mSELECT * FROM `tags` ORDER BY name[0m
+  [4;35;1mTag Columns (0.002866)[0m   [0mSHOW FIELDS FROM `tags`[0m
+Rendered review/_search_box (0.03480)
+Rendered review/_credits (0.00438)
+Rendered review/_badges (0.00666)
+  [4;36;1mQuote Columns (0.003860)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mSQL (0.000716)[0m   [0mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+Rendered review/_random_quote (0.02623)
+Completed in 0.53339 (1 reqs/sec) | Rendering: 0.27678 (51%) | DB: 0.20113 (37%) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 22:09:47) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svw_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing HomeController#picture (for 127.0.0.1 at 2008-01-19 22:09:48) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"picture", "id"=>"2", "controller"=>"home"}
+  [4;36;1mPicture Columns (0.010047)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mPicture Load (0.021486)[0m   [0mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 2) [0m
+  [4;36;1mCover Columns (0.009258)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+Sending data dopo_11_setembre.jpg
+Completed in 0.10285 (9 reqs/sec) | Rendering: 0.00020 (0%) | DB: 0.04079 (39%) | 200 OK [http://localhost/home/picture/2]
+
+
+Processing ReviewController#show (for 127.0.0.1 at 2008-01-19 22:09:56) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"show", "id"=>"2-wetret-ertet-rytyr", "controller"=>"review"}
+  [4;35;1mReview Columns (0.007872)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (0.005762)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;35;1mBookReview Columns (0.007885)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mAuthor Columns (0.005024)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.001635)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mComment Load (0.003848)[0m   [0;1mSELECT * FROM `comments` WHERE (review_id = 2 AND is_spam = 0) ORDER BY created_on LIMIT 3[0m
+  [4;35;1mSQL (0.001917)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTagging Columns (0.003523)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mTag Load (0.000947)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'Review') AND (taggings.taggable_id = 2)) [0m
+Rendering template within layouts/review
+Rendering review/show
+  [4;36;1mCover Columns (0.005442)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mCover Load (0.003563)[0m   [0mSELECT * FROM `pictures` WHERE (pictures.review_id = 2) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+  [4;36;1mComment Columns (0.005067)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mUser Columns (0.003513)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001500)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered review/_review_right_column (0.10702)
+  [4;35;1mQuote Columns (0.004206)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+  [4;36;1mSQL (0.001008)[0m   [0;1mSELECT count(*) AS count_all FROM `quotes` WHERE (quotes.review_id = 2) [0m
+  [4;35;1mLink Columns (0.005545)[0m   [0mSHOW FIELDS FROM `links`[0m
+  [4;36;1mSQL (0.001253)[0m   [0;1mSELECT count(*) AS count_all FROM `links` WHERE (links.review_id = 2) [0m
+  [4;35;1mLink Load (0.020987)[0m   [0mSELECT * FROM `links` WHERE (links.review_id = 2) [0m
+  [4;36;1mExternalLink Columns (0.005858)[0m   [0;1mSHOW FIELDS FROM `links`[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mExternalLink Load (0.005079)[0m   [0;1mSELECT * FROM `links` WHERE (links.user_id = 1) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;35;1mSQL (0.000778)[0m   [0mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;35;1mUser Load (0.001655)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendered review/_comment (0.02103)
+  [4;36;1mAuthor Load (0.001833)[0m   [0;1mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;35;1mTag Load (0.000931)[0m   [0mSELECT * FROM `tags` ORDER BY name[0m
+Rendered review/_search_box (0.00801)
+Rendered review/_credits (0.00165)
+Rendered review/_badges (0.00166)
+  [4;36;1mSQL (0.000715)[0m   [0;1mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+Rendered review/_random_quote (0.00300)
+Completed in 0.66383 (1 reqs/sec) | Rendering: 0.40185 (60%) | DB: 0.10735 (16%) | 200 OK [http://localhost/review/show/2-wetret-ertet-rytyr]
+
+
+Processing ReviewController#picture (for 127.0.0.1 at 2008-01-19 22:09:57) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"picture", "id"=>"2", "controller"=>"review"}
+  [4;35;1mPicture Columns (0.010120)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+  [4;36;1mPicture Load (0.019231)[0m   [0;1mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 2) [0m
+  [4;35;1mCover Columns (0.011601)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+Sending data dopo_11_setembre.jpg
+Completed in 0.10176 (9 reqs/sec) | Rendering: 0.00019 (0%) | DB: 0.04095 (40%) | 200 OK [http://localhost/review/picture/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 22:09:57) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svw_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ReviewController#show_comments (for 127.0.0.1 at 2008-01-19 22:10:42) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"show_comments", "id"=>"2-wetret-ertet-rytyr", "controller"=>"review"}
+  [4;36;1mReview Columns (0.008504)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (0.005750)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;36;1mBookReview Columns (0.008400)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mAuthor Columns (0.004617)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.001719)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;35;1mSQL (0.002161)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTag Load (0.001002)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'Review') AND (taggings.taggable_id = 2)) [0m
+Rendering template within layouts/review
+Rendering review/show_comments
+  [4;35;1mCover Columns (0.005861)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+  [4;36;1mCover Load (0.003638)[0m   [0;1mSELECT * FROM `pictures` WHERE (pictures.review_id = 2) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+Rendered review/_review_right_column (0.04078)
+  [4;35;1mComment Columns (0.007405)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.000782)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;35;1mComment Load (0.004018)[0m   [0mSELECT * FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;36;1mUser Columns (0.003634)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001533)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mAvatar Columns (0.006133)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mAvatar Load (0.003938)[0m   [0mSELECT * FROM `pictures` WHERE (pictures.user_id = 1) AND ( (`pictures`.`type` = 'Avatar' ) ) LIMIT 1[0m
+  [4;36;1mExternalLink Columns (0.005981)[0m   [0;1mSHOW FIELDS FROM `links`[0m
+  [4;35;1mExternalLink Load (0.004287)[0m   [0mSELECT * FROM `links` WHERE (links.user_id = 1) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;36;1mExternalLink Load (0.003732)[0m   [0;1mSELECT * FROM `links` WHERE (links.comment_id = 3) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;35;1mUser Load (0.001478)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendered review/_comment (0.00586)
+  [4;36;1mAuthor Load (0.001886)[0m   [0;1mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;35;1mTag Load (0.000938)[0m   [0mSELECT * FROM `tags` ORDER BY name[0m
+Rendered review/_search_box (0.00807)
+Rendered review/_credits (0.00155)
+Rendered review/_badges (0.00164)
+  [4;36;1mQuote Columns (0.004018)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mSQL (0.000727)[0m   [0mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+Rendered review/_random_quote (0.02542)
+Completed in 0.62559 (1 reqs/sec) | Rendering: 0.42178 (67%) | DB: 0.09214 (14%) | 200 OK [http://localhost/review/show_comments/2-wetret-ertet-rytyr]
+
+
+Processing ReviewController#picture (for 127.0.0.1 at 2008-01-19 22:10:43) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"picture", "id"=>"2", "controller"=>"review"}
+  [4;36;1mPicture Columns (0.008147)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mPicture Load (0.013915)[0m   [0mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 2) [0m
+  [4;36;1mCover Columns (0.005419)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+Sending data dopo_11_setembre.jpg
+Completed in 0.07358 (13 reqs/sec) | Rendering: 0.00018 (0%) | DB: 0.02748 (37%) | 200 OK [http://localhost/review/picture/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 22:10:43) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svw_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ReviewController#show_comments (for 127.0.0.1 at 2008-01-19 22:11:06) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"show_comments", "id"=>"2-wetret-ertet-rytyr", "controller"=>"review"}
+  [4;35;1mReview Columns (0.008008)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (0.006398)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;35;1mBookReview Columns (0.007721)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mAuthor Columns (0.003773)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.001704)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mSQL (0.001994)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTag Load (0.001023)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'Review') AND (taggings.taggable_id = 2)) [0m
+Rendering template within layouts/review
+Rendering review/show_comments
+  [4;36;1mCover Columns (0.006330)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mCover Load (0.003739)[0m   [0mSELECT * FROM `pictures` WHERE (pictures.review_id = 2) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+Rendered review/_review_right_column (0.04457)
+  [4;36;1mComment Columns (0.005155)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (0.001229)[0m   [0mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;36;1mComment Load (0.003479)[0m   [0;1mSELECT * FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;35;1mUser Columns (0.003591)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001470)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mAvatar Columns (0.005532)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+  [4;36;1mAvatar Load (0.003085)[0m   [0;1mSELECT * FROM `pictures` WHERE (pictures.user_id = 1) AND ( (`pictures`.`type` = 'Avatar' ) ) LIMIT 1[0m
+  [4;35;1mExternalLink Columns (0.005535)[0m   [0mSHOW FIELDS FROM `links`[0m
+  [4;36;1mExternalLink Load (0.003362)[0m   [0;1mSELECT * FROM `links` WHERE (links.user_id = 1) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;35;1mUser Load (0.001387)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendered review/_comment (0.00572)
+  [4;36;1mAuthor Load (0.001771)[0m   [0;1mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;35;1mTag Load (0.000880)[0m   [0mSELECT * FROM `tags` ORDER BY name[0m
+Rendered review/_search_box (0.00771)
+Rendered review/_credits (0.00161)
+Rendered review/_badges (0.00158)
+  [4;36;1mQuote Columns (0.003962)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mSQL (0.000733)[0m   [0mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+Rendered review/_random_quote (0.02468)
+Completed in 0.53555 (1 reqs/sec) | Rendering: 0.18896 (35%) | DB: 0.08186 (15%) | 200 OK [http://localhost/review/show_comments/2-wetret-ertet-rytyr]
+
+
+Processing ReviewController#picture (for 127.0.0.1 at 2008-01-19 22:11:07) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"picture", "id"=>"2", "controller"=>"review"}
+  [4;36;1mPicture Columns (0.008212)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mPicture Load (0.015448)[0m   [0mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 2) [0m
+  [4;36;1mCover Columns (0.013086)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+Sending data dopo_11_setembre.jpg
+Completed in 0.08974 (11 reqs/sec) | Rendering: 0.00020 (0%) | DB: 0.03675 (40%) | 200 OK [http://localhost/review/picture/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 22:11:07) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svw_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ReviewController#show (for 127.0.0.1 at 2008-01-19 22:11:09) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"show", "id"=>"2-wetret-ertet-rytyr", "controller"=>"review"}
+  [4;35;1mReview Columns (0.008559)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (0.006207)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;35;1mBookReview Columns (0.007974)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mAuthor Columns (0.003734)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.001831)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mComment Load (0.003901)[0m   [0;1mSELECT * FROM `comments` WHERE (review_id = 2 AND is_spam = 0) ORDER BY created_on LIMIT 3[0m
+  [4;35;1mSQL (0.001952)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTag Load (0.001054)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'Review') AND (taggings.taggable_id = 2)) [0m
+Rendering template within layouts/review
+Rendering review/show
+  [4;35;1mCover Columns (0.005402)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+  [4;36;1mCover Load (0.003789)[0m   [0;1mSELECT * FROM `pictures` WHERE (pictures.review_id = 2) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+  [4;35;1mComment Columns (0.005229)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mUser Columns (0.003578)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001467)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered review/_review_right_column (0.08917)
+  [4;36;1mQuote Columns (0.003869)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mSQL (0.000732)[0m   [0mSELECT count(*) AS count_all FROM `quotes` WHERE (quotes.review_id = 2) [0m
+  [4;36;1mLink Columns (0.005406)[0m   [0;1mSHOW FIELDS FROM `links`[0m
+  [4;35;1mSQL (0.000737)[0m   [0mSELECT count(*) AS count_all FROM `links` WHERE (links.review_id = 2) [0m
+  [4;36;1mLink Load (0.003351)[0m   [0;1mSELECT * FROM `links` WHERE (links.review_id = 2) [0m
+  [4;35;1mExternalLink Columns (0.005640)[0m   [0mSHOW FIELDS FROM `links`[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mExternalLink Load (0.003328)[0m   [0mSELECT * FROM `links` WHERE (links.user_id = 1) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.000737)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;36;1mUser Load (0.001336)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendered review/_comment (0.00584)
+  [4;35;1mAuthor Load (0.001858)[0m   [0mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;36;1mTag Load (0.000880)[0m   [0;1mSELECT * FROM `tags` ORDER BY name[0m
+Rendered review/_search_box (0.00765)
+Rendered review/_credits (0.00156)
+Rendered review/_badges (0.00165)
+  [4;35;1mSQL (0.000811)[0m   [0mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+Rendered review/_random_quote (0.00299)
+Completed in 0.39408 (2 reqs/sec) | Rendering: 0.17750 (45%) | DB: 0.08336 (21%) | 200 OK [http://localhost/review/show/2-wetret-ertet-rytyr]
+
+
+Processing ReviewController#picture (for 127.0.0.1 at 2008-01-19 22:11:10) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"picture", "id"=>"2", "controller"=>"review"}
+  [4;36;1mPicture Columns (0.010484)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mPicture Load (0.008926)[0m   [0mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 2) [0m
+  [4;36;1mCover Columns (0.005836)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+Sending data dopo_11_setembre.jpg
+Completed in 0.07280 (13 reqs/sec) | Rendering: 0.00016 (0%) | DB: 0.02525 (34%) | 200 OK [http://localhost/review/picture/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 22:11:10) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svw_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-01-19 22:11:20) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mReview Load (0.006060)[0m   [0mSELECT * FROM `reviews` WHERE (published = 1) ORDER BY created_on DESC LIMIT 5[0m
+  [4;36;1mReview Columns (0.008479)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/review
+Rendering home/index
+Rendered home/_now_reading (0.00095)
+  [4;35;1mComment Load (0.003950)[0m   [0mSELECT * FROM `comments` WHERE (is_spam = 0) ORDER BY created_on DESC LIMIT 5[0m
+  [4;36;1mComment Columns (0.005776)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mReview Load (0.005939)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;36;1mBookReview Columns (0.007864)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mUser Columns (0.003636)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001569)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mReview Load (0.005360)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+Rendered home/_recent_comments (0.11643)
+  [4;36;1mSQL (0.002123)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAuthor Columns (0.003813)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.002483)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;35;1mCover Columns (0.005386)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+  [4;36;1mCover Load (0.003415)[0m   [0;1mSELECT * FROM `pictures` WHERE (pictures.review_id = 2) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+  [4;35;1mSQL (0.000788)[0m   [0mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 2 AND (is_spam = 0)) [0m
+  [4;35;1mAuthor Load (0.001814)[0m   [0mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;36;1mTag Load (0.000875)[0m   [0;1mSELECT * FROM `tags` ORDER BY name[0m
+Rendered review/_search_box (0.00767)
+Rendered review/_credits (0.00163)
+Rendered review/_badges (0.00157)
+  [4;35;1mQuote Columns (0.004002)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+  [4;36;1mSQL (0.001356)[0m   [0;1mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+Rendered review/_random_quote (0.02439)
+Completed in 0.32918 (3 reqs/sec) | Rendering: 0.19898 (60%) | DB: 0.07469 (22%) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-01-19 22:11:20) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svw_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing HomeController#picture (for 127.0.0.1 at 2008-01-19 22:11:20) [GET]
+  Session ID: 5f8c3dcb2043f5168e5c317b1273f14d
+  Parameters: {"action"=>"picture", "id"=>"2", "controller"=>"home"}
+  [4;35;1mPicture Columns (0.005801)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+  [4;36;1mPicture Load (0.003478)[0m   [0;1mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 2) [0m
+  [4;35;1mCover Columns (0.005804)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+Sending data dopo_11_setembre.jpg
+Completed in 0.20623 (4 reqs/sec) | Rendering: 0.00018 (0%) | DB: 0.01508 (7%) | 200 OK [http://localhost/home/picture/2]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-03-24 09:43:08) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mReview Load (0.079040)[0m   [0;1mSELECT * FROM `reviews` WHERE (published = 1) ORDER BY created_on DESC LIMIT 5[0m
+  [4;35;1mReview Columns (0.001137)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/review
+Rendering home/index
+Rendered home/_now_reading (0.00083)
+  [4;36;1mComment Load (0.035880)[0m   [0;1mSELECT * FROM `comments` WHERE (is_spam = 0) ORDER BY created_on DESC LIMIT 5[0m
+  [4;35;1mComment Columns (0.008125)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mReview Load (0.001063)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mTvReview Columns (0.001228)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+Rendered home/_recent_comments (0.10523)
+  [4;36;1mAuthor Columns (0.000595)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.007653)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+  [4;36;1mCover Columns (0.000768)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mCover Load (0.001050)[0m   [0mSELECT * FROM `pictures` WHERE (pictures.review_id = 4) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.000230)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 4 AND (is_spam = 0)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 4 AND (is_spam = 0)) [0m
+  [4;36;1mAuthor Load (0.000126)[0m   [0;1mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;35;1mTag Load (0.008775)[0m   [0mSELECT * FROM `tags` ORDER BY name[0m
+  [4;36;1mTag Columns (0.000303)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+Rendered review/_search_box (0.01691)
+Rendered review/_credits (0.00106)
+Rendered review/_badges (0.00157)
+  [4;35;1mQuote Columns (0.000554)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+  [4;36;1mSQL (0.001239)[0m   [0;1mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+  [4;35;1mQuote Load (0.000138)[0m   [0mSELECT * FROM `quotes` WHERE (random = 1) LIMIT 0, 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+Rendered review/_random_quote (0.00973)
+Completed in 0.27579 (3 reqs/sec) | Rendering: 0.11178 (40%) | DB: 0.14790 (53%) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-03-24 09:43:09) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svn_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing HomeController#picture (for 127.0.0.1 at 2008-03-24 09:43:09) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {"action"=>"picture", "id"=>"19", "controller"=>"home"}
+  [4;36;1mPicture Columns (0.000791)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mPicture Load (0.000203)[0m   [0mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 19) [0m
+  [4;36;1mCover Columns (0.000716)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+Sending data anansi.jpg
+Completed in 0.01323 (75 reqs/sec) | Rendering: 0.00004 (0%) | DB: 0.00171 (12%) | 200 OK [http://localhost/home/picture/19]
+
+
+Processing ReviewController#show (for 127.0.0.1 at 2008-03-24 09:43:13) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {"action"=>"show", "id"=>"4-aaaaa", "controller"=>"review"}
+  [4;35;1mReview Columns (0.001542)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (0.000092)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mTvReview Columns (0.000973)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mAuthor Columns (0.000465)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.000038)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+  [4;36;1mComment Load (0.000282)[0m   [0;1mSELECT * FROM `comments` WHERE (review_id = 4 AND is_spam = 0) ORDER BY created_on LIMIT 3[0m
+  [4;35;1mTagging Columns (0.000501)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+  [4;36;1mTag Load (0.024152)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'Review') AND (taggings.taggable_id = 4)) [0m
+Rendering template within layouts/review
+Rendering review/show
+  [4;35;1mCover Columns (0.000699)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+  [4;36;1mCover Load (0.000069)[0m   [0;1mSELECT * FROM `pictures` WHERE (pictures.review_id = 4) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+  [4;35;1mAuthorPicture Columns (0.000643)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+  [4;36;1mAuthorPicture Load (0.001197)[0m   [0;1mSELECT * FROM `pictures` WHERE (pictures.author_id = 10) AND ( (`pictures`.`type` = 'AuthorPicture' ) ) LIMIT 1[0m
+  [4;35;1mExternalLink Columns (0.000764)[0m   [0mSHOW FIELDS FROM `links`[0m
+  [4;36;1mExternalLink Load (0.000337)[0m   [0;1mSELECT * FROM `links` WHERE (links.author_id = 10) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;35;1mComment Columns (0.000652)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered review/_review_right_column (0.04306)
+  [4;36;1mScreenshot Columns (0.002166)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mSQL (0.000158)[0m   [0mSELECT count(*) AS count_all FROM `pictures` WHERE (pictures.video_review_id = 4) AND ( (`pictures`.`type` = 'Screenshot' ) ) [0m
+  [4;36;1mQuote Columns (0.000431)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mSQL (0.000094)[0m   [0mSELECT count(*) AS count_all FROM `quotes` WHERE (quotes.review_id = 4) [0m
+  [4;36;1mQuote Load (0.000083)[0m   [0;1mSELECT * FROM `quotes` WHERE (quotes.review_id = 4) [0m
+  [4;35;1mLink Columns (0.000601)[0m   [0mSHOW FIELDS FROM `links`[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mSELECT count(*) AS count_all FROM `links` WHERE (links.review_id = 4) [0m
+  [4;35;1mUser Columns (0.000413)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.008205)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mExternalLink Load (0.000123)[0m   [0mSELECT * FROM `links` WHERE (links.user_id = 1) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.link_url) on line #85 of review/show.rhtml:
+82: 		</div>
+83: 	<% end %>
+84: 	<div id="bottom_links">
+85: 		Postato da <span class="to_bold"><%= link_to(@review.user.name, @review.user.external_link.link_url) %></span>
+86: 		 il <%= @review.created_on.strftime("%d %b %Y") %> | 
+87: 		 <% unless @review.comments.size == 0 %>
+88: 				<%= link_to(@review.comments.size.to_s + " commenti", {:controller => 'review', :action => 'show_comments', :id => @review}) %> | 
+
+    app/views/review/show.rhtml:85:in `_run_rhtml_47app47views47review47show46rhtml'
+    vendor/rails/actionpack/lib/action_view/base.rb:390:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:390:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:366:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1110:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1163:in `default_render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1169:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:697:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svn_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ReviewController#show_comments (for 127.0.0.1 at 2008-03-24 09:43:18) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {"action"=>"show_comments", "id"=>"4-aaaaa", "controller"=>"review"}
+  [4;36;1mReview Columns (0.001435)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (0.000084)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;36;1mTvReview Columns (0.001343)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mAuthor Columns (0.000440)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.000038)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+  [4;35;1mTag Load (0.000036)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'Review') AND (taggings.taggable_id = 4)) [0m
+Rendering template within layouts/review
+Rendering review/show_comments
+  [4;36;1mCover Columns (0.000682)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mCover Load (0.000069)[0m   [0mSELECT * FROM `pictures` WHERE (pictures.review_id = 4) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+  [4;36;1mAuthorPicture Columns (0.000666)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mAuthorPicture Load (0.000048)[0m   [0mSELECT * FROM `pictures` WHERE (pictures.author_id = 10) AND ( (`pictures`.`type` = 'AuthorPicture' ) ) LIMIT 1[0m
+  [4;36;1mExternalLink Columns (0.000667)[0m   [0;1mSHOW FIELDS FROM `links`[0m
+  [4;35;1mExternalLink Load (0.000046)[0m   [0mSELECT * FROM `links` WHERE (links.author_id = 10) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+Rendered review/_review_right_column (0.02707)
+  [4;36;1mComment Columns (0.000600)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (0.000032)[0m   [0mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 4 AND (is_spam = 0)) [0m
+  [4;36;1mComment Load (0.000200)[0m   [0;1mSELECT * FROM `comments` WHERE (comments.review_id = 4 AND (is_spam = 0)) [0m
+  [4;35;1mExternalLink Load (0.000595)[0m   [0mSELECT * FROM `links` WHERE (links.comment_id = 2) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;36;1mExternalLink Load (0.000114)[0m   [0;1mSELECT * FROM `links` WHERE (links.comment_id = 3) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;35;1mExternalLink Load (0.000102)[0m   [0mSELECT * FROM `links` WHERE (links.comment_id = 4) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;36;1mExternalLink Load (0.000106)[0m   [0;1mSELECT * FROM `links` WHERE (links.comment_id = 5) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;35;1mExternalLink Load (0.000102)[0m   [0mSELECT * FROM `links` WHERE (links.comment_id = 6) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;36;1mExternalLink Load (0.000103)[0m   [0;1mSELECT * FROM `links` WHERE (links.comment_id = 7) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;35;1mUser Columns (0.000406)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000089)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendered review/_comment (0.01230)
+  [4;35;1mAuthor Load (0.000041)[0m   [0mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;36;1mTag Load (0.000035)[0m   [0;1mSELECT * FROM `tags` ORDER BY name[0m
+Rendered review/_search_box (0.00113)
+Rendered review/_credits (0.00039)
+Rendered review/_badges (0.00041)
+  [4;35;1mQuote Columns (0.000492)[0m   [0mSHOW FIELDS FROM `quotes`[0m
+  [4;36;1mSQL (0.000046)[0m   [0;1mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+  [4;35;1mQuote Load (0.000041)[0m   [0mSELECT * FROM `quotes` WHERE (random = 1) LIMIT 0, 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+Rendered review/_random_quote (0.00796)
+Completed in 0.12456 (8 reqs/sec) | Rendering: 0.08312 (66%) | DB: 0.02538 (20%) | 200 OK [http://localhost/review/show_comments/4-aaaaa]
+
+
+Processing ReviewController#picture (for 127.0.0.1 at 2008-03-24 09:43:19) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {"action"=>"picture", "id"=>"13", "controller"=>"review"}
+  [4;36;1mPicture Columns (0.000995)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mPicture Load (0.000247)[0m   [0mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 13) [0m
+  [4;36;1mAuthorPicture Columns (0.000811)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+Sending data wally.gif
+Completed in 0.01574 (63 reqs/sec) | Rendering: 0.00004 (0%) | DB: 0.00205 (13%) | 200 OK [http://localhost/review/picture/13]
+
+
+Processing ReviewController#picture (for 127.0.0.1 at 2008-03-24 09:43:19) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {"action"=>"picture", "id"=>"19", "controller"=>"review"}
+  [4;35;1mPicture Columns (0.000811)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+  [4;36;1mPicture Load (0.000077)[0m   [0;1mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 19) [0m
+  [4;35;1mCover Columns (0.000745)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+Sending data anansi.jpg
+Completed in 0.01647 (60 reqs/sec) | Rendering: 0.00004 (0%) | DB: 0.00163 (9%) | 200 OK [http://localhost/review/picture/19]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-03-24 09:43:19) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svn_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ReviewController#post_comment (for 127.0.0.1 at 2008-03-24 09:43:37) [POST]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {"commit"=>"Invia", "action"=>"post_comment", "id"=>"4", "controller"=>"review", "external_link"=>{"link_url"=>"sdsfds.it"}, "comment"=>{"body"=>"ciao bello!", "author"=>"ffff", "email"=>"sdfsdgfd@đðgdd.it"}}
+  [4;36;1mReview Columns (0.001426)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (0.000085)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;36;1mComment Columns (0.000847)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mTvReview Columns (0.001010)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mUser Columns (0.000429)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000043)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000045)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000253)[0m   [0mSHOW TABLES[0m
+  [4;36;1mComment Create (0.000375)[0m   [0;1mINSERT INTO `comments` (`created_on`, `body`, `referrer`, `updated_on`, `author`, `page_id`, `review_id`, `user_agent`, `is_spam`, `user_id`, `user_ip`, `email`) VALUES('2008-03-24 09:43:38', 'ciao bello!', 'http://localhost:3000/review/show_comments/4-aaaaa', '2008-03-24 09:43:38', 'ffff', NULL, 4, 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.12) Gecko/20080207 Ubuntu/7.10 (gutsy) Firefox/2.0.0.12', 0, NULL, '127.0.0.1', 'sdfsdgfd@đðgdd.it')[0m
+  [4;35;1mSQL (0.000046)[0m   [0mCOMMIT[0m
+Sent mail:
+ Date: Mon, 24 Mar 2008 09:43:38 +0100
+From: sdfsdgfd@"đðgdd".it
+To: oscar.riva@gmail.com
+Subject: f4 reviews - commento postato
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Commento postato sul sito figura4.com
+
+ (sdfsdgfd@đðgdd.it) ha postato un commento alla recensione aaaaa
+
+
+
+ciao bello!
+Redirected to http://localhost:3000/review/show_comments/4-aaaaa
+Completed in 2.39978 (0 reqs/sec) | DB: 0.00456 (0%) | 302 Found [http://localhost/review/post_comment/4]
+
+
+Processing ReviewController#show_comments (for 127.0.0.1 at 2008-03-24 09:43:39) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {"action"=>"show_comments", "id"=>"4-aaaaa", "controller"=>"review"}
+  [4;36;1mReview Columns (0.001415)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (0.000103)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;36;1mTvReview Columns (0.001540)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mAuthor Columns (0.000662)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.000062)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+  [4;35;1mTag Load (0.000092)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'Review') AND (taggings.taggable_id = 4)) [0m
+Rendering template within layouts/review
+Rendering review/show_comments
+  [4;36;1mCover Columns (0.000675)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mCover Load (0.000083)[0m   [0mSELECT * FROM `pictures` WHERE (pictures.review_id = 4) AND ( (`pictures`.`type` = 'Cover' ) ) LIMIT 1[0m
+  [4;36;1mAuthorPicture Columns (0.000664)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mAuthorPicture Load (0.001064)[0m   [0mSELECT * FROM `pictures` WHERE (pictures.author_id = 10) AND ( (`pictures`.`type` = 'AuthorPicture' ) ) LIMIT 1[0m
+  [4;36;1mExternalLink Columns (0.002723)[0m   [0;1mSHOW FIELDS FROM `links`[0m
+  [4;35;1mExternalLink Load (0.000061)[0m   [0mSELECT * FROM `links` WHERE (links.author_id = 10) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+Rendered review/_review_right_column (0.03568)
+  [4;36;1mComment Columns (0.000645)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (0.000181)[0m   [0mSELECT count(*) AS count_all FROM `comments` WHERE (comments.review_id = 4 AND (is_spam = 0)) [0m
+  [4;36;1mComment Load (0.000169)[0m   [0;1mSELECT * FROM `comments` WHERE (comments.review_id = 4 AND (is_spam = 0)) [0m
+  [4;35;1mExternalLink Load (0.000071)[0m   [0mSELECT * FROM `links` WHERE (links.comment_id = 2) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;36;1mExternalLink Load (0.000051)[0m   [0;1mSELECT * FROM `links` WHERE (links.comment_id = 3) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;35;1mExternalLink Load (0.000051)[0m   [0mSELECT * FROM `links` WHERE (links.comment_id = 4) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;36;1mExternalLink Load (0.000044)[0m   [0;1mSELECT * FROM `links` WHERE (links.comment_id = 5) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;35;1mExternalLink Load (0.000052)[0m   [0mSELECT * FROM `links` WHERE (links.comment_id = 6) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;36;1mExternalLink Load (0.000044)[0m   [0;1mSELECT * FROM `links` WHERE (links.comment_id = 7) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;35;1mExternalLink Load (0.000174)[0m   [0mSELECT * FROM `links` WHERE (links.comment_id = 8) AND ( (`links`.`type` = 'ExternalLink' ) ) LIMIT 1[0m
+  [4;36;1mUser Columns (0.000398)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000039)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendered review/_comment (0.00199)
+  [4;36;1mAuthor Load (0.000043)[0m   [0;1mSELECT * FROM `authors` ORDER BY second_name[0m
+  [4;35;1mTag Load (0.000034)[0m   [0mSELECT * FROM `tags` ORDER BY name[0m
+Rendered review/_search_box (0.00113)
+Rendered review/_credits (0.00040)
+Rendered review/_badges (0.00041)
+  [4;36;1mQuote Columns (0.000473)[0m   [0;1mSHOW FIELDS FROM `quotes`[0m
+  [4;35;1mSQL (0.000058)[0m   [0mSELECT count(*) AS count_all FROM `quotes` WHERE (random = 1) [0m
+  [4;36;1mQuote Load (0.000044)[0m   [0;1mSELECT * FROM `quotes` WHERE (random = 1) LIMIT 0, 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 10) [0m
+Rendered review/_random_quote (0.00815)
+Completed in 0.12170 (8 reqs/sec) | Rendering: 0.06365 (52%) | DB: 0.01171 (9%) | 200 OK [http://localhost/review/show_comments/4-aaaaa]
+
+
+Processing ReviewController#picture (for 127.0.0.1 at 2008-03-24 09:43:39) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {"action"=>"picture", "id"=>"19", "controller"=>"review"}
+  [4;35;1mPicture Columns (0.000828)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+  [4;36;1mPicture Load (0.000082)[0m   [0;1mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 19) [0m
+  [4;35;1mCover Columns (0.000826)[0m   [0mSHOW FIELDS FROM `pictures`[0m
+Sending data anansi.jpg
+Completed in 0.05661 (17 reqs/sec) | Rendering: 0.00004 (0%) | DB: 0.00174 (3%) | 200 OK [http://localhost/review/picture/19]
+
+
+Processing ReviewController#picture (for 127.0.0.1 at 2008-03-24 09:43:39) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {"action"=>"picture", "id"=>"13", "controller"=>"review"}
+  [4;36;1mPicture Columns (0.000794)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+  [4;35;1mPicture Load (0.000055)[0m   [0mSELECT * FROM `pictures` WHERE (`pictures`.`id` = 13) [0m
+  [4;36;1mAuthorPicture Columns (0.000702)[0m   [0;1mSHOW FIELDS FROM `pictures`[0m
+Sending data wally.gif
+Completed in 0.01413 (70 reqs/sec) | Rendering: 0.00004 (0%) | DB: 0.00155 (10%) | 200 OK [http://localhost/review/picture/13]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-03-24 09:43:39) [GET]
+  Session ID: 195be4255d0ec4e8d254345e5a49021f
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1438:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1421:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /home/figura4/svn_working_dir/figura4_reviews_v2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+  [4;36;1mSQL (0.000091)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000063)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000083)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000054)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;36;1mSQL (0.012507)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000058)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000043)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000041)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000042)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000041)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000042)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000041)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000040)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000042)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000040)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000042)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to AddSubjectColumn (15)
+  [4;35;1mSQL (0.039790)[0m   [0mALTER TABLE `emails` ADD `subject` varchar(255)[0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mUPDATE schema_info SET version = 15[0m
+  [4;35;1mSQL (0.000106)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateDatabaseBackupTable (16)
+  [4;36;1mSQL (0.003329)[0m   [0;1mCREATE TABLE `database_backups` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `file_name` varchar(255) DEFAULT NULL, `path` varchar(255) DEFAULT NULL, `file_size` int(11) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000110)[0m   [0mUPDATE schema_info SET version = 16[0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSessions (17)
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'sessions' already exists: CREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000061)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.067328)[0m   [0;1mDROP DATABASE IF EXISTS `figura4_development_v2`[0m
+  [4;35;1mSQL (0.000065)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.000061)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000172)[0m   [0mCREATE DATABASE `figura4_development_v2` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`[0m
+  [4;36;1mSQL (0.000059)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000057)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'authors': DROP TABLE `authors`[0m
+  [4;35;1mSQL (0.007380)[0m   [0mCREATE TABLE `authors` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255) DEFAULT NULL, `second_name` varchar(255) DEFAULT NULL, `bio` text DEFAULT NULL, `created_on` datetime DEFAULT NULL, `updated_on` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.004442)[0m   [0;1mCREATE INDEX `index_authors_on_second_name` ON `authors` (`second_name`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'comments': DROP TABLE `comments`[0m
+  [4;36;1mSQL (0.002152)[0m   [0;1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `author` varchar(255) DEFAULT NULL, `email` varchar(255) DEFAULT NULL, `created_on` datetime DEFAULT NULL, `updated_on` datetime DEFAULT NULL, `review_id` int(11) DEFAULT NULL, `page_id` int(11) DEFAULT NULL, `is_spam` int(11) DEFAULT NULL, `user_ip` varchar(255) DEFAULT NULL, `user_agent` varchar(255) DEFAULT NULL, `referrer` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.004039)[0m   [0mCREATE INDEX `index_comments_on_user_id` ON `comments` (`user_id`)[0m
+  [4;36;1mSQL (0.004071)[0m   [0;1mCREATE INDEX `index_comments_on_review_id` ON `comments` (`review_id`)[0m
+  [4;35;1mSQL (0.004270)[0m   [0mCREATE INDEX `index_comments_on_page_id` ON `comments` (`page_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'database_backups': DROP TABLE `database_backups`[0m
+  [4;35;1mSQL (0.001683)[0m   [0mCREATE TABLE `database_backups` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `file_name` varchar(255) DEFAULT NULL, `path` varchar(255) DEFAULT NULL, `file_size` int(11) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'emails': DROP TABLE `emails`[0m
+  [4;35;1mSQL (0.001661)[0m   [0mCREATE TABLE `emails` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sender` varchar(255) DEFAULT NULL, `sender_address` varchar(255) DEFAULT NULL, `body` text DEFAULT NULL, `is_spam` int(11) DEFAULT NULL, `created_on` datetime DEFAULT NULL, `updated_on` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.003435)[0m   [0;1mCREATE INDEX `index_emails_on_is_spam` ON `emails` (`is_spam`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'links': DROP TABLE `links`[0m
+  [4;36;1mSQL (0.002983)[0m   [0;1mCREATE TABLE `links` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `description` text DEFAULT NULL, `review_id` int(11) DEFAULT NULL, `page_id` int(11) DEFAULT NULL, `author_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `comment_id` int(11) DEFAULT NULL, `no_follow` int(11) DEFAULT NULL, `type` varchar(255) DEFAULT NULL, `in_link_section` int(11) DEFAULT NULL, `link_url` text DEFAULT NULL, `controller` varchar(255) DEFAULT NULL, `action` varchar(255) DEFAULT NULL, `lid` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.064727)[0m   [0mCREATE INDEX `page_id` ON `links` (`page_id`)[0m
+  [4;36;1mSQL (0.008192)[0m   [0;1mCREATE INDEX `user_id` ON `links` (`user_id`)[0m
+  [4;35;1mSQL (0.005235)[0m   [0mCREATE INDEX `index_links_on_review_id` ON `links` (`review_id`)[0m
+  [4;36;1mSQL (0.009917)[0m   [0;1mCREATE INDEX `index_links_on_comment_id` ON `links` (`comment_id`)[0m
+  [4;35;1mSQL (0.008478)[0m   [0mCREATE INDEX `index_links_on_author_id` ON `links` (`author_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'pages': DROP TABLE `pages`[0m
+  [4;35;1mSQL (0.002489)[0m   [0mCREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `second_title` varchar(255) DEFAULT NULL, `html_body` text DEFAULT NULL, `meta_description` text DEFAULT NULL, `meta_keywords` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `published` int(11) DEFAULT NULL, `created_on` datetime DEFAULT NULL, `updated_on` datetime DEFAULT NULL, `description` text DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.003857)[0m   [0;1mCREATE INDEX `index_pages_on_user_id` ON `pages` (`user_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'pictures': DROP TABLE `pictures`[0m
+  [4;36;1mSQL (0.002347)[0m   [0;1mCREATE TABLE `pictures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `content_type` varchar(255) DEFAULT NULL, `type` varchar(255) DEFAULT NULL, `data` blob DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `review_id` int(11) DEFAULT NULL, `author_id` int(11) DEFAULT NULL, `comment` varchar(255) DEFAULT NULL, `video_review_id` int(11) DEFAULT NULL, `order` int(11) DEFAULT NULL, `comment_on_page` text DEFAULT NULL, `page_id` int(11) DEFAULT NULL, `order_on_page` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.010286)[0m   [0mCREATE INDEX `index_pictures_on_user_id` ON `pictures` (`user_id`)[0m
+  [4;36;1mSQL (0.004344)[0m   [0;1mCREATE INDEX `index_pictures_on_review_id` ON `pictures` (`review_id`)[0m
+  [4;35;1mSQL (0.007801)[0m   [0mCREATE INDEX `index_pictures_on_author_id` ON `pictures` (`author_id`)[0m
+  [4;36;1mSQL (0.004709)[0m   [0;1mCREATE INDEX `index_pictures_on_video_review_id` ON `pictures` (`video_review_id`)[0m
+  [4;35;1mSQL (0.011754)[0m   [0mCREATE INDEX `index_pictures_on_page_id` ON `pictures` (`page_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'quotes': DROP TABLE `quotes`[0m
+  [4;35;1mSQL (0.002126)[0m   [0mCREATE TABLE `quotes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `italian_text` text DEFAULT NULL, `original_text` text DEFAULT NULL, `source` varchar(255) DEFAULT NULL, `author` varchar(255) DEFAULT NULL, `review_id` int(11) DEFAULT NULL, `random` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.003763)[0m   [0;1mCREATE INDEX `index_quotes_on_review_id` ON `quotes` (`review_id`)[0m
+  [4;35;1mSQL (0.011757)[0m   [0mCREATE INDEX `index_quotes_on_random` ON `quotes` (`random`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'reviews': DROP TABLE `reviews`[0m
+  [4;35;1mSQL (0.002726)[0m   [0mCREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `italian_title` varchar(255) DEFAULT NULL, `italian_article` varchar(255) DEFAULT NULL, `italian_subtitle` varchar(255) DEFAULT NULL, `original_title` varchar(255) DEFAULT NULL, `original_article` varchar(255) DEFAULT NULL, `original_subtitle` varchar(255) DEFAULT NULL, `pages` int(11) DEFAULT NULL, `plot` text DEFAULT NULL, `review` text DEFAULT NULL, `year` varchar(255) DEFAULT NULL, `editor` varchar(255) DEFAULT NULL, `created_on` datetime DEFAULT NULL, `updated_on` datetime DEFAULT NULL, `vote` int(11) DEFAULT NULL, `type` varchar(255) DEFAULT NULL, `final_words` text DEFAULT NULL, `language` int(11) DEFAULT NULL, `author_id` int(11) DEFAULT NULL, `published` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `reason_to_read` text DEFAULT NULL, `reason_to_avoid` text DEFAULT NULL, `actors` text DEFAULT NULL, `nation` varchar(255) DEFAULT NULL, `seasons` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.007040)[0m   [0;1mCREATE INDEX `index_reviews_on_author_id` ON `reviews` (`author_id`)[0m
+  [4;35;1mSQL (0.008580)[0m   [0mCREATE INDEX `index_reviews_on_user_id` ON `reviews` (`user_id`)[0m
+  [4;36;1mSQL (0.006731)[0m   [0;1mCREATE INDEX `index_reviews_on_vote` ON `reviews` (`vote`)[0m
+  [4;35;1mSQL (0.005053)[0m   [0mCREATE INDEX `index_reviews_on_created_on` ON `reviews` (`created_on`)[0m
+  [4;36;1mSQL (0.036252)[0m   [0;1mCREATE INDEX `index_reviews_on_italian_title` ON `reviews` (`italian_title`)[0m
+  [4;35;1mSQL (0.007322)[0m   [0mCREATE INDEX `index_reviews_on_original_title` ON `reviews` (`original_title`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'sessions': DROP TABLE `sessions`[0m
+  [4;35;1mSQL (0.002454)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) DEFAULT NULL, `data` text DEFAULT NULL, `updated_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.004907)[0m   [0;1mCREATE INDEX `index_sessions_on_session_id` ON `sessions` (`session_id`)[0m
+  [4;35;1mSQL (0.004787)[0m   [0mCREATE INDEX `index_sessions_on_updated_at` ON `sessions` (`updated_at`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'taggings': DROP TABLE `taggings`[0m
+  [4;35;1mSQL (0.003433)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.004685)[0m   [0;1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;35;1mSQL (0.004286)[0m   [0mCREATE INDEX `index_taggings_on_taggable_id_and_taggable_type` ON `taggings` (`taggable_id`, `taggable_type`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'tags': DROP TABLE `tags`[0m
+  [4;35;1mSQL (0.002399)[0m   [0mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'users': DROP TABLE `users`[0m
+  [4;35;1mSQL (0.001991)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `hashed_password` varchar(255) DEFAULT NULL, `salt` varchar(255) DEFAULT NULL, `email` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.003802)[0m   [0;1mCREATE INDEX `index_users_on_name` ON `users` (`name`)[0m
+  [4;35;1mSQL (0.001413)[0m   [0mCREATE TABLE `schema_info` (version int(11))[0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mINSERT INTO `schema_info` (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000334)[0m   [0mSHOW FIELDS FROM `schema_info`[0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mUPDATE schema_info SET version = 16[0m
+  [4;36;1mSQL (0.000062)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000057)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;36;1mSQL (0.015497)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000031)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000029)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000026)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000026)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000027)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000027)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000026)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSessions (17)
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'sessions' already exists: CREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000062)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000069)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;36;1mSQL (0.015514)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000032)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000028)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000026)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000026)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000032)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000032)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000028)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000027)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSessions (17)
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'sessions' already exists: CREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m

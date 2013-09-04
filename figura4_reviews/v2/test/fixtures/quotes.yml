@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+dune_1:
+  id: 1
+  author: Lady Jessica Atreides
+  italian_text: Pensaci, Chani. quella principessa
+  review_id: 1
+  random: 1
+  
+dune_2:
+  id: 2
+  source: Collected Sayings of Muad'Dib by the Princess Irulan
+  original_text: There is no escape we pay for the violence of our ancestors
+  review_id: 1
+  random: 0
+  
+blade_1:
+  id: 3
+  author: Roy Batty
+  italian_text: ho visto cose...
+  random: 1
+  review_id: 2

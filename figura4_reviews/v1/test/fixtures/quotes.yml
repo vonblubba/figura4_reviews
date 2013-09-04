@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+dune_1:
+  id: 1
+  author: Lady Jessica Atreides
+  italian_text: Pensaci, Chani. quella principessa avrà il nome, e tuttavia sarà meno di una concubina... non avrà mai un momento di tenerezza dall''uomo cui sarà unita. Mentre noi, Chani, noi che portiamo il nome di concubine...la storia ci chiamerà spose.
+  review_id: 1
+  
+dune_2:
+  id: 2
+  source: Collected Sayings of Muad'Dib by the Princess Irulan
+  original_text: There is no escape we pay for the violence of our ancestors
+  review_id: 1

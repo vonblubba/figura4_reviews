@@ -1,0 +1,16 @@
+<div id="recent_comments">
+	<% @recent_comments = Comment.find(:all, :limit => 5, :order => "created_on DESC") %>
+	<h3>Ultimi commenti</h3>
+	<ul>
+	<% @recent_comments.each do |c| %>
+		<li>
+			<p>
+			<%= text_formatter_parless(h(smart_truncate(c.body, 70))) %> <%= link_to("Leggi tutto", {:controller => 'review', :action => 'show_comments', :id => c.review}) %> <br />
+			
+			<em>Postato da <%=h c.author %><br />
+			<%=h c.created_on.strftime("%d %b %Y %H:%M") %></em>
+			</p>
+		</li>
+	<% end %>
+	</ul>
+</div>

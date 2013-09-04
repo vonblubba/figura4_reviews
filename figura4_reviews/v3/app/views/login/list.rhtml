@@ -1,0 +1,9 @@
+<h1>Elenco utenti</h1>
+<ul>
+	<% for user in @all_users %>
+	<li><%= user.name %>
+		<%= link_away('modifica', :action => 'edit', :id => user) %>
+		<%= link_away('cancella', { :action => 'destroy', :id => user }, :confirm => 'Sei sicuro?', :method => :post) %>
+	</li>
+	<% end %>
+</ul>

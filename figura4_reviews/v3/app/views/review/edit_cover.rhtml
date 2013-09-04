@@ -1,0 +1,16 @@
+<h1>Modifica copertina/locandina</h1>
+<%= error_messages_for 'review' %>
+<%= form_tag({:action=>'update_cover', :id => @review}, :multipart => true)%>
+	<p>
+		<label for="review_cover">Copertina/locandina (larghezza 150px)</label>
+		<br/>
+		<%= file_field("picture" , "picture", :size => 40 ) %>
+		<br />
+		<% unless @review.cover.nil? %>
+			<img src="<%= url_for(:action => "picture", :id => @review.cover.id) %>" />
+			<input type="checkbox" name="delete_cover" value="1" /> Elmina immagine	
+		<% end %>
+	</p>
+	<%= submit_tag "Salva" %>
+</form>
+<p><%= link_to("back", :action => 'back') %></p>

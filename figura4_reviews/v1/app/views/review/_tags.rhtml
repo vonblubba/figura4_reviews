@@ -1,0 +1,7 @@
+<% tags = Tag.find(:all, :order => :name) %>
+<h3>Tags</h3>
+<p>
+<% tags.each do |t| %>
+	<%= link_to h(t.name), {:controller => 'review', :action => 'search_by_tag', :id => t.id} %><br />
+<% end %>
+</p>

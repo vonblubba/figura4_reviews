@@ -1,0 +1,9 @@
+<h1>Modifica quote - <%= @quote.review.full_title %></h1>
+
+<%= error_messages_for 'quote' %>
+
+<%= form_tag({:action => 'update', :id => @quote}, :multipart => true) %>
+	<%= render(:partial => 'quote', :object => @quote) %>
+</form>
+
+<%= link_to 'Back', :action => 'list', :id => @quote.review.id %>

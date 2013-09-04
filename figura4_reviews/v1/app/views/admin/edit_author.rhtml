@@ -1,0 +1,14 @@
+<h1>Modifica autore - <%= @author.first_name + ' ' + @author.second_name %></h1>
+
+<%= error_messages_for 'author' %>
+
+<%= form_tag({:action=>'update_author', :id => @author}, :multipart => true)%>
+
+	<%= render(:partial => "author", :object => @author) %>
+	
+	<%= submit_tag 'Salva' %>
+	
+</form>
+
+<%= link_to 'Show', :action => 'show_author', :id => @review %> |
+<%= link_to 'Back', :action => 'list_authors' %>

@@ -1,0 +1,24 @@
+<p>
+	<label for="original_text">Testo originale</label>
+	<br />
+	<%= text_area("quote", "original_text", :size => "40x10") %>
+</p>
+<p>
+	<label for="italian_text">Testo italiano</label>
+	<br />
+	<%= text_area("quote", "italian_text", :size => "40x10") %>
+</p>
+<p>
+	<label for="quote_source">Fonte</label>
+	<br />
+	<%= text_field("quote", "source", :size => "50") %>
+</p>
+<p>
+	<label for="quote_author">Autore</label>
+	<br />
+	<%= text_field("quote", "author", :size => "50") %>
+</p>
+<p>
+	<%= check_box("quote", "random") %> <label for="quote_random">Includi nelle random quotes</label>
+</p>
+<%= submit_tag "Salva" %>

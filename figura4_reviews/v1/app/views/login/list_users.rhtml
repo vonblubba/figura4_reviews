@@ -1,0 +1,10 @@
+<h1>Administrators</h1>
+<ul>
+	<% for user in @all_users %>
+	<li><%= link_to "[X]" , :controller => 'login',
+		:action => 'delete_user',
+		:id => user %>
+		<%= user.name %>
+	</li>
+	<% end %>
+</ul>

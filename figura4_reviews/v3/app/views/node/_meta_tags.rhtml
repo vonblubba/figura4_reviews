@@ -1,0 +1,13 @@
+<% form_tag :controller => 'node', :action => 'update_meta_tags', :id => meta_tags.id do %>
+	<p>
+		<label for="node_meta_keys">Meta keywords</label>
+		<br/>
+		<%= text_field 'node', 'meta_keywords', :size => 60  %> 
+	</p>
+	<p>
+		<label for="node_meta_description">Meta description</label>
+		<br/>
+		<%= text_area 'node', 'meta_description', :size => '60x10'  %>
+	</p>
+	<%= submit_tag 'Salva' %>
+<% end %>

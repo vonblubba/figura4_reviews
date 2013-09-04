@@ -1,0 +1,22 @@
+<!-- quotes -->
+<div class="separator"><h2>Citazioni</h2></div>
+<ul class="quote_list">
+	<% quotes.each do |q| %>
+		<li>
+			<blockquote>
+				<%= text_formatter(h(q.body)) %>
+				<% unless q.source.blank? %>
+					<p class="quote_source">
+						<%= q.source %>
+						<% if session[:authorized_to_edit] %>
+							<p>
+								<%= link_away('[edit quote]', :controller => 'quote', :action => 'edit', :id => q.id) %>
+								<%= link_away('[delete quote]', {:controller => 'quote', :action => 'destroy', :id => q.id}, :confirm => 'Sei sicuro?', :method => :post) %>
+							</p>
+						<% end %>
+					</p>
+				<% end %>
+			</blockquote>
+		</li>
+	<% end %>
+</ul>

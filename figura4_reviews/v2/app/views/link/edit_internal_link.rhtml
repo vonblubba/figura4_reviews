@@ -1,0 +1,9 @@
+<h1>Modifica link interno - <%= @internal_link.review.full_title %></h1>
+
+<%= error_messages_for 'internal_link' %>
+
+<%= form_tag({:action => 'update_internal_link', :id => @internal_link}, :multipart => true) %>
+	<%= render(:partial => 'internal_link', :object => @internal_link) %>
+</form>
+
+<%= link_to 'Back', :controller => 'review', :action => 'edit_links', :id => @internal_link.review.id %>

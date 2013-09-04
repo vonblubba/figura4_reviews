@@ -1,0 +1,26 @@
+<% unless comment.user.blank? %>
+	<p>
+		Utente: <strong><%= comment.user.name %></strong>
+	</p>
+<% else %>
+	<p>
+		<label>Nome (*)</label>
+		<br/>
+		<%= text_field("comment", "author", :size => "30") %>
+	</p>
+	<p>
+		<label>Homepage</label>
+		<br/>
+		<%= text_field("comment", "homepage", :size => "30") %>
+	</p>
+	<p>
+		<label>E-mail</label>
+		<br/>
+		<%= text_field("comment", "email", :size => "30") %>
+	</p>
+<% end %>
+<p>
+	<label>Messaggio (*)</label>
+	<br/>
+	<%= text_area("comment", "body", :size => "50x10") %>
+</p>

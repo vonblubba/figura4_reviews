@@ -1,0 +1,19 @@
+<p>
+	<label for="somment">Commento</label>
+	<br/>
+	<%= text_area 'screenshot', 'comment', :size => '60x8'  %>
+</p>
+<p>
+	<label for="order">Ordinamento</label>
+	<br/>
+	<%= text_field 'screenshot', 'order', :size => 10  %>
+</p>
+<p>
+	<label for="screenshot_picture">Immagine</label>
+	<br/>
+	<%= file_field("picture" , "picture", :size => 60 ) %>
+	<br />
+	<% unless @screenshot.data.nil? %>
+		<img src="<%= url_for(:action => "picture", :id => @screenshot.id) %>" />
+	<% end %>
+</p>

@@ -1,0 +1,23 @@
+<h1>Link globali del sito</h1>
+
+<div id="table-list" >
+	<table cellpadding="5" cellspacing="0">
+		<% if @links.nil? == false and @links.size > 0 %>
+			<tr>
+				<th>Titolo</th>
+				<th>Descrizione</th>
+	 		</tr>  
+	 		<% for link in @links %>
+  					<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+  					<td><%=h link.title %></td>
+					<td><%=h link.description %></td>
+    				<td><%= link_to 'Modifica', :action => 'edit_link', :id => link %></td>
+    				<td><%= link_to 'Cancella', { :action => 'destroy_link', :id => link }, :confirm => 'Sei sicuro?', :method => :post %></td>
+  				</tr>
+			<% end %>
+		<% end %>
+	</table>
+</div>
+<p>
+	<%= link_to 'Nuovo link', :action => 'new_link' %>
+</p>

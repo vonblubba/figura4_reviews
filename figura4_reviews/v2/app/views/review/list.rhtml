@@ -1,0 +1,34 @@
+<h1>Lista recensioni</h1>
+
+<div id="table-list" >
+	<table cellpadding="5" cellspacing="0">
+  		<tr>
+			<th>Titolo originale</th>
+			<th>Titolo italiano</th>
+			<th>Autore</th>
+			<th>Pubblicata</th>
+  		</tr>
+		<% for review in @reviews %>
+  			<tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+  				<td><%=h review.original_title %></td>
+				<td><%=h review.italian_title %></td>
+  				<td><%=h review.author.second_name + ', '  + review.author.first_name unless review.author.nil? %></td>
+				<td>
+					<% if review.published == 1 %>
+						SI
+					<% else %>
+						NO
+					<% end %>
+				</td>
+			    <td><%= link_to('Mostra', {:controller => 'review', :action => 'show', :id => review}) %></td>
+    			<td><%= link_to 'Modifica', { :action => 'show_for_edit', :id => review } %></td>
+    			<td><%= link_to 'Cancella', { :action => 'destroy', :id => review }, :confirm => 'Sei sicuro?', :method => :post %></td>
+  			</tr>
+		<% end %>
+	</table>
+</div>
+
+<%= link_to 'Precedente', { :page => @review_pages.current.previous } if @review_pages.current.previous %>
+<%= link_to 'Successiva', { :page => @review_pages.current.next } if @review_pages.current.next %> 
+<br />
+<%= link_to 'Nuova recensione', :action => 'new' %>

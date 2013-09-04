@@ -1,0 +1,12 @@
+<h1>Nuovo screenshot per la recensione <%= @review.full_title %></h1>
+
+<%= error_messages_for 'screenshot' %>
+
+<%= form_tag({:action=>'create', :id => @review.id}, :multipart => true)%>
+	<%= render(:partial => "screenshot", :object => @screenshot) %>
+	<%= submit_tag 'Salva' %>
+</form>
+
+<p>
+	<%= link_to 'Back', :action => 'list', :id=> @review.id %>
+</p>

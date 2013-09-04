@@ -1,0 +1,118 @@
+<div id="cover">
+	<% if review_right_column.cover %>
+		<img src="<%= url_for(:action => "picture", :id => review_right_column.cover.id) %>" 
+			 alt="Copertina del <%= review_right_column.media %> '<%=h review_right_column.full_title %>' di <%=h review_right_column.author.full_name %>" 
+			 title="Copertina del <%= review_right_column.media %> '<%=h review_right_column.full_title %>' di <%=h review_right_column.author.full_name %>"
+		/>
+	<% end %>
+</div>
+<div class="rc_box_title">
+	<h3>Scheda</h3>
+</div>
+<div class="rc_box">
+
+	<h4>Titolo italiano:</h4>
+	<p>
+		<%=h review_right_column.full_italian_title %>
+		<% unless review_right_column.italian_subtitle.nil? or review_right_column.italian_subtitle.blank? %>
+			<br />
+			<%= review_right_column.italian_subtitle %>
+		<% end %>
+	</p>
+
+	<h4>Titolo originale:</h4>
+	<p>
+		<%=h review_right_column.full_original_title %>
+		<% unless review_right_column.original_subtitle.nil? or review_right_column.original_subtitle.blank? %>
+			<br />
+			<%= review_right_column.original_subtitle %>
+		<% end %>
+	</p>
+	<% if review_right_column.is_a? PaperReview %>
+		<h4>Autore:</h4> 
+	<% else %>
+		<h4>Regia:</h4> 
+	<% end %> 
+	<p>
+		<%=h review_right_column.author.full_name %>
+	</p>
+	<% unless review_right_column.year %>
+		<h4>Anno di prima pubblicazione
+			<br />
+			(in lingua originale):</h4>
+		<p> 
+			<%=h review_right_column.year %>
+		</p>
+	<% end %>
+	<% if review_right_column.is_a? PaperReview %>
+		<% unless review_right_column.editor.nil? or review_right_column.editor.blank? %>
+			<h4>Edizione recensita:</h4>
+			<p>
+				<%=h review_right_column.editor %> (<%=h review_right_column.language_to_display %>)
+			</p>
+		<% end %>
+		<% unless review_right_column.pages.nil? or review_right_column.pages.blank? %>
+			<h4>Pagine:</h4>
+			<p> 
+				<%=h review_right_column.pages %>
+			</p>
+		<% end %>
+	<% end %>
+	<% unless review_right_column.actors.nil? or review_right_column.actors.blank? %>
+		<h4>Attori:</h4>
+		<p> 
+			<%=h review_right_column.actors %>
+		</p>
+	<% end %>
+	<% unless review_right_column.tag_list.size < 1 %>
+		<h4>Tags:</h4> 
+		<p>
+			<% review_right_column.tag_list.each do |tag| %>
+				<span class="tag"><%= link_to(tag, {:controller => 'review', :action => 'search_by_tag', :id => tag}) %></span> /    
+			<% end %>
+		</p>
+	<% end %>
+</div>
+<div class="rc_box_footer">
+</div>
+
+<% unless review_right_column.author.bio.nil? or review_right_column.author.bio.blank? %>
+	<div class="rc_box_title">
+		<h3>Biografia dell'autore</h3>
+	</div>
+	<div class="rc_box">
+		<%= author_picture_tag(review_right_column.author) %>
+		<%=text_formatter(h(review_right_column.author.bio)) %>
+		<% if review_right_column.author.external_link %>
+			<%= link_to("<span class=\"rc_box_bio_source\">Fonte</span>", review_right_column.author.external_link.link_url) %>
+		<% end %>
+	</div>
+	<div class="rc_box_footer">
+	</div>
+<% end %>
+<% unless @last_comments.nil? or @last_comments.size == 0 %>
+	<div class="rc_box_title">
+		<h3>Commenti</h3>
+	</div>
+	<div class="rc_box">
+		<ul class="recent_comments"> 
+			<% @last_comments.each do |c| %>
+				<li>
+					<%= text_formatter(h(smart_truncate(c.body, 70))) %> 
+					<p class="comment_details">
+						<% if c.user %>
+							<strong><%=h c.user.name %></strong>
+						<% else %>
+							<strong><%=h c.author %></strong>
+						<% end %>
+						<br />
+						<%=h "#{c.created_on.strftime("%d %b %Y")} @ #{c.created_on.strftime("%H:%M")}" %>
+					</p>
+				</li>
+			<% end %>
+		</ul>
+		<%= link_to("<span class=\"rc_box_read_all\">Leggi tutti</span>", {:controller => 'review', :action => 'show_comments', :id => review_right_column}) %>
+	</div>
+	<div class="rc_box_footer">
+	</div>
+<% end %>

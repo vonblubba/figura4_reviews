@@ -1,0 +1,9 @@
+<h1>Nuovo link esterno per la recensione <%= @review.full_title %></h1>
+
+<%= error_messages_for 'external_link' %>
+
+<%= form_tag({:action=>'create_external_link', :id => @review.id}, :multipart => true) %>
+	<%= render(:partial => "external_link", :object => @external_link) %>
+</form>
+
+<%= link_to 'Back', :controller => 'review', :action => 'edit_links', :id => @review.id %>

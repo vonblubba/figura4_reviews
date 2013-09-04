@@ -1,0 +1,18 @@
+<h1>Modifica tags - <%= @review.full_title %></h1>
+
+<%= error_messages_for 'tag' %>
+
+<% form_tag :action => 'update_tags', :id => @review do %>	
+	<h5>Seleziona tra i tags esistenti (tieni premuto ctrl per selezione multipla)</h5>
+	<%= tags_multiple_select()  %>
+	<h5>Crea nuovi tags</h5>
+	<p>
+		<% @create_tag = Tag.new %>
+		<% 0.upto(3) do |i| %>
+			<%= text_field("create_tag[]", "name", "size" => 15)-%>
+		<% end %>
+	</p>
+	<%= submit_tag "Salva modifiche" %><br /><br />
+<% end %>
+
+<%= link_to 'Back', :action => 'show_for_edit', :id => @review.id, :type => @review.class %>

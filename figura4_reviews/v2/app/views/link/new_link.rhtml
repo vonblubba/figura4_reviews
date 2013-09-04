@@ -1,0 +1,9 @@
+<h1>Nuovo link globale</h1>
+
+<%= error_messages_for 'external_link' %>
+
+<%= form_tag({:action=>'create'}, :multipart => true) %>
+	<%= render(:partial => "external_link", :object => @external_link) %>
+</form>
+
+<%= link_to 'Back', :action => 'list' %>

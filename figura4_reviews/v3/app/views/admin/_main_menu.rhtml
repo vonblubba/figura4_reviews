@@ -1,0 +1,17 @@
+<h3>Menu</h3>
+<ul class="main_menu">
+	<!-- utente registrato -->
+	<% if (session[:is_editor] or session[:is_admin]) %>
+		<!-- utente editor -->
+		<li class="main_menu"><%= link_away('Nuova recensione', :controller => 'review', :action => 'new_step_1') %></li>
+		<li class="main_menu"><%= link_away('Nuova blog entry', :controller => 'blog', :action => 'new_step_1') %></li>
+		<li class="main_menu"><%= link_away('Nuovo autore', :controller => 'author', :action => 'new') %></li>
+		<li class="main_menu"><%= link_away('Elenco autori', :controller => 'author', :action => 'list') %></li>
+	<% end %>
+	<% if session[:is_admin] %>
+		<!-- utente administrator -->
+		<li class="main_menu"><%= link_away('Elenco utenti', :controller => 'login', :action => 'list') %></li>
+		<li class="main_menu"><%= link_away('Nuovo utente', :controller => 'login', :action => 'new') %></li>
+	<% end %>
+	<li class="main_menu"><%= link_away('Logout', :controller => 'login', :action => 'logout') %></li>
+</ul>

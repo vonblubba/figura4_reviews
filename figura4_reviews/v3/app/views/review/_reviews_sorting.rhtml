@@ -1,0 +1,24 @@
+<p>
+	Questo &egrave; l'elenco completo delle recensioni.<br />
+	In alternativa, puoi utilizzare il box di ricerca a sinistra.
+	<ul>
+		<% unless reviews_sorting == 'vote' %>
+			<li><%= link_to("ordina per voto", :action => 'list', :order_by => 'vote') %></li>
+		<% end %>
+		<% unless reviews_sorting == 'author' %>
+			<li><%= link_to("ordina per autore", :action => 'list', :order_by => 'author') %></li>
+		<% end %>
+		<% unless reviews_sorting == 'italian_title' %>
+			<li><%= link_to("ordina per titolo", :action => 'list', :order_by => 'italian_title') %></li>
+		<% end %>
+		<% unless reviews_sorting == 'original_title' %>
+			<li><%= link_to("ordina per titolo originale", :action => 'list', :order_by => 'original_title') %></li>
+		<% end %>
+		<% unless reviews_sorting == 'media' %>
+			<li><%= link_to("ordina per tipo", :action => 'list', :order_by => 'media') %></li>
+		<% end %>
+	</ul>
+</p>
+<p>
+	(*) Inedito in Italia
+</p>

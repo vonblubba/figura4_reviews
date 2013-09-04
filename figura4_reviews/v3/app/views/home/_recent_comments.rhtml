@@ -1,0 +1,33 @@
+<div class="rc_box_title">
+	<h3>Ultimi commenti</h3>
+</div>
+
+<div class="rc_box">
+	<ul class="recent_comments">
+	<% recent_comments.each do |c| %>
+		<li>
+				<a href="<%= url_for({:controller => 'node', :action => 'show_comments', :id => c.node}) %>"
+			       title="leggi il commento" >
+			   	<span>
+					<%= text_formatter(h(smart_truncate(c.body, 70))).gsub("<p>", "").gsub("</p>", "") %> 
+				</span>
+				<br />
+				<span class="comment_details">
+					<% if c.user %>
+						<strong><%=h c.user.name %></strong>
+					<% else %>
+						<strong><%=h c.author %></strong>
+					<% end %>
+					<br />
+					<%=h "#{c.created_on.strftime("%d %b %Y")} @ #{c.created_on.strftime("%H:%M")}" %>
+				</span>
+			</a>
+			<% if session[:is_admin] %>
+				<%= link_away('[X]', {:controller => 'comment', :action => 'destroy', :id => c.id}, :confirm => 'Sei sicuro?', :method => :post) %>
+			<% end %>
+		</li>
+	<% end %>
+	</ul>
+</div>
+<div class="rc_box_footer">
+</div>

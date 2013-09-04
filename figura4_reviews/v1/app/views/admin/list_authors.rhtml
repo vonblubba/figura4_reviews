@@ -1,0 +1,28 @@
+<h1>Lista autori</h1>
+
+<div id="table-list" >
+<table cellpadding="5" cellspacing="0">
+  <tr>
+	<th>Cognome</th>
+	<th>Nome</th>
+  </tr>
+  
+<% for author in @authors %>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+  	<td><%=h author.second_name %></td>
+	<td><%=h author.first_name %></td>
+
+    <td><%= link_to 'Mostra', :action => 'show_author', :id => author %></td>
+    <td><%= link_to 'Modifica', :action => 'edit_author', :id => author %></td>
+    <td><%= link_to 'Cancella', { :action => 'destroy_author', :id => author }, :confirm => 'Sei sicuro?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+<%= link_to 'Precedente', { :page => @author_pages.current.previous } if @author_pages.current.previous %>
+<%= link_to 'Successiva', { :page => @author_pages.current.next } if @author_pages.current.next %> 
+
+<br />
+
+<%= link_to 'Nuovo autore', :action => 'new_author' %>

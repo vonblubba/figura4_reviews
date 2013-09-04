@@ -1,0 +1,101 @@
+<div id="rci_right_column">
+	<%= render(:partial => 'review_right_column', :object => @review) %>
+</div>
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<div id="main_titles">
+		<h1><%=h @review.full_title %></h1>
+		<h2>by <%=h @review.author.full_name %></h2>
+	</div>
+	<p>
+		<img src="/images/<%= @review.vote %>.png" alt="<%= vote_comment(@review.vote) %>" title="<%= vote_comment(@review.vote) %>" />
+		<%= media_icon_tag(@review) %>
+	</p>
+	<% unless @review.plot.nil? or @review.plot.blank? %>
+		<div class="separator"><h2>La trama in breve</h2></div>
+		<%= text_formatter h(@review.plot) %>
+	<% end %>
+	<div class="separator"><h2>Recensione</h2></div>
+	<%= text_formatter h(@review.review) %>
+	<% unless @review.reason_to_read.nil? or @review.reason_to_read.blank? %>
+		<div class="separator"><h2><%= pro_title(@review) %></h2></div>
+		<%= text_formatter(h(@review.reason_to_read)) %>
+	<% end %>
+	<% unless @review.reason_to_avoid.nil? or @review.reason_to_avoid.blank? %>
+		<div class="separator"><h2><%= vs_title(@review) %></h2></div>
+		<%= text_formatter(h(@review.reason_to_avoid)) %>
+	<% end %>
+	<% unless @review.final_words.nil? or @review.final_words.blank? %>
+		<div class="separator"><h2>In conclusione</h2></div>
+		<%= text_formatter(h(@review.final_words)) %>
+	<% end %>
+	<% if @review.is_a?(VideoReview) and @review.screenshots.size > 0 %>
+		<div class="separator"><h2>Screenshots</h2></div>
+		<% @review.screenshots.each do |s| %>
+			<img src="<%= url_for(:action => "picture", :id => s.id) %>" alt="<%=h s.comment %>" title="<%=h s.comment %>" /><br />
+		<% end %>
+	<% end %>
+	<% unless @review.quotes.size == 0 %>
+		<div class="separator"><h2>Citazioni</h2></div>
+		<ul class="quote_list">
+			<% @review.quotes.each do |q| %>
+				<li>
+					<blockquote>
+						<%= text_formatter(h(q.text)) %>
+						<% if q.source_to_display %>
+							<p class="quote_source">
+								<%=h(q.source_to_display) %>
+							</p>
+						<% end %>
+					</blockquote>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+	<% unless @review.links.size == 0 %>
+		<div class="separator"><h2>Link sul tema</h2></div>
+		<div id="related_links">
+			<ul>
+				<% @review.links.each do |l| %>
+					<% if l.is_a?(InternalLink) %>
+						<li>
+						<%= link_to(l.title, {:controller => l.controller, :action => l.action, :id => l.lid})%>
+						<% unless l.description.nil? or l.description.blank? %>
+							<p><%= l.description %></p>
+						<% end %>
+						</li>
+					<% end %>
+				<% end %>
+				<% @review.links.each do |l| %>
+					<% if l.is_a?(ExternalLink) %>
+						<li>
+							<%= link_to(l.title, l.link_url.to_s) %>
+							<% unless l.description.nil? or l.description.blank? %>
+								<p><%= l.description %></p>
+							<% end %>
+						</li>
+					<% end %>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div id="bottom_links">
+		Postato da <span class="to_bold"><%= link_to(@review.user.name, @review.user.external_link.link_url) %></span>
+		 il <%= @review.created_on.strftime("%d %b %Y") %> | 
+		 <% unless @review.comments.size == 0 %>
+				<%= link_to(@review.comments.size.to_s + " commenti", {:controller => 'review', :action => 'show_comments', :id => @review}) %> | 
+		 <% end %>	
+		 <a href="http://oknotizie.alice.it/post.html.php?url=http://figura4.com/review/show/<%= @review.to_param %>&amp;title=<%= @review.full_title %>"><img src="/images/oknotizie.png" alt="proponi su oknotizie" title="proponi su oknotizie" /></a> 
+		 <a href="http://del.icio.us/post?title=<%= @review.full_title %>;url=http://figura4.com/review/show/<%= @review.to_param %> " title="Aggiungi questa pagina ai tuoi link del.icio.us"><img src="/images/delicious.gif" alt="Add to del.icio.us" /></a>  
+		 <a href="http://www.stumbleupon.com/submit?url=http://figura4.com/review/show/<%= @review.to_param %>" title="stumble it!"><img src="/images/su.gif" alt="Add to stumbleupon" /></a>
+	</div>
+	<div id="post_comment">
+		<h4>Invia un commento</h4>
+		<%= form_tag(:action=>'post_comment', :id => @review.id)%>
+			<%= render(:partial => 'comment') %>
+			<p><%= submit_tag 'Invia' %></p>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,4 @@
+backup:
+  path: /db_dumps
+  compress: true
+  file_prefix: f4-

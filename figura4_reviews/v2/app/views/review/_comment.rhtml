@@ -1,0 +1,29 @@
+<% logged_user = User.find_by_id(session[:user_id]) %>
+<% if logged_user %>
+	<p>
+		Utente: 
+		<br />
+		<strong><%= logged_user.name %></strong>
+	</p>
+<% else %>
+	<p>
+		<label>Nome (*)</label>
+		<br/>
+		<%= text_field("comment", "author", :size => "30") %>
+	</p>
+	<p>
+		<label>Homepage</label>
+		<br/>
+		<%= text_field("external_link", "link_url", :size => "30") %>
+	</p>
+	<p>
+		<label>E-mail</label>
+		<br/>
+		<%= text_field("comment", "email", :size => "30") %>
+	</p>
+<% end %>
+<p>
+	<label>Messaggio (*)</label>
+	<br/>
+	<%= text_area("comment", "body", :size => "50x10") %>
+</p>

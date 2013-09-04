@@ -1,0 +1,48 @@
+<div id="rci_right_column">
+<%= render(:partial => 'review_right_column', :object => @review) %>
+</div>
+
+<div id="rci_left_column">	
+<% if flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<div class="show_comments">
+<h2>I vostri commenti</h2>
+<p><%= link_to("<-- torna alla recensione", {:controller => 'review', :action => 'show', :id => @review}) %></p>
+<% unless @review.comments.size == 0 %>
+<ul>
+<% @review.comments.each do |c| %>
+<li>
+<p><em>Postato da 
+<% unless c.homepage.nil? or c.homepage.blank? %>
+<a href="http://<%=h c.homepage %>"><%= c.author %></a>
+<% else %>
+<%= c.author %>
+<% end %>
+ - <%=h c.created_on.strftime("%d %b %Y %H:%M") %></em></p>
+<%= text_formatter(h(c.body)) %>
+</li>
+<% end %>
+</ul>
+<% else %>
+<p>Non ci sono ancora commenti a questa recensione.
+Invia tu il primo!</p>
+<% end %>
+</div>
+<div id="new_comment">	
+<h3>Partecipa alla discussione!</h3>
+<%= form_tag(:action=>'post_comment', :id => @review)%>
+<p><label for="nickname">Il tuo nome (*)</label><br/>
+<%= text_field 'comment', 'nickname', :size => 30 -%></p>
+<p><label for="email">La tua email (*)</label><br/>
+<%= text_field 'comment', 'email', :size => 30 -%></p>
+<p><label for="homepage">La tua homepage</label><br/>
+<%= text_field 'comment', 'homepage', :size => 30 -%></p>
+<p><label for="body">Il tuo messaggio (*)</label><br/>
+<%= text_area 'comment', 'body', :size => '40x10'  %></p>
+<p><%= submit_tag 'Invia' %></p>
+</form>
+</div>
+<p><%= link_to("<-- torna alla recensione", {:controller => 'review', :action => 'show', :id => @review}) %></p>
+</div>

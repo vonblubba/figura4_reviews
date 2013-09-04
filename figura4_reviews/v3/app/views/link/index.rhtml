@@ -1,0 +1,33 @@
+<div id="rci_right_column">
+	<div id="search_suggestions">
+		<div id="search_suggestions">
+			Sei interessato uno scambio di link?<br />
+			Vuoi segnalarmi un sito interessante?<br /> 
+			<%= link_to('Contattami!', :controller => 'contact') %>
+		</div>
+	</div>
+</div>
+
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<h1>Links</h1>
+	<div id="link_list">
+		<% @links.each do |l| %>
+			<h5><%= link_to(l.page_title, l.url) %></h5>
+			<% if session[:is_admin] %>
+				<%= link_away('[edit]', {:controller => 'link', :action => 'edit', :id => l.id}, :method => :post) %>
+				<%= link_away('[delete]', {:controller => 'link', :action => 'destroy', :id => l.id}, :confirm => 'Sei sicuro?', :method => :post) %>
+			<% end %>
+			<% unless l.description.blank? %>
+				<p>
+					<%= h(l.description) %>
+				</p>
+			<% end %>
+		<% end %>
+	</div>
+	<% if session[:is_admin] %>
+		<%= link_away('[aggiungi link]', {:controller => 'link', :action => 'new'}, :method => :post) %>
+	<% end %>
+</div>

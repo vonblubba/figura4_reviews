@@ -1,0 +1,39 @@
+<p>
+	<label for="page_title">Titolo della pagina (*)</label>
+	<br/>
+	<%= text_field 'page', 'title', :size => 60  %>
+</p>
+<p>
+	<label for="page_second_title">Sottotitolo</label>
+	<br/>
+	<%= text_field 'page', 'second_title', :size => 60  %>
+</p>
+<p>
+	<label for="page_meta_description">Meta-tag descrizione (*)</label>
+	<br/>
+	<%= text_field 'page', 'meta_description', :size => 60  %>
+</p>
+<p>
+	<label for="page_meta_keywords">Meta-tag keywords (*)</label>
+	<br/>
+	<%= text_field 'page', 'meta_keywords', :size => 60  %>
+</p>
+<p>
+	<label for="page_description">Breve descrizione della della pagina (*)</label>
+	<br/>
+	<%= text_area 'page', 'description', :size => '60x10'  %>
+</p>
+<p>
+	<label for="page_html_body">Corpo html della pagina (*)</label>
+	<br/>
+	<%= text_area 'page', 'html_body', :size => '60x20'  %>
+</p>
+<p>
+	<label for="page_published">Pubblicata (*)</label>
+	<br/>
+	<select id="page_published" name="page[published]">
+		<option value="0" <%= "selected='selected'" if page.published == 0 %>>No</option>
+		<option value="1" <%= "selected='selected'" if page.published == 1 %>>Si</option>
+	</select>
+</p>
+<!-- 2do: aggiungere gestione user_id -->

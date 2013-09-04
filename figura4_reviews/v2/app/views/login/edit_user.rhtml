@@ -1,0 +1,12 @@
+<h1>Modifica utente - <%= @user.name %></h1>
+
+<%= error_messages_for 'user' %>
+
+<%= form_tag({:action=>'update_user', :id => @user}, :multipart => true)%>
+	<%= render(:partial => "user", :object => @user) %>
+	<%= submit_tag 'Salva' %>
+</form>
+
+<p>
+	<%= link_to 'Back', :action => 'list_users' %>
+</p>

@@ -1,0 +1,70 @@
+<!-- colonna destra -->
+<div id="rci_right_column">
+	<% if @node.is_a? Review %>
+		<%= render(:partial => 'review/cover_reference', :object => @node) %>
+		<%= render(:partial => 'review/author_bio',      :object => @node.author) %>
+	<% end %>
+</div>
+
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<div class="show_comments">
+		<h1>I vostri commenti</h1>
+		<% unless @node.comments.size == 0 %>
+			<ul>
+				<% @node.comments.each do |c| %>
+					<li>
+						<div class="comment_author">
+							<%= comment_avatar_tag(c) %>
+								<% if c.user %>
+									<% unless c.user.homepage.blank? %>
+										<span class="author_name"><%= link_to(h(c.user.name), h(c.user.homepage)) %></span>
+									<% else %>
+										<span class="author_name"><%=h c.user.name %></span>
+									<% end %>
+								<% else %>
+									<% unless c.homepage.blank? %>
+										<span class="author_name"><%= link_to(h(c.author), h(c.homepage)) %></span>
+									<% else %>
+										<span class="author_name"><%=h c.author %></span>
+									<% end %>
+								<% end %>
+								<br />
+								<span class="comment_date">
+									<%=h c.created_on.strftime("%d %b %Y") %>
+									<br />
+									@ <%=h c.created_on.strftime("%H:%M") %>
+								</span>
+								<% if session[:authorized_to_edit] %>
+									<%= link_away('[edit comment]', :controller => 'comment', :action => 'edit', :id => c.id) %>
+									<%= link_away('[delete comment]', {:controller => 'comment', :action => 'destroy', :id => c.id}, :confirm => 'Sei sicuro?', :method => :post) %>
+								<% end %>					
+						</div>
+						<div class="comment_text">
+							<%= text_formatter(c.body) %>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		<% else %>
+			<p>
+				Non ci sono ancora commenti a questa recensione.
+				Invia tu il primo!
+			</p>
+		<% end %>
+	</div>
+	
+	<% if @node.is_a? Review %>
+		<%= link_to("<div class='back_to_review'>Torna alla recensione</div>", { :controller => 'review', :action => 'show', :id => @node }) %> 
+	<% else %>
+		<%= link_to("<div class='back_to_review'>Torna alla pagina</div>", { :controller => 'blog', :action => 'show', :id => @node }) %> 
+	<% end %>
+	
+	<div id="new_comment">	
+		<h4>Partecipa alla discussione!</h4>
+		<%= error_messages_for 'comment' %>
+		<%= render(:partial => 'node/comment', :object => @node) %>
+	</div>
+</div>

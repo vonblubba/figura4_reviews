@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+dune:
+  id: 1
+  original_title: dune
+  italian_title: dune
+  year: 1963
+  language: 1
+  editor: Nord
+  vote: 10
+  cover: dune.jpg
+  media: 1
+  user_id: 1
+  author_id: 1
+  published: 1
+  plot: Arrakis, meglio conosciuto come Dune, è l’unico pianeta dell’universo su cui si trova il melange, la spezia, la sostanza su cui si basa l’intera economia dell’impero. La spezia allunga la vita, dona capacità di preveggenza, e soprattutto rende possibili i viaggi interstellari. Arrakis tuttavia è un pianeta desertico, abitato solo dagli indigeni Fremen e dai vermi delle sabbie, enormi creature che vengono attirate da qualsiasi vibrazione del terreno. La raccolta della spezia è quindi un affare molto rischioso, ma anche molto redditizio. L’incarico di raccogliere la preziosa sostanza viene affidato dall’imperatore alla nobile casa Atreides. Ma quella che sembra essere un’ottima occasione potrebbe nascondere un complotto per annientare casa Atreides, organizzato dai rivali Harkonnen, con la complicità dell’imperatore stesso.
+  review: Dune è sicuramente una delle più importanti opere di SF di tutti i tempi; l’universo ricreato da Herbert non ha eguali per realismo e dettaglio della rappresentazione. In particolare la struttura sociale e l’ecosistema di Arrakis vengono delineati con un realismo incredibile; il modo di vivere dei Fremen, il culto dell’acqua e del dio-verme Shai-Hulud, la loro esistenza in simbiosi con l’inospitale ambiente circostante fanno da contorno ad una trama avvincente e ben congegnata.

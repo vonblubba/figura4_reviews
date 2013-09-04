@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//IT"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+	<head>
+		<title>Amministrazione del sito Figura4's reviews</title>
+		<%= stylesheet_link_tag "admin", :media => "all" %>
+	</head>
+<body id="admin" >
+	<div id="banner" >
+		<!-- <img src="/images/logo.png" /> -->
+		<%= @page_title || "Figura4's reviews" %>
+	</div>
+	<div id="columns" >
+		<div id="side" >
+			<p>
+				<%= link_to "Recensioni" , :controller => 'review', :action => 'list' %>
+				<br />
+				<%= link_to "Autori" , :controller => 'author', :action => 'list' %>
+				<br />
+				<%= link_to "Pagine" , :controller => 'page', :action => 'list' %>
+				<br />
+				<%= link_to "Links" , :controller => 'link', :action => 'list' %>
+				<br />
+				<%= link_to "Utenti" , :controller => 'login', :action => 'list_users' %>
+				<br />
+				<%= link_to "Backup DB" , :controller => 'admin', :action => 'backup_db' %>
+			</p>
+			<p>
+				<%= link_to "Logout" , :controller => 'login', :action => 'logout' %>
+			</p>
+		</div>
+		<div id="main" >
+			<% if flash[:notice] -%>
+				<div id="notice" ><%= flash[:notice] %></div>
+			<% end -%>
+			<%= @content_for_layout %>
+		</div>
+	</div>
+</body>
+</html>

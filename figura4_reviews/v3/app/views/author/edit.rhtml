@@ -1,0 +1,7 @@
+<h1>Modifica autore</h1>
+<%= error_messages_for 'author' %>
+<%= form_tag({:action=>'update', :id => @author}, :multipart => true)%>
+	<%= render(:partial => "author", :object => @author) %>
+	<%= submit_tag 'Salva' %>
+</form>
+<p><%= link_to("back", :action => 'back') %></p>

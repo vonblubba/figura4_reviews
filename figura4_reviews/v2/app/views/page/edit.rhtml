@@ -1,0 +1,11 @@
+<h1>Modifica pagina - <%= @page.title %></h1>
+
+<%= error_messages_for 'page' %>
+
+<%= form_tag({:action=>'update', :id => @page}, :multipart => true)%>
+	<%= render(:partial => "page", :object => @page) %>
+	<%= submit_tag 'Salva' %>
+</form>
+
+<%= link_to 'Show', :action => 'show', :id => @page %> |
+<%= link_to 'Back', :action => 'list' %>

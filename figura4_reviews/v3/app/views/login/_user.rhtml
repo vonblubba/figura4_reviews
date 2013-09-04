@@ -1,0 +1,30 @@
+<p>
+	<label for="user_name" >Name:</label>
+	<br />
+	<%= text_field :user, :name, :size => 40 %>
+</p>
+<p>
+	<label for="user_password" >Password:</label>
+	<br />
+	<%= text_field :user, :password, :size => 40 %>
+</p>
+<p>
+	<label for="user_password_confirmation" >Confirm:</label>
+	<br />
+	<%= text_field :user, :password_confirmation, :size => 40 %>
+</p>
+<p>
+	<label for="user_homepage">Homepage</label>
+	<br/>
+	<%= text_field 'external_link', 'link_url', :size => 60  %>
+</p>
+<p>
+	<label for="user_avatar">Avatar (48x48 pixel)</label>
+	<br/>
+	<%= file_field("picture" , "picture", :size => 60 ) %>
+	<br />
+	<% unless user.avatar.nil? %>
+		<img src="<%= url_for(:action => "picture", :id => user.avatar.id) %>" />
+		<input type="checkbox" name="delete_user_avatar" value="1" /> Elmina avatar
+	<% end %>
+</p>

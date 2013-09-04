@@ -1,0 +1,28 @@
+<h1>Quotes per la recensione <%= @review.full_original_title %></h1>
+
+<div id="table-list" >
+	<table cellpadding="5" cellspacing="0">
+  		<tr>
+			<th>Testo italiano</th>
+			<th>Testo originale</th>
+			<th>Autore</th>
+			<th>Fonte</th>
+  		</tr>
+		<% for quote in @quotes %>
+  			<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+  				<td><%=h quote.italian_text %></td>
+				<td><%=h quote.original_text %></td>
+				<td><%=h quote.author %></td>
+				<td><%=h quote.source %></td>
+    			<td><%= link_to 'Modifica', :action => 'edit', :id => quote %></td>
+    			<td><%= link_to 'Cancella', { :action => 'destroy', :id => quote }, :confirm => 'Sei sicuro?', :method => :post %></td>
+  			</tr>
+		<% end %>
+	</table>
+</div>
+
+<%= link_to 'Precedente', { :page => @quote_pages.current.previous } if @quote_pages.current.previous %>
+<%= link_to 'Successiva', { :page => @quote_pages.current.next } if @quote_pages.current.next %> 
+<br />
+<%= link_to 'Nuova quote', :action => 'new', :id => @review.id %>
+<%= link_to 'Back', :controller => 'review', :action => 'show_for_edit', :id => @review.id, :type => @review.class %>

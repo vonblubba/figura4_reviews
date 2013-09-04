@@ -1,0 +1,10 @@
+<% unless @quote.nil? %>
+	<%= text_formatter(h(@quote.body)) %>
+	<%if @quote.node.is_a? Review %>
+		<p id="quote_attrib">Tratto da <%= link_to('"' + h(@quote.node.page_title) + '"', {:controller => 'review', :action => 'show', :id => quote.node}) %> di <%= h(@quote.node.author.full_name) %></p>
+	<% else %>
+		<p id="quote_attrib"><%= @quote.source || 'Anonimo' %></p>
+	<% end %>
+<% else %>
+	<p>Nessuna quote nel db</p>
+<% end %>

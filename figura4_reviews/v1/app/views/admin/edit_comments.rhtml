@@ -1,0 +1,29 @@
+<h1>Gestione commenti - <%= @review.page_title %></h1>
+
+<%= error_messages_for 'comment' %>
+
+<% form_tag :action => 'update_comments', :id => @review do %>
+	<br />
+	<table>
+  		<tr>
+			<th>Testo</th>
+			<th>Autore</th>
+  		</tr>
+		
+	<% for @comment in @comments do %>
+		<tr>
+  			<td><%= text_area ("comment[]", "body",   :size => "40x10") %></td>
+			<td valign="top">Nickname <br /><%= text_field("comment[]", "author", :size => "15") %><br />
+			e-mail <br /><%= text_field("comment[]", "email", :size => "15") %><br />
+			Home page <br /><%= text_field("comment[]", "homepage", :size => "15") %><br />
+			<%= check_box_tag("to_delete[" + @comment.id.to_s + "]", value="1", checked=false) %>Cancella</td>
+		</tr>
+	<% end %>
+	
+	</table>
+	
+	<%= submit_tag "Salva modifiche" %><br /><br />
+	
+<% end %>
+
+<%= link_to 'Back', :action => 'list' %>

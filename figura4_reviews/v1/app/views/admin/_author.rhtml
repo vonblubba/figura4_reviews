@@ -1,0 +1,10 @@
+<p><label for="author_second_name">Cognome</label><br/>
+<%= text_field 'author', 'second_name'  %></p>
+<p><label for="author_first_name">Nome</label><br/>
+<%= text_field 'author', 'first_name'  %></p>
+<p><label for="author_bio">Biografia</label><br/>
+<%= text_area 'author', 'bio'  %></p>
+<p><label for="author_picture">Fotografia (larghezza 80px)</label><br/>
+<%= file_field("picture" , "picture" ) %><br />
+<img src="<%= Author.picture_path + author.picture unless author.picture.nil? %>"></p>
+

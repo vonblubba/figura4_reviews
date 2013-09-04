@@ -1,0 +1,91 @@
+<p><label for="author">Autore/Regista</label><br/>
+<%= authors_select -%> oppure 
+<%= link_to 'inserisci un nuovo autore', :action => 'new_author' %>
+
+<p><label for="review_italian_title">Titolo italiano (titolo, articolo)</label><br/>
+<%= text_field 'review', 'italian_title'  %>, <%= text_field 'review', 'italian_article', :size => 4  %></p>
+
+<p><label for="review_second_italian_title">Sottotitolo italiano</label><br/>
+<%= text_field 'review', 'second_italian_title'  %></p>
+
+<p><label for="review_original_title">Titolo originale (titolo, articolo)</label><br/>
+<%= text_field 'review', 'original_title'  %>, <%= text_field 'review', 'original_article', :size => 4  %></p>
+
+<p><label for="review_second_original_title">Sottotitolo originale</label><br/>
+<%= text_field 'review', 'second_original_title'  %></p>
+
+<p><label for="review_year">Anno (yyyy)</label><br/>
+<%= text_field 'review', 'year', :size => 4  %></p>
+
+<p><label for="review_editor">Edizione recensita (solo libri/fumetti)</label><br/>
+<%= text_field 'review', 'editor'  %></p>
+
+<p><label for="review_pages">Pagine (solo libri/fumetti)</label><br/>
+<%= text_field 'review', 'pages', :size => 5  %></p>
+
+<p><label for="review_language">Lingua dell'edizione recensita</label><br/>
+<select id="review_language" name="review[language]">
+	<option value="0" <%= "selected='selected'" if review.language == 0 %> >Italiano</option>
+	<option value="1" <%= "selected='selected'" if review.language == 1 %> >Inglese</option>
+</select></p>
+
+<p><label for="review_actors">Cast (solo film/serie tv)</label><br/>
+<%= text_area 'review', 'actors', :size => '40x8'  %></p>
+	
+<p><label for="review_media">Tipo di recensione</label><br/>
+<select id="review_media" name="review[media]">
+	<option value="1" <%= "selected='selected'" if review.media == 1 %> >Libro</option>
+	<option value="0" <%= "selected='selected'" if review.media == 0 %> >Serie TV</option>
+	<option value="2" <%= "selected='selected'" if review.media == 2 %> >Film</option>
+	<option value="3" <%= "selected='selected'" if review.media == 3 %> >Fumetto</option>
+</select>
+</p>
+	
+<p><label for="review_vote">Voto</label><br/>
+<select id="review_vote" name="review[vote]">
+	<option value="1" <%= "selected='selected'" if review.vote == 1 %>>1</option>
+	<option value="2" <%= "selected='selected'" if review.vote == 2 %>>2</option>
+	<option value="3" <%= "selected='selected'" if review.vote == 3 %>>3</option>
+	<option value="4" <%= "selected='selected'" if review.vote == 4 %>>4</option>
+	<option value="5" <%= "selected='selected'" if review.vote == 5 %>>5</option>
+	<option value="6" <%= "selected='selected'" if review.vote == 6 %>>6</option>
+	<option value="7" <%= "selected='selected'" if review.vote == 7 %>>7</option>
+	<option value="8" <%= "selected='selected'" if review.vote == 8 %>>8</option>
+	<option value="9" <%= "selected='selected'" if review.vote == 9 %>>9</option>
+	<option value="10" <%= "selected='selected'" if review.vote == 10 %>>10</option>
+</select></p>
+
+<p><label for="review_cover">Copertina (larghezza 150px)</label><br/>
+<%= file_field("picture" , "picture" ) %><br />
+<% unless review.cover.nil? or review.cover.blank? %>
+	<img src="<%= Review.cover_path + review.cover%>"></p>
+<% end %>
+
+<p><label for="review_plot">La trama in breve</label><br/>
+<%= text_area 'review', 'plot'  %></p>
+
+<p><label for="review_review">Recensione</label><br/>
+<%= text_area 'review', 'review'  %></p>
+
+<p><label for="review_final_words">In conclusione</label><br/>
+<%= text_area 'review', 'final_words'  %></p>
+
+<p><label for="review_published">Pubblicata</label><br/>
+<select id="review_published" name="review[published]">
+	<option value="0" <%= "selected='selected'" if review.published == 0 %>>No</option>
+	<option value="1" <%= "selected='selected'" if review.published == 1 %>>Si</option>
+</select></p>
+
+<p><label for="review_reasons_pro">motivi per leggere questo romanzo</label><br/>
+<%= text_area 'review', 'reason_to_read', :size => '40x8'  %></br>
+</p>
+	
+<p><label for="review_reasons_pro">motivi per evitare questo romanzo</label><br/>
+<%= text_area 'review', 'reason_to_avoid', :size => '40x8'  %></br>
+</p>
+	
+<p><label for="review_created_on">Creata il</label><br/>
+<%= datetime_select 'review', 'created_on'  %></p>
+
+<p><label for="review_updated_on">Modificata il</label><br/>
+<%= datetime_select 'review', 'updated_on'  %></p> 

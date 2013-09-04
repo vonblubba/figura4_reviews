@@ -1,0 +1,41 @@
+<h1>Nuova recensione - passo 1</h1>
+<%= error_messages_for 'review' %>
+<%= form_tag({:action=>'create'}, :multipart => true)%>
+	<p>
+		<label for="author">Autore/Regista (*)</label>
+		<br/>
+		<%= authors_select("none", "review[author_id]", "--Seleziona l'autore") -%> oppure 
+		<%= link_away('inserisci un nuovo autore', :controller => 'author', :action => 'new') %>
+	</p>
+	<p>
+		<label for="review_original_title">Titolo originale (articolo, titolo) (*)</label>
+		<br/>
+		<%= text_field 'review', 'original_article', :size => 4  %> <%= text_field 'review', 'original_title', :size => 40  %> 
+	</p>
+	<p>
+		<label for="review_original_subtitle">Sottotitolo originale</label>
+		<br/>
+		<%= text_field 'review', 'original_subtitle', :size => 40  %>
+	</p>
+	<p>
+		<label for="review_italian_title">Titolo italiano (articolo, titolo). Lasciare vuoto se inedito in italia.</label>
+		<br/>
+		<%= text_field 'review', 'italian_article', :size => 4  %> <%= text_field 'review', 'italian_title', :size => 40  %>
+	</p>
+	<p>
+		<label for="review_italian_subtitle">Sottotitolo italiano</label>
+		<br/>
+		<%= text_field 'review', 'italian_subtitle', :size => 40  %>
+	</p>
+	<p>
+		<label for="type">Tipo di recensione (*)</label>
+		<br/>
+		<select id="type" name="review[type]">
+			<option value="BookReview" <%= "selected='selected'" if @review.is_a?(BookReview) %> >libro</option>
+			<option value="TvReview" <%= "selected='selected'" if @review.is_a?(TvReview) %> >serie tv</option>
+			<option value="MovieReview" <%= "selected='selected'" if @review.is_a?(MovieReview) %> >film</option>
+			<option value="ComicReview" <%= "selected='selected'" if @review.is_a?(ComicReview) %> >fumetto</option>
+		</select>
+	</p>
+	<%= submit_tag 'Procedi' %>
+</form>

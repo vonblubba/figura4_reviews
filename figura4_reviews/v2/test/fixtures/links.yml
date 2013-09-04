@@ -1,0 +1,37 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+global_link_1:
+  id: 1
+  title: f4 hp
+  no_follow: 0
+  type: ExternalLink
+  link_url: figura4.com
+  in_link_section: 1
+  
+global_link_2:
+  id: 2
+  title: il ceppalonico
+  description: il sito di sta ceppa
+  no_follow: 1
+  type: ExternalLink
+  link_url: http://sta.ceppa.it
+  in_link_section: 1
+  
+dune_ext_link:
+  id: 3
+  title: frank herbert official home page
+  description: sito ufficiale de frank herbert
+  no_follow: 0
+  type: ExternalLink
+  link_url: http://frankie-herbert.com
+  in_link_section: 1
+  review_id: 1
+  
+dune_int_link:
+  id: 4
+  title: recensione eretici di dune
+  no_follow: 1
+  type: InternalLink
+  controller: review
+  action: show
+  lid: 1
+  review_id: 1

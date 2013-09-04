@@ -1,0 +1,3 @@
+class MovieReview < VideoReview
+
+end

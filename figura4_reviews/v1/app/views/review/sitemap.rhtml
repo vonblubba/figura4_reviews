@@ -1,0 +1,136 @@
+<div id="rci_right_column">
+<div id="search_suggestions">
+<p>
+Questo &egrave; l'elenco completo delle recensioni, raggruppate per votazione.<br />
+In alternativa, puoi utilizzare il box di ricerca a sinistra.
+</p>
+</div>
+</div>
+<div id="rci_left_column">	
+<% if flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<h2>Lista delle recensioni</h2>
+<% unless @reviews_10.size < 1 %>
+	<div class="reviews_block">
+		<img src="/images/10.png" alt="<%= vote_title(10) %>" title="<%= vote_title(10) %>" />
+		
+		<% @reviews_10.each do |r| %>
+			<p>
+				<%= link_to(h(r.full_title_to_display), {:controller => 'review', :action => 'show', :id => r}) %><br /> 
+				by <%= h(r.author.full_name) %>
+			</p>
+		<% end %>
+	</div>
+<% end %>
+<% unless @reviews_9.size < 1 %>
+	<div class="reviews_block">
+		<img src="/images/9.png" alt="<%= vote_title(9) %>" title="<%= vote_title(8) %>" />
+		<% @reviews_9.each do |r| %>
+		    <p>
+				<%= link_to(h(r.full_title_to_display), {:controller => 'review', :action => 'show', :id => r}) %><br /> 
+				by <%= h(r.author.full_name) %>
+			</p>
+		<% end %>
+	</div>
+<% end %>
+<% unless @reviews_8.size < 1 %>
+	<div class="reviews_block">
+		<img src="/images/8.png" alt="<%= vote_title(8) %>" title="<%= vote_title(8) %>" />
+		<% @reviews_8.each do |r| %>
+			<p>
+				<%= link_to(h(r.full_title_to_display), {:controller => 'review', :action => 'show', :id => r}) %><br /> 
+				by <%= h(r.author.full_name) %><br />
+			</p>
+		<% end %>
+	</div>
+<% end %>
+<% unless @reviews_7.size < 1 %>
+	<div class="reviews_block">
+		<img src="/images/7.png" alt="<%= vote_title(7) %>" title="<%= vote_title(7) %>" />
+		<% @reviews_7.each do |r| %>
+			<p>
+				<%= link_to(h(r.full_title_to_display), {:controller => 'review', :action => 'show', :id => r}) %><br /> 
+				by <%= h(r.author.full_name) %><br />
+			</p>
+		<% end %>
+	</div>
+<% end %>
+<% unless @reviews_6.size < 1 %>
+	<div class="reviews_block">
+		<img src="/images/6.png" alt="<%= vote_title(6) %>" title="<%= vote_title(6) %>" />
+		<% @reviews_6.each do |r| %>
+			<p>
+				<%= link_to(h(r.full_title_to_display), {:controller => 'review', :action => 'show', :id => r}) %><br /> 
+				by <%= h(r.author.full_name) %><br />
+			</p>
+		<% end %>
+	</div>
+<% end %>
+<% unless @reviews_5.size < 1 %>
+	<div class="reviews_block">		
+		<img src="/images/5.png" alt="<%= vote_title(5) %>" title="<%= vote_title(5) %>" />
+		<% @reviews_5.each do |r| %>
+			<p>
+				<%= link_to(h(r.full_title_to_display), {:controller => 'review', :action => 'show', :id => r}) %><br /> 
+				by <%= h(r.author.full_name) %><br />
+			</p>
+		<% end %>
+	</div>
+<% end %>
+<% unless @reviews_4.size < 1 %>
+	<div class="reviews_block">
+		<img src="/images/4.png" alt="<%= vote_title(4) %>" title="<%= vote_title(4) %>" />
+		<% @reviews_4.each do |r| %>
+			<p>
+				<%= link_to(h(r.full_title_to_display), {:controller => 'review', :action => 'show', :id => r}) %> <br /> 
+				by <%= h(r.author.full_name) %><br />
+			</p>
+		<% end %>
+	</div>
+<% end %>
+<% unless @reviews_3.size < 1 %>
+	<div class="reviews_block">
+		<img src="/images/3.png" alt="<%= vote_title(3) %>" title="<%= vote_title(3) %>" />
+		<% @reviews_3.each do |r| %>
+			<p>
+				<%= link_to(h(r.full_title_to_display), {:controller => 'review', :action => 'show', :id => r}) %><br /> 
+				by <%= h(r.author.full_name) %><br />
+			</p>
+		<% end %>
+	</div>
+<% end %>
+<% unless @reviews_2.size < 1 %>
+	<div class="reviews_block">
+		<img src="/images/2.png" alt="<%= vote_title(2) %>" title="<%= vote_title(2) %>" />
+		<% @reviews_2.each do |r| %>
+			<p>
+				<%= link_to(h(r.full_title_to_display), {:controller => 'review', :action => 'show', :id => r}) %><br /> 
+				by <%= h(r.author.full_name) %><br />
+			</p>
+		<% end %>
+	</div>
+<% end %>
+<% unless @reviews_1.size < 1 %>
+	<div class="reviews_block">
+		<img src="/images/1.png" alt="<%= vote_title(1) %>" title="<%= vote_title(1) %>" />
+		<% @reviews_1.each do |r| %>
+			<p>
+				<%= link_to(h(r.full_title_to_display), {:controller => 'review', :action => 'show', :id => r}) %><br /> 
+				by <%= h(r.author.full_name) %><br />
+			</p>
+		<% end %>
+	</div>
+<% end %>
+<% unless @reviews_0.size < 1 %>
+	<div class="reviews_block">
+		<img src="/images/0.png" alt="<%= vote_title(0) %>" title="<%= vote_title(0) %>" />
+		<% @reviews_0.each do |r| %>
+			<p>
+				<%= link_to(h(r.full_title_to_display), {:controller => 'review', :action => 'show', :id => r}) %><br /> 
+				by <%= h(r.author.full_name) %><br />
+			</p>
+		<% end %>
+	</div>
+<% end %>
+</div>

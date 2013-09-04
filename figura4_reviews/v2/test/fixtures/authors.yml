@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+herbert:
+  id: 1
+  first_name:   Frank
+  second_name:  Herbert
+  bio:          Frank Patrick Herbert (8 ottobre 1920 - 11 febbraio 1986)
+
+leguin:
+  id: 2
+  first_name:   Ursula
+  second_name:  K. Le Guin
+  bio:          Ursula Kroeber Le Guin (Berkeley, 21 ottobre 1929)
+  
+martin:
+  id: 3
+  first_name:   George R. R.
+  second_name:  Martin
+  
+scott:
+  id: 4
+  first_name: Ridley
+  second_name: Scott
+  bio: decaduto

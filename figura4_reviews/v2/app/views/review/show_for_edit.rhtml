@@ -1,0 +1,122 @@
+<h3><%= @review.full_title %></h3>
+<p>
+	<label for="author">Autore/Regista:</label>
+	<br />
+	<%= @review.author.full_name %>
+</p>
+
+<p>
+	<label for="review_type">Tipo di recensione: </label>
+	<br />
+	<%= @review.media %>
+</p>
+
+<p>
+	<label for="review_original_title">Titolo originale:</label>
+	<br/>
+	<%= @review.full_original_title  %>
+</p>
+
+<p>
+	<label for="review_original_subtitle">Sottotitolo originale:</label>
+	<br/>
+	<%= @review.original_subtitle  %>
+</p>
+
+<p>
+	<label for="review_italian_title">Titolo italiano:</label>
+	<br/>
+	<%= @review.full_italian_title  %>
+</p>
+
+<p>
+	<label for="review_italian_subtitle">Sottotitolo italiano:</label>
+	<br/>
+	<%= @review.italian_subtitle  %>
+</p>
+
+<p>
+	<label for="review_cover">Copertina/locandina:</label>
+	<br/>
+	<% unless @review.cover.nil? %>
+		<img src="<%= url_for(:action => "picture", :id => @review.cover.id) %>" />
+	<% end %>
+</p>
+
+<p>
+	<label for="review_year">Anno:</label>
+	<br/>
+	<%= @review.year  %>
+</p>
+
+<p>
+	<label for="review_vote">Voto:</label>
+	<br/>
+	<%= @review.vote %>
+</p>
+
+<p>
+	<label for="review_published">Pubblicata:</label>
+	<br/>
+	<% if @review.published == 0 %>
+		No
+	<% else %>
+		Si
+	<% end %>
+</p>
+
+<p>
+	<label for="review_created_on">Creata il:</label>
+	<br/>
+	<%= @review.created_on  %>
+	</p>
+
+<p>
+	<label for="review_updated_on">Modificata il:</label>
+	<br/>
+	<%= @review.updated_on  %>
+</p>
+
+<p>
+	<label for="review_plot">La trama in breve:</label>
+	<br/>
+	<%= @review.plot  %>
+</p>
+
+<p>
+	<label for="review_review">Recensione:</label>
+	<br/>
+	<%= @review.review  %>
+</p>
+
+<p>
+	<label for="review_final_words">In conclusione:</label>
+	<br/>
+	<%= @review.final_words  %>
+</p>
+
+<p>
+	<label for="review_reasons_pro">Motivi per leggere/guardare:</label>
+	<br/>
+	<%= @review.reason_to_read  %>
+</p>
+	
+<p>
+	<label for="review_reasons_pro">Motivi per evitare:</label>
+	<br/>
+	<%= @review.reason_to_avoid  %>
+</p>
+
+<p>
+	<%= link_to('Mostra', {:controller => 'review', :action => 'show', :id => @review}) %>
+    <%= link_to 'Modifica', :controller => 'review', :action => 'edit', :id => @review %>
+	<%= link_to 'Tags', :action => 'edit_tags', :id => @review %>
+	<%= link_to 'Quotes', :controller => 'quote', :action => 'list', :id => @review %>
+	<%= link_to 'Links', :action => 'edit_links', :id => @review %>
+	<%= link_to 'Commenti', :controller => 'comment', :action => 'list', :id => @review %>
+	<% if @review.kind_of? VideoReview %>
+		<%= link_to 'Screenshots', :controller => 'screenshot', :action => 'list', :id => @review %>
+	<% end %>
+	<br />
+	<%= link_to 'Back', :action => 'list' %>
+</p>

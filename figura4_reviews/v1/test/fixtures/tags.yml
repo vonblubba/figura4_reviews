@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+hard_sf:
+  id: 1
+  name: hard sf
+  description: tecnologia a manetta
+  
+soft_sf:
+  id: 2
+  name: soft sf
+  description: scienze umanistiche

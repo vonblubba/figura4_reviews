@@ -1,0 +1,14 @@
+<h1>Modifica tags - <%= @node.page_title %></h1>
+<%= error_messages_for 'tag' %>
+<% form_tag :action => 'update_tags', :id => @node do %>	
+	<h5>Seleziona tra i tags esistenti (tieni premuto ctrl per selezione multipla)</h5>
+	<%= tags_multiple_select('selected_tags', 'selected_tags', @node.id)  %>
+	<h5>Crea nuovi tags</h5>
+	<p>
+		<% 0.upto(3) do |i| %>
+			<%= text_field("created_tags[]", "name", "size" => 15)-%>
+		<% end %>
+	</p>
+	<%= submit_tag "Salva modifiche" %>
+<% end %>
+<p><%= link_to("back", :controller => 'application', :action => 'back') %></p>

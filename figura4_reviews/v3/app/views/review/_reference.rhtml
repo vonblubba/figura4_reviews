@@ -1,0 +1,70 @@
+<p>
+	<label for="author">Autore/Regista (*)</label>
+	<br/>
+	<%if reference.author.nil?%>
+		<%= authors_select("none", "review[author_id]", "--Seleziona l'autore") -%> oppure 
+	<% else %>
+		<%= authors_select("none", "review[author_id]", "--Seleziona l'autore", reference.author.id) -%> oppure 
+	<% end %>
+	<%= link_away('inserisci un nuovo autore', :controller => 'author', :action => 'new') %>
+</p>
+<p>
+	<label for="review_original_title">Titolo originale (titolo, articolo) (*)</label>
+	<br/>
+	<%= text_field 'review', 'original_article', :size => 4  %>, <%= text_field 'review', 'original_title', :size => 40  %>
+</p>
+<p>
+	<label for="review_original_subtitle">Sottotitolo originale</label>
+	<br/>
+	<%= text_field 'review', 'original_subtitle', :size => 40  %>
+</p>
+<p>
+	<label for="review_italian_title">Titolo italiano (titolo, articolo). Lasciare vuoto se inedito in italia.</label>
+	<br/>
+	<%= text_field 'review', 'italian_article', :size => 4  %>, <%= text_field 'review', 'italian_title', :size => 40  %> 
+</p>
+<p>
+	<label for="review_italian_subtitle">Sottotitolo italiano</label>
+	<br/>
+	<%= text_field 'review', 'italian_subtitle', :size => 40  %>
+</p>
+<p>
+	<label for="review_year">Anno (yyyy)</label>
+	<br/>
+	<%= text_field 'review', 'year', :size => 4  %>
+</p>
+<h3>Campi per libri/fumetti</h3>
+<p>
+	<label for="review_editor">Edizione recensita</label>
+	<br/>
+	<%= text_field 'review', 'editor', :size => 40  %>
+</p>
+<p>
+	<label for="review_pages">Pagine</label>
+	<br/>
+	<%= text_field 'review', 'pages', :size => 5  %>
+</p>
+<p>
+	<label for="review_language">Lingua dell'edizione recensita</label>
+	<br/>
+	<select id="review_language" name="review[language]">
+		<option value="0" <%= "selected='selected'" if reference.language == 0 %> >Italiano</option>
+		<option value="1" <%= "selected='selected'" if reference.language == 1 %> >Inglese</option>
+	</select>
+</p>
+<h3>Campi per film/serie tv</h3>
+<p>
+	<label for="review_actors">Cast</label>
+	<br/>
+	<%= text_area 'review', 'actors', :size => '60x8'  %>
+</p>
+<p>
+	<label for="review_nation">Nazione</label>
+	<br/>
+	<%= text_field 'review', 'nation', :size => 60  %>
+</p>
+<p>
+	<label for="review_seasons">Stagioni (solo serie tv)</label>
+<br/>
+	<%= text_field 'review', 'seasons', :size => 60  %>
+</p>

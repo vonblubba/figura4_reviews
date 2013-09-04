@@ -1,0 +1,15 @@
+<h1>Nuova blog entry - passo 1</h1>
+<%= error_messages_for 'blog_entry' %>
+<%= form_tag({:action=>'create'}, :multipart => true)%>
+	<p>
+		<label for="blog_entry_page_title">Titolo della entry (*)</label>
+		<br/>
+		<%= text_field 'blog_entry', 'page_title', :size => 60  %> 
+	</p>
+	<p>
+		<label for="blog_entry_body">Corpo della entry (*)</label>
+		<br/>
+		<%= text_area 'blog_entry', 'body', :size => '60x30'  %>
+	</p>
+	<%= submit_tag 'Procedi' %>
+</form>

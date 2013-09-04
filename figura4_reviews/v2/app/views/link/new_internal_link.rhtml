@@ -1,0 +1,9 @@
+<h1>Nuovo link interno per la recensione <%= @review.full_title %></h1>
+
+<%= error_messages_for 'internal_link' %>
+
+<%= form_tag({:action=>'create_internal_link', :id => @review.id}, :multipart => true) %>
+	<%= render(:partial => "internal_link", :object => @internal_link) %>
+</form>
+
+<%= link_to 'Back', :controller => 'review', :action => 'edit_links', :id => @review.id %>

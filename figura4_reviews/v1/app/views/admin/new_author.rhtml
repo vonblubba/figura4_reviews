@@ -1,0 +1,13 @@
+<h1>Nuovo autore</h1>
+
+<%= error_messages_for 'author' %>
+
+<%= form_tag({:action=>'create_author'}, :multipart => true)%>
+
+	<%= render(:partial => "author", :object => @author) %>
+	
+	<%= submit_tag 'Salva' %>
+	
+</form>
+
+<%= link_to 'Back', :action => 'list_authors' %>

@@ -1,0 +1,26 @@
+<!-- colonna destra -->
+<div id="rci_right_column">
+</div>
+
+<!-- corpo -->
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<div class="depot-form" >
+		<h1>Log In</h1>
+		<% form_tag(:action => 'login', :method => :post) do %>
+			<p>
+				<label for="name" >Nome utente:</label>
+				<%= text_field_tag :name, params[:name] %>
+			</p>
+			<p>
+				<label for="password" >Password:</label>
+				<%= password_field_tag :password, params[:password] %>
+			</p>
+			<p>
+				<%= submit_tag "Login" %>
+			</p>
+		<% end %>
+	</div>
+</div>

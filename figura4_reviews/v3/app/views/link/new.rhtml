@@ -1,0 +1,7 @@
+<h1>Nuovo link esterno</h1>
+<%= error_messages_for 'link' %>
+<%= form_tag(:action=>'create', :multipart => true) %>
+	<%= render(:partial => "link", :object => @link) %>
+	<%= submit_tag 'Salva' %>
+</form>
+<p><%= link_to("back", :controller => 'review', :action => 'back') %></p>

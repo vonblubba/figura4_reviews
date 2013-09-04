@@ -1,0 +1,10 @@
+<div id="depot-form" >
+<%= error_messages_for 'user' %>
+<%= form_tag({:action=>'create_user'}, :multipart => true)%>
+	<%= render(:partial => "user", :object => @user) %>
+	<%= submit_tag 'Salva' %>
+</form>
+<p>
+	<%= link_to 'Back', :action => 'list_users' %>
+</p>
+</div>

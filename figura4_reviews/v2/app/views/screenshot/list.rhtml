@@ -1,0 +1,24 @@
+<h1>Lista screenshots della recensione <%= @review.full_title %></h1>
+
+<div id="table-list" >
+	<table cellpadding="5" cellspacing="0">
+  	<tr>
+		<th>Ordine</th>
+		<th>Nome file</th>
+		<th>Commento</th>
+  	</tr>
+	<% for screenshot in @screenshots %>
+	  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+	  	<td><%=h screenshot.order %></td>
+		<td><%=h screenshot.name %></td>
+		<td><%=h screenshot.comment %></td>
+	    <td><%= link_to 'Modifica', :action => 'edit', :id => screenshot %></td>
+	    <td><%= link_to 'Cancella', { :action => 'destroy', :id => screenshot }, :confirm => 'Sei sicuro?', :method => :post %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
+
+<p>
+	<%= link_to 'Nuovo screenshot', :action => 'new', :id => @review.id %>
+</p>

@@ -1,0 +1,32 @@
+<h1>Commenti per la recensione <%= @review.full_original_title %></h1>
+
+<div id="table-list" >
+<table cellpadding="5" cellspacing="0">
+  <tr>
+	<th>Testo</th>
+	<th>Autore</th>
+	<th>Homepage</th>
+	<th>E-mail</th>
+  </tr>
+  
+<% for comment in @comments %>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+  	<td><%=h comment.body %></td>
+	<td><%=h comment.author %></td>
+	<td><%=h comment.homepage %></td>
+	<td><%=h comment.email %></td>
+
+    <td><%= link_to 'Modifica', :action => 'edit_comment', :id => comment %></td>
+    <td><%= link_to 'Cancella', { :action => 'destroy_comment', :id => comment }, :confirm => 'Sei sicuro?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+<%= link_to 'Precedente', { :page => @comment_pages.current.previous } if @comment_pages.current.previous %>
+<%= link_to 'Successiva', { :page => @comment_pages.current.next } if @comment_pages.current.next %> 
+
+<br />
+
+<%= link_to 'Nuovo commento', :action => 'new_comment', :id => @review.id %>
+<%= link_to 'Back', :action => 'list' %>

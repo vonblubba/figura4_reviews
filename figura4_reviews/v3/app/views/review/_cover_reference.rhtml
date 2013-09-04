@@ -1,0 +1,110 @@
+<!-- copertina -->
+<div id="cover">
+	<% if cover_reference.cover %>
+		<img src="<%= url_for(:action => "picture", :id => cover_reference.cover.id) %>" 
+			 alt="copertina del <%= cover_reference.media %> '<%=h cover_reference.full_title %>' di <%=h cover_reference.author.full_name %>" 
+			 title="copertina del <%= cover_reference.media %> '<%=h cover_reference.full_title %>' di <%=h cover_reference.author.full_name %>"
+		/>
+	<% else %>
+		<img src="/images/no_cover.jpg" 
+		     alt="copertina non disponibile" 
+		     title="copertina non disponibile"
+		/>
+	<% end %>
+	<% if session[:authorized_to_edit] %>
+		<p><%= link_away('[edit cover]', :controller => 'review', :action => 'edit_cover', :id => @review) %></p>
+	<% end %>
+</div>
+
+<!-- scheda -->
+<div class="rc_box_title">
+	<h3>Scheda</h3>
+</div>
+
+<div class="rc_box">
+
+	<h4>Titolo italiano:</h4>
+	<p>
+		<% if cover_reference.full_italian_title.blank? %>
+			Inedito in italia
+		<% else %>
+			<%=h cover_reference.full_italian_title %>
+		<% end %>
+		<% unless cover_reference.italian_subtitle.blank? %>
+			<br />
+			<%= cover_reference.italian_subtitle %>
+		<% end %>
+	</p>
+
+	<h4>Titolo originale:</h4>
+	<p>
+		<%=h cover_reference.full_original_title %>
+		<% unless cover_reference.original_subtitle.blank? %>
+			<br />
+			<%= cover_reference.original_subtitle %>
+		<% end %>
+	</p>
+	
+	<!-- autore -->
+	<% if cover_reference.is_a? MovieReview %>
+		<h4>Regia:</h4> 
+	<% else %>
+		<h4>Autore:</h4> 
+	<% end %> 
+	<p>
+		<%=h cover_reference.author.full_name %>
+	</p>
+	
+	<!-- anno -->
+	<% unless cover_reference.year.blank? %>
+		<h4>Anno di prima pubblicazione
+			<br />
+			(in lingua originale):</h4>
+		<p> 
+			<%=h cover_reference.year %>
+		</p>
+	<% end %>
+	
+	<!-- edizione / pagine -->
+	<% if cover_reference.is_a? PaperReview %>
+		<% unless cover_reference.editor.blank? %>
+			<h4>Edizione recensita:</h4>
+			<p>
+				<%=h cover_reference.editor %> (<%=h cover_reference.language_to_display %>)
+			</p>
+		<% end %>
+		<% unless cover_reference.pages.blank? %>
+			<h4>Pagine:</h4>
+			<p> 
+				<%=h cover_reference.pages %>
+			</p>
+		<% end %>
+	<% end %>
+	
+	<!-- cast -->
+	<% unless cover_reference.actors.blank? %>
+		<h4>Cast:</h4>
+		<p> 
+			<%=h review_right_column.actors %>
+		</p>
+	<% end %>
+	
+	<!-- tags -->
+	<% unless cover_reference.tag_list.size < 1 %>
+		<h4>Tags:</h4> 
+		<p>
+			<% cover_reference.tag_list.each do |tag| %>
+				<span class="tag"><%= link_to(tag, {:controller => 'review', :action => 'search_by_tag', :id => tag}) %></span> /
+			<% end %>
+		</p>
+	<% end %>
+	<% if session[:authorized_to_edit] %>
+		<p><%= link_away('[edit tags]', :controller => 'node', :action => 'edit_tags', :id => @review) %></p>
+	<% end %>
+	<% if session[:authorized_to_edit] %>
+		<p><%= link_away('[edit reference]', :controller => 'review', :action => 'edit_reference', :id => @review) %></p>
+	<% end %>
+</div>
+
+<div class="rc_box_footer">
+</div>

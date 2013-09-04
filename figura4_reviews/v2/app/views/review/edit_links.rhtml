@@ -1,0 +1,44 @@
+<h1>Link per la recensione <%= @review.full_title %></h1>
+
+<div id="table-list" >
+	<table cellpadding="5" cellspacing="0">
+		<% if @internal_links.size > 0 %>
+			<h2>Link interni</h2>
+			<tr>
+				<th>Titolo</th>
+				<th>Descrizione</th>
+	 		</tr>  
+	 		<% for link in @internal_links %>
+  					<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+  					<td><%=h link.title %></td>
+					<td><%=h link.description %></td>
+    				<td><%= link_to 'Modifica', :controller => 'link', :action => 'edit_internal_link', :id => link %></td>
+    				<td><%= link_to 'Cancella', { :controller => 'link', :action => 'destroy_internal_link', :id => link }, :confirm => 'Sei sicuro?', :method => :post %></td>
+  				</tr>
+			<% end %>
+		<% end %>
+	</table>
+	<br />
+	<table cellpadding="5" cellspacing="0">
+		<% if @external_links.size > 0 %>
+			<h2>Link esterni</h2>
+			<tr>
+				<th>Titolo</th>
+				<th>Descrizione</th>
+	 		</tr>  
+	 		<% for link in @external_links %>
+  				<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+  					<td><%=h link.title %></td>
+					<td><%=h link.description %></td>
+    				<td><%= link_to 'Modifica', :controller => 'link', :action => 'edit_external_link', :id => link %></td>
+    				<td><%= link_to 'Cancella', { :controller => 'link', :action => 'destroy_external_link', :id => link }, :confirm => 'Sei sicuro?', :method => :post %></td>
+  				</tr>
+			<% end %>
+		<% end %>
+	</table>
+</div>
+<p>
+	<%= link_to 'Nuovo link interno', :controller => 'link', :action => 'new_internal_link', :id => @review.id %>
+	<%= link_to 'Nuovo link esterno', :controller => 'link', :action => 'new_external_link', :id => @review.id %>
+	<%= link_to 'Back', :action => 'show_for_edit', :id => @review.id, :type => @review.class %>
+</p>

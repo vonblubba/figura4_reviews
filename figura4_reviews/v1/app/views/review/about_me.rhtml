@@ -1,0 +1,33 @@
+<div id="rci_right_column">
+<div id="search_suggestions">
+<p></>Per qualunque motivo ti passi per la testa, non esitare a contattarmi.<br />
+Puoi usare l'apposito <%= link_to('form', {:controller => 'review', :action => 'contacts'}) %>, oppure puoi provare a contattarmi su messenger:</p>
+<p>
+<a href="msnim:chat?contact=figura4.it@hotmail.it"><img src="/images/msn.gif" alt="contattami su msn" title="contattami su msn" /></a>
+<script type="text/javascript" src="http://del.icio.us/feeds/js/networkbadge/figura4.it?name;icon=s"></script>
+</p>
+</div>
+</div>
+
+<div id="rci_left_column">	
+<% if flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<h2>About me</h2>
+<p>
+Realizzare questo sito &egrave; stato un po' come unire l'utile al dilettevole.
+</p>
+<p>
+L'utile sta nel fatto che ho potuto imparare il framework <em>Ruby on Rails</em> (parolacce tecniche che suppongo interesseranno a pochi. Se non siete tra questi pochi, passate al prossimo paragrafo).<br />
+Ebbene si, mi avete scoperto, sono un ingengere informatico, classe 1976, che per necessit&agrave; ha dovuto ripiegare su un impiego nel campo dell'automazione industriale. Per&ograve; mi piacerebbe potermi dedicare un giorno allo sviluppo di applicazioni web, magari proprio in Ruby on Rails (se state cercando una figura simile nella provincia nord-est di milano, <%= link_to("contattatemi", {:controller => 'review', :action => 'contacts'}) %> vi invier&ograve; il mio curriculum alla velocit&agrave; della luce).<br />
+Chi &egrave; del mestiere avr&agrave; notato che il layout del sito &egrave; decisamente grezzo e fatto un po' a spanne, ma cosa volete non sono un designer. Qualsiasi suggerimento per migliorare l'estetica del sito &egrave; bene accetto. Se poi siete dei guru del css e avete voglia di aiutarmi a dare una ripulita al layout, avreste la mia eterna gratitudine.
+</p>
+<p>
+Il dilettevole &egrave; rappresentato dall'opportunit&agrave; di parlare di libri, in particolare romanzi di fantascienza e fantasy (ma non solo. Sono un tipo abbastanza eclettico, lo avrete notato).<br />
+Giusto per capire che tipo di letture che passano dal mio comodino, potrei dirvi che i miei autori preferiti (in ordine rigorosamente casuale) sono Frank Herbert, Ursula K. Le Guin, George R. R. Martin, Masamune Shirow, Noam Chomsky (vi ho spiazzati con quest'ultimo nome, eh?).<br />
+E poi c'&egrave; il cinema. I miei registi preferiti (sempre in ordine rigorosamente casuale) sono Terry Gilliam, Takeshi Kitano, Kim Ki-Duk, Akira Kurosawa e ovviamente Stanley Kubrick.<br /> 
+Se abbiamo qualcosa in comune, <%= link_to("scrivetemi", {:controller => 'review', :action => 'contacts'}) %>. Sar&ograve; ben felice di fare quattro chiacchiere.<br />
+Devo ammettere che finora non ho avuto molto riscontro dai naviganti di passaggio; non ho mai ricevuto pi&ugrave; di 6/7 messaggi al mese. La cosa &egrave; un pochino frustrante, devo ammetterlo.
+Quindi, se vi piacciono le mie recensioni (ma anche se NON vi piacciono!), lasciate un messaggio! Anche solo per dire "ho letto la tua recensione". Almeno sapr&ograve; che le mie fatiche non vanno del tutto sprecate...
+</p><p></p>
+</div>

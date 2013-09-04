@@ -1,0 +1,30 @@
+<p>
+	<label for="author_second_name">Cognome (*)</label>
+	<br/>
+	<%= text_field 'author', 'second_name', :size => 60  %>
+</p>
+<p>
+	<label for="author_first_name">Nome (*)</label>
+	<br/>
+	<%= text_field 'author', 'first_name', :size => 60  %>
+</p>
+<p>
+	<label for="author_bio">Biografia</label>
+	<br/>
+	<%= text_area 'author', 'bio', :size => '60x8'  %>
+</p>
+<p>
+	<label for="author_link_title">Link alla fonte della biografia</label>
+	<br/>
+	<%= text_field 'link', 'link_url', :size => 60  %>
+</p>
+<p>
+	<label for="author_picture">Fotografia (larghezza 80px)</label>
+	<br/>
+	<%= file_field("picture" , "picture", :size => 60 ) %>
+	<br />
+	<% unless author.author_picture.nil? %>
+		<img src="<%= url_for(:action => "picture", :id => @author.author_picture.id) %>" />
+		<input type="checkbox" name="delete_author_picture" value="1" /> Elmina immagine
+	<% end %>
+</p>

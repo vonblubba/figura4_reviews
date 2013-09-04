@@ -1,0 +1,30 @@
+<% if @reviews.size < 1 %>
+	<p><em>Nessuna recensione soddisfa i tuoi criteri di ricerca</em></p>
+<% else %>
+	<div id="table-list" >
+	<table cellpadding="5" cellspacing="0" >
+		<tr>
+			<th class="title">Titolo</th>
+			<th class="author">Autore</th>
+			<th class="media">Tipo</th>
+			<th class="vote">Voto</th>
+		</tr>
+		<% @reviews.each do |r| %>
+			<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">  
+				<td class="title">
+					<a href="<%= url_for :controller => 'review', :action => 'show', :id => r %>" title="Leggi la recensione"  >
+					<% if r.formal_italian_title.nil? or r.formal_italian_title.blank? %>
+						<%=h r.formal_original_title %>
+					<% else %>
+						<%=h r.formal_italian_title %>
+					<% end %>
+					</a>
+				</td>
+				<td class="author"><%=h r.author.second_name + ", " + r.author.first_name %></td>
+				<td class="media"><%=h media_to_display(r) %></td>
+				<td class="vote"><img src="/images/<%= r.vote %>.png" alt="<%= vote_title(r.vote) %>" title="<%= vote_title(r.vote) %>" /></td>
+			</tr>
+		<% end %>
+	</table>
+	</div>
+<% end %>

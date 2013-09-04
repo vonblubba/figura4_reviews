@@ -1,0 +1,10 @@
+<div id="bottom_links">
+	Postato da <span class="to_bold"><%= link_to(bottom_links.user.name, bottom_links.user.homepage) %></span>
+	il <%= bottom_links.created_on.strftime("%d %b %Y") %> | 
+	<% unless bottom_links.comments.size == 0 %>
+		<%= link_to(bottom_links.comments.size.to_s + " commenti", { :controller => 'node', :action => 'show_comments', :id => bottom_links }) %> | 
+	<% end %>	
+	<a href="http://oknotizie.alice.it/post.html.php?url=<%= url_for(:action => 'show', :id => @node.id, :only_path => false) %>&amp;title=<%= bottom_links.page_title %>"><img src="/images/oknotizie.png" alt="proponi su oknotizie" title="proponi su oknotizie" /></a> 
+	<a href="http://del.icio.us/post?title=<%= @node.page_title %>;url=<%= url_for(:action => 'show', :id => @node.id, :only_path => false) %> " title="Aggiungi questa pagina ai tuoi link del.icio.us"><img src="/images/delicious.gif" alt="Add to del.icio.us" /></a>  
+	<a href="http://www.stumbleupon.com/submit?url=<%= url_for(:action => 'show', :id => @node.id, :only_path => false) %>" title="stumble it!"><img src="/images/su.gif" alt="Add to stumbleupon" /></a>
+</div>

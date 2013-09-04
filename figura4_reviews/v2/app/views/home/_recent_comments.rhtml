@@ -1,0 +1,31 @@
+<div class="rc_box_title">
+	<h3>Ultimi commenti</h3>
+</div>
+
+<div class="rc_box">
+	<% @recent_comments = Comment.find(:all, :limit => 5, :conditions => "is_spam = 0", :order => "created_on DESC") %>
+	<ul class="recent_comments">
+	<% @recent_comments.each do |c| %>
+		<li>
+			<a href="<%= url_for({:controller => 'review', :action => 'show_comments', :id => c.review}) %>"
+			   title="leggi il commento" >
+			   	<span>
+					<%= text_formatter(h(smart_truncate(c.body, 70))).gsub("<p>", "").gsub("</p>", "") %> 
+				</span>
+				<br />
+				<span class="comment_details">
+					<% if c.user %>
+						<strong><%=h c.user.name %></strong>
+					<% else %>
+						<strong><%=h c.author %></strong>
+					<% end %>
+					<br />
+					<%=h "#{c.created_on.strftime("%d %b %Y")} @ #{c.created_on.strftime("%H:%M")}" %>
+				</span>
+			</a>
+		</li>
+	<% end %>
+	</ul>
+</div>
+<div class="rc_box_footer">
+</div>

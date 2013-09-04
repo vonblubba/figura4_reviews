@@ -1,0 +1,12 @@
+<div id="rci_right_column">
+	<%= render(:partial => "reviews_sorting", :object => params[:order_by]) %>
+</div>
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<h1>Elenco recensioni</h1>
+	<p>
+		<%= render(:partial => "reviews_table", :object => @reviews) %>
+	</p>
+</div>

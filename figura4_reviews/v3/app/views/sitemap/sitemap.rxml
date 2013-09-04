@@ -1,0 +1,32 @@
+xml.instruct! :xml, :version=> '1.0', :encoding => 'UTF-8'
+xml.urlset( :xmlns => 'http://www.google.com/schemas/sitemap/0.84') do
+  # First entry is the main entry to the site
+  xml.url do
+    xml.loc('http://figura4.com/')
+    xml.changefreq('always')
+    xml.priority('0.9')
+  end
+  # Then one entry per post
+  @nodes.each do |node|
+    xml.url do
+      if node.is_a? Review
+        xml.loc(url_for(:controller => 'review', :action => 'show', :id => node.to_param, :only_path => false))
+        xml.changefreq('weekly')
+        xml.priority('0.8')
+      else
+        xml.loc(url_for(:controller => 'blog', :action => 'show', :id => node.to_param, :only_path => false))
+        xml.changefreq('weekly')
+        xml.priority('0.7')
+      end
+    end
+  end
+  @nodes.each do |node|
+    if node.comments.size > 0
+      xml.url do
+        xml.loc(url_for(:controller => 'node', :action => 'show_comments', :id => node.to_param, :only_path => false))
+        xml.changefreq('weekly')
+        xml.priority('0.5')
+      end
+    end
+  end
+end

@@ -1,0 +1,26 @@
+<p>
+	<label for="title">Titolo (*)</label>
+	<br />
+	<%= text_field("internal_link", "title", :size => "50") %>
+</p>
+<p>
+	<label for="description">Descrizione</label>
+	<br />
+	<%= text_area("internal_link", "description", :size => "40x10") %>
+</p>
+<p>
+	<label for="controller">Controller (*)</label>
+	<br />
+	<%= text_field("internal_link", "controller", :size => "50") %>
+</p>
+<p>
+	<label for="action">Action (*)</label>
+	<br />
+	<%= text_field("internal_link", "action", :size => "50") %>
+</p>
+<p>
+	<label for="lid">Id (*)</label>
+	<br />
+	<%= text_field("internal_link", "lid", :size => "50") %>
+</p>
+<%= submit_tag "Salva" %>

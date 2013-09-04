@@ -1,0 +1,44 @@
+<div id="search_box">
+<h3>Cerca una recensione</h3>
+<%= form_tag(:action=>'search')%>
+	<p>
+	<%= text_field 'search', 'key_word', :size => 19 -%>
+
+	<select class='formatted_select_box' name="search[rating]" >
+		<option value="" selected="selected">--Ricerca per voto</option>
+		<option value="10">10 - Capolavoro!</option>
+		<option value="9">9 - Imperdibile</option>
+		<option value="8">8 - Ottimo</option>
+		<option value="7">7 - Discreto</option>
+		<option value="6">6 - Passabile</option>
+		<option value="5">5 - Scarso</option>
+		<option value="4">4 - Brutto</option>
+		<option value="3">3 - Orribile</option>
+		<option value="2">2 - Terrificante</option>
+		<option value="1">1 - Una ciofeca</option>
+	</select>
+
+	<select class='formatted_select_box' name="search[media]">
+		<option value="" selected="selected">--Ricerca per tipo</option>
+		<option value="1">Libro</option>
+		<option value="0">Serie TV</option>
+		<option value="2">Film</option>
+		<option value="3">Fumetto</option>
+	</select>
+	
+	<%= authors_select("formatted_select_box") %>
+	
+	<%= tags_select("formatted_select_box") %>
+	
+	<select class='formatted_select_box' name="search[order_by]">
+		<option value="vote DESC" selected="selected">--Ordina per:</option>
+		<option value="vote DESC">Voto (decrescente)</option>
+		<option value="original_title">Titolo originale</option>
+		<option value="italian_title">Titolo italiano</option>
+		<option value="author_id">Autore</option>
+	</select>
+
+	<span><%= submit_tag 'Cerca' %></span>
+	</p>
+</form>
+</div>

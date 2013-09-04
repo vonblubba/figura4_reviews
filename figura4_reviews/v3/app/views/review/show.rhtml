@@ -1,0 +1,77 @@
+<!-- colonna destra -->
+<div id="rci_right_column">
+	<%= render(:partial => 'cover_reference', :object => @review) %>
+	<%= render(:partial => 'author_bio',      :object => @review.author) %>
+	<%= render(:partial => 'node/recent_comments', :object => @review.comments) %>
+</div>
+
+<!-- corpo -->
+<div id="rci_left_column">	
+	<!-- messaggi di errore e notifiche -->
+	<%= error_messages_for 'review' %>
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+
+	<!-- titolo e autore -->
+	<div id="main_titles">
+		<h1><%=h @review.full_title %></h1>
+		<h2>by <%=h @review.author.full_name %></h2>
+	</div>
+	
+	<!-- voto -->
+	<p>
+		<% unless @review.vote.blank? %>
+			<img src="/images/<%= @review.vote %>.png" alt="<%= vote_comment(@review.vote) %>" title="<%= vote_comment(@review.vote) %>" />
+		<% end %>
+		<% if session[:authorized_to_edit] %>
+			<%= link_away('[edit vote]', :controller => 'review', :action => 'edit_vote', :id => @review) %>
+		<% end %>
+		<%= media_icon_tag(@review) %>
+	</p>
+	
+	<!-- stato di pubblicazione -->
+	<% if session[:authorized_to_edit] %>
+		<p>Stato di pubblicazione: <%  %>
+		<% if @review.published == 1 %>
+			<strong>PUBBLICATA</strong>
+			<%= link_away('[non pubblicare]', :controller => 'node', :action => 'unpublish', :id => @review) %>
+		<% else %>
+			<strong>NON PUBBLICATA</strong>
+			<%= link_away('[pubblica]', :controller => 'node', :action => 'publish', :id => @review) %>
+		<% end %>
+	<% end %></p>
+	
+	<!-- trama in breve -->
+	<% unless @review.plot.blank? %>
+		<div class="separator"><h2>La trama in breve</h2></div>
+		<%= text_formatter h(@review.plot) %>
+	<% end %>
+	<% if session[:authorized_to_edit] %>
+		<%= link_away('[edit synopsis]', :controller => 'review', :action => 'edit_plot', :id => @review) %>
+	<% end %>
+	
+	<!-- recensione -->
+	<div class="separator"><h2>Recensione</h2></div>
+	<%= text_formatter(@review.review) %>
+	<% if session[:authorized_to_edit] %>
+		<%= link_away('[edit review]', :controller => 'review', :action => 'edit_review', :id => @review) %>
+	<% end %>
+	
+	<!-- quotes -->
+	<% unless @review.quotes.size == 0 %>
+		<%= render(:partial => 'node/quotes', :object => @review.quotes) %>
+	<% end %>
+	<% if session[:authorized_to_edit] %>
+		<p><%= link_away('[add quote]', :controller => 'quote', :action => 'new', :id => @review) %></p>
+	<% end %>
+	
+	<!-- links finali -->
+	<%= render(:partial => 'node/bottom_links', :object => @review) %>
+	
+	<!-- form commenti -->
+	<div id="post_comment">
+		<h4>Invia un commento</h4>
+		<%= render(:partial => 'node/comment', :object => @review) %>
+	</div>
+</div>

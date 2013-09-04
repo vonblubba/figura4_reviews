@@ -1,0 +1,10 @@
+<h1>Modifica screenshot - <%= @screenshot.review.full_title %></h1>
+
+<%= error_messages_for 'screenshot' %>
+
+<%= form_tag({:action => 'update', :id => @screenshot}, :multipart => true) %>
+	<%= render(:partial => 'screenshot', :object => @screenshot) %>
+	<%= submit_tag "Salva" %>
+</form>
+
+<%= link_to 'Back', :action => 'list', :id => @screenshot.review.id %>

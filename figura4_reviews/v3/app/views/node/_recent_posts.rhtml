@@ -1,0 +1,30 @@
+<div id="recent_nodes"> 
+	<% recent_posts.each do |p| %>
+		<div class="preview">		
+			<% if p.is_a? Review %>
+				<!-- recensione -->
+				<h2 class="preview_title"><%=h p.full_title %></h2>
+				<% unless p.subtitle.blank? %>
+					<h2 class="preview_subtitle"><%=h p.subtitle %></h2>
+				<% end %>
+				<h2 class="preview_author">by <%=h p.author.full_name %></h2>
+				<div class="vote">
+					<img src="/images/<%= p.vote %>.png" alt="<%= vote_comment(p.vote) %>" title="<%= vote_comment(p.vote) %>" />
+					<%= media_icon_tag(p) %>
+				</div>
+				<%= text_formatter(h(smart_truncate(p.review, 200))) %>
+				<%= link_to("<span class='preview_more'>Leggi tutto</span>", {:controller => 'review', :action => 'show', :id => p}) %> 
+			<% else %>
+				<% if p.is_a? BlogEntry %>
+					<!-- blog entry -->
+					<h2 class="preview_title"><%=h p.page_title %></h2>
+					<%= text_formatter(h(smart_truncate(p.body, 200))) %>
+					<%= link_to("<span class='preview_more'>Leggi tutto</span>", {:controller => 'blog', :action => 'show', :id => p}) %> 
+				<% end%>
+			<% end %>
+			<% if p.comments.size > 0 %>
+				<%= link_to("<span class='preview_comments'>#{p.comments.size} commenti</span>", { :controller => 'node', :action => 'show_comments', :id => p }) %>
+			<% end %>
+		</div>
+	<% end %>
+</div>

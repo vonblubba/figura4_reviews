@@ -1,0 +1,2 @@
+class ComicReview < PaperReview
+end

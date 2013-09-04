@@ -1,0 +1,221 @@
+<<<<<<< .mine
+=======
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-07-02 15:44:25) [GET]
+  Session ID: 3cfb0d2719cc6b6f43cd32fc5e9e5190
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/default
+Rendering home/index
+Completed in 5.28100 (0 reqs/sec) | Rendering: 3.04700 (57%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-07-02 15:44:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTVhMjc3MjhkNDM4YWRmYTc0YTU2NzIyMjg1YzE5%0AOTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ad395fcc05eac4c1c710b331da1619447eb18e5a
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ReviewController#generate_urls (for 127.0.0.1 at 2008-07-02 15:45:06) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlZTVhMjc3MjhkNDM4YWRmYTc0%0AYTU2NzIyMjg1YzE5OTM%3D--5be5f76be83ab4ce113f5848b5c85039703f0fc6
+  Parameters: {"action"=>"generate_urls", "controller"=>"review"}
+Redirected to http://127.0.0.1:3004/login/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x3670888 @filter=:authorize>] rendered_or_redirected.
+Completed in 0.01600 (62 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://127.0.0.1/review/generate_urls]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2008-07-02 15:45:06) [GET]
+  Session ID: BAh7CToRb3JpZ2luYWxfdXJsIhovcmV2aWV3L2dlbmVyYXRlX3VybHM6F2F1%0AdGhvcml6ZWRfdG9fZWRpdEY6DGNzcmZfaWQiJWU1YTI3NzI4ZDQzOGFkZmE3%0ANGE1NjcyMjI4NWMxOTkzIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpG%0AbGFzaDo6Rmxhc2hIYXNoewY6C25vdGljZSIoRWZmZXR0dWFyZSBpbCBsb2dp%0AbiB8IFBsZWFzZSBsb2cgaW4GOgpAdXNlZHsGOwlU--d30e6800febdc16d4f4815a878e1a8643826c297
+  Parameters: {"action"=>"login", "controller"=>"login"}
+Rendering template within layouts/default
+Rendering login/login
+Completed in 0.18700 (5 reqs/sec) | Rendering: 0.17200 (91%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/login/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-07-02 15:45:07) [GET]
+  Session ID: BAh7DDoMdXNlcl9pZDA6EW9yaWdpbmFsX3VybCIaL3Jldmlldy9nZW5lcmF0%0AZV91cmxzOg5pc19lZGl0b3IwOhdhdXRob3JpemVkX3RvX2VkaXRGOg1pc19h%0AZG1pbjAiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFz%0AaEhhc2h7AAY6CkB1c2VkewA6DGNzcmZfaWQiJWU1YTI3NzI4ZDQzOGFkZmE3%0ANGE1NjcyMjI4NWMxOTkz--4b6089d07e3de49fb5112f84b8dbcc1c263732bb
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing LoginController#login (for 127.0.0.1 at 2008-07-02 15:45:14) [POST]
+  Session ID: BAh7DDoMdXNlcl9pZDA6EW9yaWdpbmFsX3VybCIaL3Jldmlldy9nZW5lcmF0%0AZV91cmxzOg5pc19lZGl0b3IwOhdhdXRob3JpemVkX3RvX2VkaXRGOg1pc19h%0AZG1pbjA6DGNzcmZfaWQiJWU1YTI3NzI4ZDQzOGFkZmE3NGE1NjcyMjI4NWMx%0AOTkzIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hI%0AYXNoewAGOgpAdXNlZHsA--1434ea2a420b26f68aefbae2bfd131af17a19bb0
+  Parameters: {"name"=>"figura4", "commit"=>"Login", "authenticity_token"=>"ec4fb0a2cda2bfa8c23031f78814b9eda6bf2897", "action"=>"login", "method"=>"post", "controller"=>"login", "password"=>"sh1r0w76!"}
+Redirected to http://127.0.0.1:3004/home
+Completed in 0.04700 (21 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://127.0.0.1/login/login?method=post]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-07-02 15:45:14) [GET]
+  Session ID: BAh7DDoMdXNlcl9pZGkGOhFvcmlnaW5hbF91cmwiGi9yZXZpZXcvZ2VuZXJh%0AdGVfdXJsczoOaXNfZWRpdG9yVDoXYXV0aG9yaXplZF90b19lZGl0RjoNaXNf%0AYWRtaW5UIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxh%0Ac2hIYXNoewAGOgpAdXNlZHsAOgxjc3JmX2lkIiVlNWEyNzcyOGQ0MzhhZGZh%0ANzRhNTY3MjIyODVjMTk5Mw%3D%3D--ffd2c7eb7b52d0c2792eacccaa098fb4bb891113
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/default
+Rendering home/index
+Completed in 0.20300 (4 reqs/sec) | Rendering: 0.20300 (100%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-07-02 15:45:14) [GET]
+  Session ID: BAh7DDoMdXNlcl9pZGkGOhFvcmlnaW5hbF91cmwiGi9yZXZpZXcvZ2VuZXJh%0AdGVfdXJsczoOaXNfZWRpdG9yVDoXYXV0aG9yaXplZF90b19lZGl0RjoNaXNf%0AYWRtaW5UOgxjc3JmX2lkIiVlNWEyNzcyOGQ0MzhhZGZhNzRhNTY3MjIyODVj%0AMTk5MyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--3c8b6109f502ba72011bbe715960362a43096993
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ReviewController#generate_urls (for 127.0.0.1 at 2008-07-02 15:45:58) [GET]
+  Session ID: BAh7DDoMdXNlcl9pZGkGOhFvcmlnaW5hbF91cmwiGi9yZXZpZXcvZ2VuZXJh%0AdGVfdXJsczoOaXNfZWRpdG9yVDoXYXV0aG9yaXplZF90b19lZGl0RjoNaXNf%0AYWRtaW5UIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxh%0Ac2hIYXNoewAGOgpAdXNlZHsAOgxjc3JmX2lkIiVlNWEyNzcyOGQ0MzhhZGZh%0ANzRhNTY3MjIyODVjMTk5Mw%3D%3D--ffd2c7eb7b52d0c2792eacccaa098fb4bb891113
+  Parameters: {"action"=>"generate_urls", "controller"=>"review"}
+Redirected to http://127.0.0.1:3004/home
+Completed in 8.48500 (0 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://127.0.0.1/review/generate_urls]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-07-02 15:46:06) [GET]
+  Session ID: BAh7DDoMdXNlcl9pZGkGOhFvcmlnaW5hbF91cmwiGi9yZXZpZXcvZ2VuZXJh%0AdGVfdXJsczoOaXNfZWRpdG9yVDoXYXV0aG9yaXplZF90b19lZGl0RjoNaXNf%0AYWRtaW5UOgxjc3JmX2lkIiVlNWEyNzcyOGQ0MzhhZGZhNzRhNTY3MjIyODVj%0AMTk5MyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsGOgtub3RpY2UiEXVybCBnZW5lcmF0aQY6CkB1c2VkewY7DFQ%3D--b83d27f267d30a890122b2ade888bb2094c3f55c
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/default
+Rendering home/index
+Completed in 0.07800 (12 reqs/sec) | Rendering: 0.07800 (100%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-07-02 15:46:07) [GET]
+  Session ID: BAh7DDoMdXNlcl9pZGkGOhFvcmlnaW5hbF91cmwiGi9yZXZpZXcvZ2VuZXJh%0AdGVfdXJsczoOaXNfZWRpdG9yVDoXYXV0aG9yaXplZF90b19lZGl0RjoNaXNf%0AYWRtaW5UIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxh%0Ac2hIYXNoewAGOgpAdXNlZHsAOgxjc3JmX2lkIiVlNWEyNzcyOGQ0MzhhZGZh%0ANzRhNTY3MjIyODVjMTk5Mw%3D%3D--ffd2c7eb7b52d0c2792eacccaa098fb4bb891113
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/navbar_fade.jpg" with {:method=>:get}):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+>>>>>>> .r266

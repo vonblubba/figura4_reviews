@@ -1,0 +1,7 @@
+<h1>Modifica commento</h1>
+<%= error_messages_for 'comment' %>
+<%= form_tag({:action => 'update', :id => @comment}, :multipart => true) %>
+	<%= render(:partial => 'comment', :object => @comment) %>
+    <%= submit_tag 'Salva' %>
+</form>
+<p><%= link_to("back", :action => 'back') %></p>

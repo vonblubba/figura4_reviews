@@ -1,0 +1,30 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+dune:
+  id: 1
+  original_title: dune
+  original_subtitle: The Dune saga, volume 1
+  italian_title: dune
+  italian_subtitle: La saga di Dune, volume 1
+  year: 1963
+  language: 1
+  editor: Nord
+  type: BookReview
+  vote: 10
+  user_id: 1
+  author_id: 1
+  published: 1
+  plot: Arrakis, meglio conosciuto come Dune,
+  review: Dune sicuramente una delle pi importanti.
+  
+blade_runner:
+  id: 2
+  original_title: Blade runner
+  italian_title: Blade runner
+  year: 1984
+  type: MovieReview
+  vote: 10
+  user_id: 2
+  author_id: 4
+  published: 1
+  plot: replicanti allo sbando
+  review: the best

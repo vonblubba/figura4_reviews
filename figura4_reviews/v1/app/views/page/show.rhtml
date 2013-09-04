@@ -1,0 +1,15 @@
+<div id="rci_right_column">
+
+</div>
+
+<div id="rci_left_column">	
+<% if flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<div>
+<h2><%= @page.title %></h2>
+<h2><%= @page.second_title %></h2>
+<br />
+<%= @page.html_body %>
+</div>
+</div>

@@ -1,0 +1,14 @@
+<p>
+	<label for="body">Testo</label>
+	<br />
+	<%= text_area("quote", "body", :size => "40x10") %>
+</p>
+<p>
+	<label for="quote_source">Fonte</label>
+	<br />
+	<%= text_field("quote", "source", :size => "50") %>
+</p>
+<p>
+	<%= check_box("quote", "random") %> <label for="quote_random">Includi nelle random quotes</label>
+</p>
+<%= submit_tag "Salva" %>

@@ -1,0 +1,10 @@
+<h1>Modifica recensione - <%= @review.full_title %></h1>
+
+<%= error_messages_for 'review' %>
+
+<%= form_tag({:action=>'update', :id => @review}, :multipart => true)%>
+	<%= render(:partial => "review", :object => @review) %>
+	<%= submit_tag 'Salva' %>
+</form>
+
+<%= link_to 'Back', :action => 'list' %>

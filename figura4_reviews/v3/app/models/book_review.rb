@@ -1,0 +1,2 @@
+class BookReview < PaperReview
+end

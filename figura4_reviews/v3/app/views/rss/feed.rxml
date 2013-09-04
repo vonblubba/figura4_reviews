@@ -1,0 +1,31 @@
+xml.instruct! :xml, :version=>"1.0" 
+xml.rss(:version=>"2.0"){
+  xml.channel{
+    xml.title("Figura4's reviews")
+    xml.link("http://figura4.com/")
+    xml.description("Recensioni di tutto ciò che è fantascienza e fantasy.")
+    xml.language('it')
+    for node in @nodes
+      xml.item do
+        if node.is_a? Review
+          xml.title(node.page_title)
+          xml.description("<h2>Trama</h2>" + 
+                          node.plot + 
+                          "<h2>Recensione</h2>" +
+                          node.review)    
+          xml.author(node.user.name)               
+          xml.pubDate(node.created_on.strftime("%a, %d %b %Y %H:%M:%S %z"))
+          xml.link(url_for(:controller => 'review', :action => 'show', :id => node.to_param, :only_path => false))
+          xml.guid(url_for(:controller => 'review', :action => 'show', :id => node.to_param, :only_path => false))
+        else
+          xml.title(node.page_title)
+          xml.description(node.body)    
+          xml.author(node.user.name)               
+          xml.pubDate(node.created_on.strftime("%a, %d %b %Y %H:%M:%S %z"))
+          xml.link(url_for(:controller => 'blog', :action => 'show', :id => node.to_param, :only_path => false))
+          xml.guid(url_for(:controller => 'blog', :action => 'show', :id => node.to_param, :only_path => false))
+        end
+      end
+    end
+  }
+}

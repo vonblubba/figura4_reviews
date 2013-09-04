@@ -1,0 +1,12 @@
+<h1>Lista autori</h1>
+<ul>
+	<% for author in @authors %>
+		<li>
+			<%=h author.second_name %>, 
+			<%=h author.first_name %>
+			<%= link_away('modifica', :action => 'edit', :id => author) %>
+			<%= link_away('cancella', { :action => 'destroy', :id => author }, :confirm => 'Sei sicuro?', :method => :post) %>
+		</li>
+	<% end %>
+</ul>
+<%= will_paginate @authors %>

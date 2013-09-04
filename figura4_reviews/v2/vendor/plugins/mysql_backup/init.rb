@@ -1,0 +1,1 @@
+require File.dirname(__FILE__) + '/lib/database_backup_model'

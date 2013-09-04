@@ -1,0 +1,11 @@
+<h1>Nuova recensione</h1>
+
+<%= error_messages_for 'review' %>
+
+<%= form_tag({:action=>'create'}, :multipart => true)%>
+	<%= render(:partial => "review", :object => @review) %>
+	<%= submit_tag 'Salva' %>
+</form>
+<p>
+	<%= link_to 'Back', :action => 'list' %>
+</p>

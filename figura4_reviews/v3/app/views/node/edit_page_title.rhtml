@@ -1,0 +1,12 @@
+<h1>Modifica titolo della pagina</h1>
+<h2>Attenzione! sarà modificato anche l'url della pagina</h2>
+<%= error_messages_for 'node' %>
+<% form_tag :action => 'update_page_title', :id => @node do %>
+	<p>
+		<label for="page_title">Titolo della pagina (*)</label>
+		<br/>
+		<%= text_field 'node', 'page_title', :size => 60  %> 
+	</p>
+	<%= submit_tag "Salva modifiche" %>
+<% end %>
+<p><%= link_to("back", :action => 'back') %></p>

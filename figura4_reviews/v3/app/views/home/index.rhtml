@@ -1,0 +1,23 @@
+<div id="rci_right_column">
+	<%= render(:partial => "now_reading") %>
+	<%= render(:partial=>"recent_comments") %>
+</div>
+
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<h1>Figura4's reviews (beta)</h1>
+	<div id="mission">
+		<p>
+			Ho deciso di mettermi a scrivere delle piccole <em>recensioni</em> di (quasi) tutto ci&ograve; che mi capita di leggere/guardare (soprattutto leggere, in verit&agrave;...).<br />A che scopo? per dare un aiuto a chi, come me, spesso si trova a vagare senza meta per la rete in cerca un titolo interessante da leggere.
+		</p>
+		<p>
+			Una piccola nota: ricordate che una recensione &egrave;, in ultima analisi, un'opinione, e come tale non pu&ograve; essere giusta o sbagliata, ma semplicemente condivisa o meno.<br />
+		</p>
+		<p>
+			Buona lettura!
+		</p>
+	</div>
+	<%= render(:partial => 'node/recent_posts', :object => @recent_posts) %>
+</div>

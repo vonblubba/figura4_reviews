@@ -1,0 +1,19 @@
+<p>
+	<label for="title">Titolo (*)</label>
+	<br />
+	<%= text_field("external_link", "title", :size => "50") %>
+</p>
+<p>
+	<label for="description">Descrizione</label>
+	<br />
+	<%= text_area("external_link", "description", :size => "40x10") %>
+</p>
+<p>
+	<label for="link_url">URL (*)</label>
+	<br />
+	<%= text_field("external_link", "link_url", :size => "50") %>
+</p>
+<p>
+	<%= check_box("external_link", "no_follow") %> <label for="link_no_follow">No follow</label>
+</p>
+<%= submit_tag "Salva" %>

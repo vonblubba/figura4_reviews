@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="<%=h @meta_description %>" />
+		<meta name="keywords" content="<%=h @meta_keywords %>" />
+		<meta name="author" content="codice e contenuti by figura4" />
+		<%= stylesheet_link_tag "review", :media => "all" %>
+		<% unless @page_title %>
+			<% title_to_display = "Figura4's reviews" %>
+		<% else %>
+			<% title_to_display = "#{@page_title} - F4 reviews" %>
+		<% end %>
+		<title><%= title_to_display %></title>
+		<%= auto_discovery_link_tag(:rss, {:controller => 'rss', :action => 'feed'}) %>
+		<link rel="shortcut icon" href="http://figura4.com/favicon.ico" />
+	</head>
+	<body>
+		<div id="left_container">
+			<img id="logo" alt="bookworm" src="/images/bookworm.jpg" />
+			<div id="left_text">
+				<%= render(:partial=>"review/search_box") %>
+				<%= render(:partial=>"review/credits") %>
+				<%= render(:partial=>"review/badges") %>
+			</div>
+		</div>
+		<div id="right_container_outer">
+			<div id="random_quote">
+				<%= render(:partial=>"review/random_quote") %>
+			</div>
+			<div class="navbar" id="nav"> 
+				<ul>
+					<li <%= "id='current'" if $section == "home" %> ><%= link_to "home", {:controller => 'home', :action => 'index'} %></li>
+					<li <%= "id='current'" if $section == "recensioni" %> ><%= link_to "recensioni", {:controller => 'review', :action => 'index'} %></li>
+					<li <%= "id='current'" if $section == "pages" %> ><%= link_to "approfondimenti", {:controller => 'page', :action => 'index'} %></li>
+					<li <%= "id='current'" if $section == "links" %> ><%= link_to "links", {:controller => 'link', :action => 'index'} %></li>
+					<li <%= "id='current'" if $section == "about" %> ><%= link_to "about me", {:controller => 'about', :action => 'index'} %></li>
+					<li <%= "id='current'" if $section == "contacts" %> ><%= link_to "contatti", {:controller => 'contact', :action => 'index'} %></li>
+				</ul>
+			</div>
+			<div id="navbar_fade">
+			</div>
+			<div id="right_container_inner" class="clearfix">
+				<%= @content_for_layout %>
+			</div>
+			<div id="footer">
+				Questo sito non ha scopo di lucro. 
+				<br />
+				Ogni immagine, logo o citazione &egrave; da considerarsi &#169; dei legittimi proprietari.
+			</div>
+		</div>
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+		</script>
+		<script type="text/javascript">
+			_uacct = "UA-419680-1";
+			urchinTracker();
+		</script>
+	</body>
+</html>

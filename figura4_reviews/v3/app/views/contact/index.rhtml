@@ -1,0 +1,53 @@
+<div id="rci_right_column">
+	<p>
+		Usa questo form per contattare il gestore del sito.
+	</p>
+	<p>
+		I campi contrasseganti da (*) sono obbligatori.
+	</p>
+	<p>
+		Prometto che non venderò il vostro indirizzo email a nessuno spacciatore di Viagra.
+	</p>
+</div>
+
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<h1>Contatti</h1>
+	<div id="feedback_form">
+		<%= form_tag(:action=>'feedback')%>
+			<p>
+				<label for="nickname">Il tuo nome (*)</label>
+				<br/>
+				<%= text_field 'feedback', 'nickname', :size => 34 -%>
+			</p>
+			<p>
+				<label for="email">La tua email (*)</label>
+				<br/>
+				<%= text_field 'feedback', 'email', :size => 34 -%>
+			</p>
+			<p>
+				<select name="feedback[subject]">
+					<option value="" selected="selected">--Il motivo del tuo messaggio</option>
+					<option value="f4 feedback - segnalazione libro">Segnalare un libro</option>
+					<option value="f4 feedback - segnalazione serie tv">Segnalare una serie TV</option>
+					<option value="f4 feedback - segnalazione film">Segnalare un film</option>
+					<option value="f4 feedback - segnalazione fumetto">Segnalare un fumetto</option>
+					<option value="f4 feedback - segnalazione bug">Segnalare un bug nel codice del sito</option>
+					<option value="f4 feedback - 4 chiacchiere">Fare quattro chiacchiere</option>
+					<option value="f4 feedback - recensione">Inviare una recensione</option>
+					<option value="f4 feedback - altro">Altro</option>
+				</select>
+			</p>
+			<p>
+				<label for="body">Il tuo messaggio (*)</label>
+				<br/>
+				<%= text_area 'feedback', 'body', :size => "40x10" %>
+			</p>
+			<p>
+				<%= submit_tag 'invia' %>
+			</p>
+		</form>
+	</div>
+</div>

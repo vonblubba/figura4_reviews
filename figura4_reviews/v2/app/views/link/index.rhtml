@@ -1,0 +1,26 @@
+<div id="rci_right_column">
+	<div id="search_suggestions">
+		<div id="search_suggestions">
+			Sei interessato uno scambio di link?<br />
+			Vuoi segnalarmi un sito interessante?<br /> 
+			<%= link_to('Contattami!', {:controller => 'review', :action => 'contacts'}) %>
+		</div>
+	</div>
+</div>
+
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<h1>Links</h1>
+	<div id="link_list">
+		<% @links.each do |l| %>
+			<h5><%= link_to(l.title, l.link_url) %></h5>
+			<% if l.description %>
+				<p>
+					<%= h(l.description) %>
+				</p>
+			<% end %>
+		<% end %>
+	</div>
+</div>

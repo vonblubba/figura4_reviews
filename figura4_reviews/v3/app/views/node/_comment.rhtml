@@ -1,0 +1,30 @@
+<%= form_tag(:controller => 'node', :action=>'post_comment', :id => comment.id)%>
+	<% logged_user = User.find_by_id(session[:user_id]) %>
+	<% if logged_user %>
+		<p>
+			Utente: <strong><%= logged_user.name %></strong>
+		</p>
+	<% else %>
+		<p>
+			<label>Nome (*)</label>
+			<br/>
+			<%= text_field("comment", "author", :size => "30") %>
+		</p>
+		<p>
+			<label>Homepage</label>
+			<br/>
+			<%= text_field("comment", "homepage", :size => "30") %>
+		</p>
+		<p>
+			<label>E-mail</label>
+			<br/>
+			<%= text_field("comment", "email", :size => "30") %>
+		</p>
+	<% end %>
+	<p>
+		<label>Messaggio (*)</label>
+		<br/>
+		<%= text_area("comment", "body", :size => "50x10") %>
+	</p>
+	<p><%= submit_tag 'Invia' %></p>
+</form>

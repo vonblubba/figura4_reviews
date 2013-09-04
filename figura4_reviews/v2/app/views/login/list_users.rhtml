@@ -1,0 +1,14 @@
+<h1>Elenco utenti</h1>
+<ul>
+	<% for user in @all_users %>
+	<li><%= user.name %>
+		<%= link_to "elimina" , :controller => 'login',
+		:action => 'destroy_user',
+		:id => user %>
+		<%= link_to "modifica", :action => 'edit_user', :id => user %>
+	</li>
+	<% end %>
+</ul>
+<p>
+	<%= link_to 'Nuovo utente', :action => 'new_user' %>
+</p>

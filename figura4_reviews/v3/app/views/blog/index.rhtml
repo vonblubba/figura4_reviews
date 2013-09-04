@@ -1,0 +1,13 @@
+<div id="rci_right_column">
+	<%= render(:partial=>"home/recent_comments") %>
+</div>
+
+<div id="rci_left_column">	
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	<h1>Figura4's blog</h1>
+	<div id="mission">
+	</div>
+	<%= render(:partial => 'node/recent_posts', :object => @recent_blog_entries) %>
+</div>

@@ -1,0 +1,12 @@
+<h1>Nuova pagina</h1>
+
+<%= error_messages_for 'page' %>
+
+<%= form_tag({:action=>'create'}, :multipart => true)%>
+	<%= render(:partial => "page", :object => @page) %>
+	<%= submit_tag 'Salva' %>
+</form>
+
+<p>
+	<%= link_to 'Back', :action => 'list' %>
+</p>

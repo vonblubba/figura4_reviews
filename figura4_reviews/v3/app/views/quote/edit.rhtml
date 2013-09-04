@@ -1,0 +1,6 @@
+<h1>Modifica quote</h1>
+<%= error_messages_for 'quote' %>
+<%= form_tag({:action => 'update', :id => @quote}, :multipart => true) %>
+	<%= render(:partial => 'quote', :object => @quote) %>
+</form>
+<p><%= link_to("back", :action => 'back') %></p>

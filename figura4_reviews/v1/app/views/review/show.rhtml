@@ -1,0 +1,76 @@
+<div id="rci_right_column">
+<%= render(:partial => 'review_right_column', :object => @review) %>
+</div>
+
+<div id="rci_left_column">	
+<% if flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<h2><%=h @review.full_title_to_display ||  "Recensione" %></h2>
+<div id="second_title">
+<% second_title = @review.second_title_to_display %>
+<% unless second_title.nil? or second_title.blank? %> 
+	<h3><%=h second_title %></h3>
+<% end %>
+<h3>by <%=h @review.author.full_name %></h3>
+</div>
+<p>
+<img src="/images/<%= @review.vote %>.png" alt="<%= vote_title(@review.vote) %>" title="<%= vote_title(@review.vote) %>" />
+</p>
+<% unless @review.plot.nil? or @review.plot.blank? %>
+<div class="separator"><img src="/images/plot.png" alt="La trama in breve" /></div>
+<%= text_formatter h(@review.plot) %>
+<% end %>
+<div class="separator"><img src="/images/review.png" alt="Recensione" /></div>
+<%= text_formatter h(@review.review) %>
+<% unless @review.reason_to_read.nil? or @review.reason_to_read.blank? %>
+<div class="separator"><img src="/images/pro.png" alt="Motivi per leggere questo romanzo" /></div>
+<div id="pro">
+<%= text_formatter(h(@review.reason_to_read)) %>
+</div>
+<% end %>
+<% unless @review.reason_to_avoid.nil? or @review.reason_to_avoid.blank? %>
+<div class="separator"><img src="/images/vs.png" alt="motivi per evitare questo romanzo" /></div>
+<div id="vs">
+<%= text_formatter(h(@review.reason_to_avoid)) %>
+</div>
+<% end %>
+<% unless @review.quotes.size == 0 %>
+<div class="separator"><img src="/images/quotes.png" alt="Quotes" /></div>
+<div id="quotes">
+<ul>
+<% @review.quotes.each do |q| %>
+<li>
+<blockquote><%= text_formatter(h(q.text_to_display)) %>
+<p><em><%=h(q.source_to_display) %></em></p></blockquote>
+</li>
+<% end %>
+</ul>
+</div>
+<% end %>
+<div class="separator"><img src="/images/comments.png" alt="Commenti" /></div>
+<div id="post_comment">
+<% if @review.comments.size == 0 %>
+<p>Non ci sono ancora commenti a questa recensione.<br />
+Invia tu il primo!</p>
+<% else %>
+<p><%= link_to("Ci sono " + @review.comments.size.to_s + " commenti a questa recensione.", {:controller => 'review', :action => 'show_comments', :id => @review}) %></p>
+<% end %>
+<p>
+<a href="http://oknotizie.alice.it/post.html.php?url=http://figura4.com/review/show/<%= @review.to_param %>&amp;title=<%= @review.full_title_to_display %>"><img src="/images/oknotizie.png" alt="proponi su oknotizie" title="proponi su oknotizie" /></a>
+<a href="http://del.icio.us/post?title=<%= @review.full_title_to_display %>;url=http://figura4.com/review/show/<%= @review.to_param %> " title="Aggiungi questa pagina ai tuoi link del.icio.us"><img src="/images/delicious.png" alt="Add to del.icio.us" /></a>
+<a href="http://www.stumbleupon.com/submit?url=http://figura4.com/review/show/<%= @review.to_param %>" title="stumble it!"><img src="/images/su.gif" alt="Add to stumbleupon" /></a>
+</p>
+<%= form_tag(:action=>'post_comment', :id => @review)%>
+<p><label for="comment_nickname">Il tuo nome (*)</label><br />
+<%= text_field 'comment', 'nickname', :size => 30 -%></p>
+<p><label for="comment_email">La tua email (*)</label><br />
+<%= text_field 'comment', 'email', :size => 30 -%></p>
+<p><label for="comment_homepage">La tua homepage</label><br />
+<%= text_field 'comment', 'homepage', :size => 30 -%></p>
+<p><label for="comment_body">Il tuo messaggio (*)</label><br />
+<%= text_area 'comment', 'body', :size => '40x10'  %></p>
+<p><%= submit_tag 'Invia' %></p>
+</form>
+</div>
+</div>

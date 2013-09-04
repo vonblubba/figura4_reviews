@@ -1,0 +1,15 @@
+<div id="rci_right_column">
+<div id="search_suggestions">
+<p>Se non trovi la recensione che stai cercando, probabilmente non ho ancora letto quel libro. Se ti va di segnalarmelo o di mandarmi una tua piccola recensione, <%= link_to('contattami', {:controller => 'review', :action => 'contacts'}) %>, potrebbe essere pubblicata sul sito.</p>
+</div>
+</div>
+<div id="rci_left_column">	
+<% if flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<h1><%=h @page_title %></h1>
+<p>
+<%= render(:partial => "reviews_table", :object => @reviews) %>
+</p>
+</div>
+

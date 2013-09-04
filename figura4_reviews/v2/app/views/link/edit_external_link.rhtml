@@ -1,0 +1,9 @@
+<h1>Modifica link esterno - <%= @external_link.review.full_title %></h1>
+
+<%= error_messages_for 'external_link' %>
+
+<%= form_tag({:action => 'update_external_link', :id => @external_link}, :multipart => true) %>
+	<%= render(:partial => 'external_link', :object => @external_link) %>
+</form>
+
+<%= link_to 'Back', :controller => 'review', :action => 'edit_links', :id => @external_link.review.id %>

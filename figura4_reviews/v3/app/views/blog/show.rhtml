@@ -1,0 +1,61 @@
+<!-- colonna destra -->
+<div id="rci_right_column">
+	<%= render(:partial => 'node/recent_comments', :object => @node.comments) %>
+</div>
+
+<!-- corpo -->
+<div id="rci_left_column">	
+	<!-- messaggi di errore e notifiche -->
+	<%= error_messages_for 'blog_entry' %>
+	<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+
+	<!-- titolo -->
+	<div id="main_titles">
+		<h1><%=h @node.page_title %></h1>
+		<% if session[:authorized_to_edit] %>
+			<%= link_away('[edit title]', :controller => 'node', :action => 'edit_page_title', :id => @node) %>
+		<% end %>
+	</div>
+	
+	<!-- stato di pubblicazione -->
+	<% if session[:authorized_to_edit] %>
+		<p>Stato di pubblicazione: <%  %>
+		<% if @node.published == 1 %>
+			<strong>PUBBLICATA</strong>
+			<%= link_away('[non pubblicare]', :controller => 'node', :action => 'unpublish', :id => @node) %>
+		<% else %>
+			<strong>NON PUBBLICATA</strong>
+			<%= link_away('[pubblica]', :controller => 'node', :action => 'publish', :id => @node) %>
+		<% end %>
+		<br />
+		<%= link_away('[edit meta_tags]', :controller => 'node', :action => 'edit_meta_tags', :id => @node) %>
+	<% end %></p>
+	
+	<!-- body -->
+	<% unless @node.body.blank? %>
+		<div><%= text_formatter(@node.body) %></div>
+	<% end %>
+	<% if session[:authorized_to_edit] %>
+		<%= link_away('[edit body]', :controller => 'blog', :action => 'edit_body', :id => @node) %>
+	<% end %>
+	
+	<!-- quotes -->
+	<% unless @node.quotes.size == 0 %>
+		<%= render(:partial => 'node/quotes', :object => @node.quotes) %>
+	<% end %>
+	<% if session[:authorized_to_edit] %>
+		<p><%= link_away('[add quote]', :controller => 'quote', :action => 'new', :id => @node) %></p>
+	<% end %>
+	
+	<!-- links finali -->
+	<%= render(:partial => 'node/bottom_links', :object => @node) %>
+	
+	<!-- form commenti -->
+	<div id="post_comment">
+		<h4>Invia un commento</h4>
+		<%= render(:partial => 'node/comment', :object => @node) %>
+	</div>
+
+</div>

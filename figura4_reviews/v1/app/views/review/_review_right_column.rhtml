@@ -1,0 +1,60 @@
+<div id="cover">
+<img src="<%= Review.cover_path + review_right_column.cover unless review_right_column.cover.nil? %>" alt="Copertina" title="Copertina del <%= media_to_display(review_right_column) %> <%=h review_right_column.full_original_title %> di <%=h review_right_column.author.full_name %>" />
+</div>
+<div id="scheda">
+<h3>Scheda</h3>
+<p>
+Titolo italiano:<br /> <em><%=h review_right_column.full_italian_title %></em>
+</p>
+<p>
+Titolo originale:<br /> <em><%=h review_right_column.full_original_title %></em>
+</p>
+<p>
+<% if review_right_column.media == 1 or review_right_column.media == 3 %>Autore: <br /><% else %>Regia: <br /><% end %> 
+<em><%=h review_right_column.author.full_name %></em>
+</p>
+<p>
+Anno di prima pubblicazione <br />(in lingua originale): <br /><em><%=h review_right_column.year %></em>
+</p>
+<% unless review_right_column.media == 2 or review_right_column.media == 0 %>
+<p>
+Edizione recensita: <br /><em><%=h review_right_column.editor %> (<%=h language_to_display(review_right_column) %>)</em>
+</p>
+<% unless review_right_column.pages.nil? or review_right_column.pages.blank? %>
+<p>
+Pagine: <br /><em><%=h review_right_column.pages %></em>
+</p>
+<% end %>
+<% end %>
+<% unless review_right_column.actors_to_display.nil? %>
+<p>
+Attori: <br /><em><%=h review_right_column.actors %></em>
+</p>
+<% end %>
+<p>
+Categorie: <br />
+<% review_right_column.tags.each do |tag| %>
+	<%= link_to(tag.name, {:controller => 'review', :action => 'search_by_tag', :id => tag.id}) %>,   
+<% end %>
+</p>
+</div>
+<% unless review_right_column.author.bio.nil? or review_right_column.author.bio.blank? %>
+<div id="author">
+<h3>L'autore</h3>
+<img src="<%= Author.picture_path + review_right_column.author.picture_to_display %>" alt="<%=h review_right_column.author.full_name %>" title="<%=h review_right_column.author.full_name %>" />
+<%=text_formatter(h(review_right_column.author.bio)) %>
+</div>
+<% end %>
+<% unless @last_comments.nil? or @last_comments.size == 0 %>
+<div id="comments">
+<h3>Ultimi commenti</h3>
+<ul> 
+<% @last_comments.each do |c| %>
+<li><p><%= text_formatter_parless(h(smart_truncate(c.body, 70))) %> <%= link_to("Leggi tutto", {:controller => 'review', :action => 'show_comments', :id => c.review}) %><br />
+<em>Postato da <%=h c.author %><br />
+<%=h c.created_on.strftime("%d %b %Y %H:%M") %></em></p></li>
+<% end %>
+</ul>
+<%= link_to("Leggi tutti i commenti", {:controller => 'review', :action => 'show_comments', :id => review_right_column}) %>
+</div>
+<% end %>

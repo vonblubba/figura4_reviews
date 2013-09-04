@@ -1,0 +1,2 @@
+class TvReview < VideoReview
+end
